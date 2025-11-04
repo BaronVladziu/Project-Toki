@@ -16,4 +16,8 @@ pip3 install pip --upgrade
 # Install repository
 pip3 install -e . --no-cache-dir
 
+# Build pre-commit
+pre-commit install --config=".pre-commit-config.yaml"
+pre-commit run --all-files --config=".pre-commit-config.yaml"
+
 echo "VIRTUALENV INSTALLED SUCCESSFULLY!"
