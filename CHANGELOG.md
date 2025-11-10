@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.4] - 2025-11-10
+
+### Added
+
+- `dictionary_data.json` with nimi ku suli
+
+
 ## [0.0.3] - 2025-11-06
 
 ### Added

@@ -1,0 +1,931 @@
+{
+  "metadata": "Definitions gathered from https://lipu-sona.pona.la/en/dictionary/",
+  "words": {
+    "a": {
+      "definition": {
+        "PARTICLE": "(emotional interjection, emphasis or confirmation)"
+      }
+    },
+    "akesi": {
+      "definition": {
+        "NOUN": "lizard, reptile"
+      }
+    },
+    "ala": {
+      "definition": {
+        "ADJECTIVE": "not, no, empty",
+        "NOUN": "nothing",
+        "NUMBER": "zero"
+      }
+    },
+    "alasa": {
+      "definition": {
+        "PRE_VERB": "(unconventional) to try (doing something)",
+        "VERB_WITHOUT_OBJECT": "to hunt, to gather; (unconventional) to search, to look for",
+        "VERB_WITH_OBJECT": "to hunt, to gather; (unconventional) to search, to look for"
+      }
+    },
+    "ale": {
+      "definition": {
+        "ADJECTIVE": "every, all, abundant",
+        "NOUN": "everything, universe",
+        "NUMBER": "all/infinite (simple system), 100 (complex system)"
+      }
+    },
+    "ali": {
+      "definition": {
+        "ADJECTIVE": "every, all, abundant",
+        "NOUN": "everything, universe",
+        "NUMBER": "all/infinite (simple system), 100 (complex system)"
+      }
+    },
+    "anpa": {
+      "definition": {
+        "ADJECTIVE": "bowing down, downward, lowly, humble, dependent",
+        "NOUN": "(old/non-pu) lower part",
+        "VERB_WITHOUT_OBJECT": "to bow down",
+        "VERB_WITH_OBJECT": "to conquer, to defeat"
+      }
+    },
+    "ante": {
+      "definition": {
+        "ADJECTIVE": "different, other, changed",
+        "NOUN": "difference, change, (unconventional) version",
+        "VERB_WITHOUT_OBJECT": "to change",
+        "VERB_WITH_OBJECT": "to change"
+      }
+    },
+    "anu": {
+      "definition": {
+        "PARTICLE": "or"
+      }
+    },
+    "awen": {
+      "definition": {
+        "ADJECTIVE": "kept, safe, enduring, resilient, waiting, staying",
+        "NOUN": "(unconventional) stability, safety, wait",
+        "PRE_VERB": "continue (doing something)",
+        "VERB_WITHOUT_OBJECT": "keep, stay, endure, protect",
+        "VERB_WITH_OBJECT": "keep, stay, endure, protect"
+      }
+    },
+    "e": {
+      "definition": {
+        "PARTICLE": "(specifies an object)"
+      }
+    },
+    "en": {
+      "definition": {
+        "PARTICLE": "and (combines subjects)"
+      }
+    },
+    "epiku": {
+      "definition": {
+        "ADJECTIVE": "epic, awesome"
+      }
+    },
+    "esun": {
+      "definition": {
+        "ADJECTIVE": "trade/exchange-related, commercial",
+        "NOUN": "trade, transaction, exchange",
+        "VERB_WITHOUT_OBJECT": "to trade, to exchange",
+        "VERB_WITH_OBJECT": "to trade, to exchange"
+      }
+    },
+    "ijo": {
+      "definition": {
+        "ADJECTIVE": "material, physical",
+        "NOUN": "thing, object, matter"
+      }
+    },
+    "ike": {
+      "definition": {
+        "ADJECTIVE": "bad, evil, complex, unnecessary",
+        "NOUN": "evil",
+        "VERB_WITHOUT_OBJECT": "(unconventional) make smth worse",
+        "VERB_WITH_OBJECT": "(unconventional) make smth worse"
+      }
+    },
+    "ilo": {
+      "definition": {
+        "ADJECTIVE": "useful, (unconventional) electronic, metallic",
+        "NOUN": "tool, machine, device"
+      }
+    },
+    "insa": {
+      "definition": {
+        "ADJECTIVE": "central, inside, between",
+        "NOUN": "insides, contents, center, stomach"
+      }
+    },
+    "jaki": {
+      "definition": {
+        "ADJECTIVE": "dirty, disgusting, toxic, unclean, unsanitary",
+        "NOUN": "dirt, waste",
+        "VERB_WITHOUT_OBJECT": "to make something dirty",
+        "VERB_WITH_OBJECT": "to make something dirty"
+      }
+    },
+    "jan": {
+      "definition": {
+        "ADJECTIVE": "human-like, personal",
+        "NOUN": "person, people, humanity, somebody"
+      }
+    },
+    "jasima": {
+      "definition": {
+        "ADJECTIVE": "opposite",
+        "NOUN": "mirror, reflection, echo",
+        "VERB_WITHOUT_OBJECT": "to reflect, to reverse",
+        "VERB_WITH_OBJECT": "to reflect, to reverse"
+      }
+    },
+    "jelo": {
+      "definition": {
+        "ADJECTIVE": "(the color) yellow (and its shades)",
+        "NOUN": "(the color) yellow (and its shades)",
+        "VERB_WITHOUT_OBJECT": "to color smth yellow",
+        "VERB_WITH_OBJECT": "to color smth yellow"
+      }
+    },
+    "jo": {
+      "definition": {
+        "NOUN": "(unconventional) possessions, property",
+        "VERB_WITHOUT_OBJECT": "to have/carry/contain/hold",
+        "VERB_WITH_OBJECT": "to have/carry/contain/hold"
+      }
+    },
+    "kala": {
+      "definition": {
+        "NOUN": "fish, marine animal, sea creature"
+      }
+    },
+    "kalama": {
+      "definition": {
+        "ADJECTIVE": "loud, noisy, sound-making",
+        "NOUN": "sound, noise",
+        "VERB_WITHOUT_OBJECT": "to make noise, to recite, to play (an instrument)",
+        "VERB_WITH_OBJECT": "to make noise, to recite, to play (an instrument)"
+      }
+    },
+    "kama": {
+      "definition": {
+        "ADJECTIVE": "arriving, coming, future, summoned",
+        "NOUN": "event, arrival",
+        "PRE_VERB": "to become, to be in the process of (doing smth), to manage to, to succeed in"
+      }
+    },
+    "kasi": {
+      "definition": {
+        "NOUN": "plant, grass, herb, leaf"
+      }
+    },
+    "ken": {
+      "definition": {
+        "ADJECTIVE": "(unconventional) able, possible",
+        "NOUN": "ability, possibility, (unconventional) right, liberty",
+        "PRE_VERB": "can (do smth), may (do smth)"
+      }
+    },
+    "kepeken": {
+      "definition": {
+        "NOUN": "use, (unconventional) practice",
+        "PREPOSITION": "(do smth) using, with the help of",
+        "VERB_WITH_OBJECT": "to use smth"
+      }
+    },
+    "kijetesantakalu": {
+      "definition": {
+        "NOUN": "raccoon or other musteloid"
+      }
+    },
+    "kili": {
+      "definition": {
+        "NOUN": "fruit, vegetable, mushroom"
+      }
+    },
+    "kin": {
+      "definition": {
+        "PARTICLE": "very, really, also"
+      }
+    },
+    "kipisi": {
+      "definition": {
+        "VERB_WITHOUT_OBJECT": "to cut, to divide",
+        "VERB_WITH_OBJECT": "to cut, to divide"
+      }
+    },
+    "kiwen": {
+      "definition": {
+        "ADJECTIVE": "hard, metallic, solid",
+        "NOUN": "hard object, metal, stone, solid"
+      }
+    },
+    "ko": {
+      "definition": {
+        "NOUN": "powder, clay, paste, semi-solid"
+      }
+    },
+    "kokosila": {
+      "definition": {
+        "VERB_WITHOUT_OBJECT": "to speak not in toki pona in an environment where others speak toki pona",
+        "VERB_WITH_OBJECT": "to speak not in toki pona in an environment where others speak toki pona"
+      }
+    },
+    "kon": {
+      "definition": {
+        "ADJECTIVE": "invisible, ephemeral, (unconventional) gaseous",
+        "NOUN": "air, essence, spirit, (unconventional) gas"
+      }
+    },
+    "ku": {
+      "definition": {
+        "NOUN": "the Toki Pona Dictionary by Sonja Lang",
+        "VERB_WITHOUT_OBJECT": "to interact with ku"
+      }
+    },
+    "kule": {
+      "definition": {
+        "ADJECTIVE": "colorful, painted",
+        "NOUN": "color, (rare) gender",
+        "VERB_WITHOUT_OBJECT": "to paint smth a color",
+        "VERB_WITH_OBJECT": "to paint smth a color"
+      }
+    },
+    "kulupu": {
+      "definition": {
+        "ADJECTIVE": "communal, social",
+        "NOUN": "group, community, company, society, nation, tribe"
+      }
+    },
+    "kute": {
+      "definition": {
+        "ADJECTIVE": "…-sounding",
+        "NOUN": "ear, hearing",
+        "VERB_WITHOUT_OBJECT": "to hear, to listen, to obey",
+        "VERB_WITH_OBJECT": "to hear, to listen, to obey"
+      }
+    },
+    "la": {
+      "definition": {
+        "PARTICLE": "“if/when” (introduces context)"
+      }
+    },
+    "lanpan": {
+      "definition": {
+        "VERB_WITHOUT_OBJECT": "to get, to take, to steal",
+        "VERB_WITH_OBJECT": "to get, to take, to steal"
+      }
+    },
+    "lape": {
+      "definition": {
+        "ADJECTIVE": "sleeping, restful",
+        "NOUN": "sleep, rest",
+        "VERB_WITHOUT_OBJECT": "to sleep, to rest",
+        "VERB_WITH_OBJECT": "to sleep, to rest"
+      }
+    },
+    "laso": {
+      "definition": {
+        "ADJECTIVE": "(the color) blue, green (and its shades)",
+        "NOUN": "(the color) blue, green (and its shades)",
+        "VERB_WITHOUT_OBJECT": "to color something blue/green",
+        "VERB_WITH_OBJECT": "to color something blue/green"
+      }
+    },
+    "lawa": {
+      "definition": {
+        "ADJECTIVE": "main, primary, controlling, ruling",
+        "NOUN": "head, mind",
+        "VERB_WITHOUT_OBJECT": "to head, to control, to direct, to guide, to lead, to own, to rule",
+        "VERB_WITH_OBJECT": "to head, to control, to direct, to guide, to lead, to own, to rule"
+      }
+    },
+    "leko": {
+      "definition": {
+        "NOUN": "square, block, (sometimes) stairs"
+      }
+    },
+    "len": {
+      "definition": {
+        "ADJECTIVE": "clothed, made of cloth/fabric",
+        "NOUN": "cloth, clothes, fabric, layer of privacy",
+        "VERB_WITHOUT_OBJECT": "to clothe, to provide a layer of privacy",
+        "VERB_WITH_OBJECT": "to clothe, to provide a layer of privacy"
+      }
+    },
+    "lete": {
+      "definition": {
+        "ADJECTIVE": "cold, cool, raw, uncooked",
+        "NOUN": "cold",
+        "VERB_WITHOUT_OBJECT": "to cool down",
+        "VERB_WITH_OBJECT": "to cool down"
+      }
+    },
+    "li": {
+      "definition": {
+        "PARTICLE": "(between subj. and verb/adj.)"
+      }
+    },
+    "lili": {
+      "definition": {
+        "ADJECTIVE": "small, few, young",
+        "NOUN": "smallness",
+        "VERB_WITHOUT_OBJECT": "to shrink",
+        "VERB_WITH_OBJECT": "to shrink"
+      }
+    },
+    "linja": {
+      "definition": {
+        "NOUN": "long flexible object, string, rope, hair"
+      }
+    },
+    "lipu": {
+      "definition": {
+        "ADJECTIVE": "flat, used as lipu, lipu-like, of lipu",
+        "NOUN": "flat object, book, document, paper, page, record, website"
+      }
+    },
+    "loje": {
+      "definition": {
+        "ADJECTIVE": "(the color) red (and its shades)",
+        "NOUN": "(the color) red (and its shades)",
+        "VERB_WITHOUT_OBJECT": "to color smth red",
+        "VERB_WITH_OBJECT": "to color smth red"
+      }
+    },
+    "lon": {
+      "definition": {
+        "ADJECTIVE": "real, true, present, existing",
+        "NOUN": "truth, life, existence",
+        "PREPOSITION": "in, at, on",
+        "VERB_WITHOUT_OBJECT": "is true, exists"
+      }
+    },
+    "luka": {
+      "definition": {
+        "NOUN": "hand, arm",
+        "NUMBER": "5 (complex system)"
+      }
+    },
+    "lukin": {
+      "definition": {
+        "ADJECTIVE": "…-looking, visual",
+        "NOUN": "eye, vision",
+        "PRE_VERB": "to seek (to do something)",
+        "VERB_WITHOUT_OBJECT": "to look, to see, to read",
+        "VERB_WITH_OBJECT": "to look, to see, to read"
+      }
+    },
+    "lupa": {
+      "definition": {
+        "NOUN": "hole, door, orifice, window"
+      }
+    },
+    "ma": {
+      "definition": {
+        "NOUN": "earth, land, outdoors, territory, country"
+      }
+    },
+    "mama": {
+      "definition": {
+        "NOUN": "parent, ancestor, creator, origin, caretaker",
+        "VERB_WITHOUT_OBJECT": "to create, to parent, to take care of",
+        "VERB_WITH_OBJECT": "to create, to parent, to take care of"
+      }
+    },
+    "mani": {
+      "definition": {
+        "ADJECTIVE": "(unconventional) wealthy",
+        "NOUN": "money, large domesticated animal"
+      }
+    },
+    "meli": {
+      "definition": {
+        "ADJECTIVE": "feminine",
+        "NOUN": "woman, female, wife"
+      }
+    },
+    "meso": {
+      "definition": {
+        "ADJECTIVE": "average, moderate, mediocre",
+        "NOUN": "middle, center"
+      }
+    },
+    "mi": {
+      "definition": {
+        "ADJECTIVE": "my, our",
+        "NOUN": "i, me, we, us"
+      }
+    },
+    "mije": {
+      "definition": {
+        "ADJECTIVE": "masculine",
+        "NOUN": "man, male, husband"
+      }
+    },
+    "misikeke": {
+      "definition": {
+        "ADJECTIVE": "medicinal",
+        "NOUN": "medicine, cure",
+        "VERB_WITHOUT_OBJECT": "to cure",
+        "VERB_WITH_OBJECT": "to cure"
+      }
+    },
+    "moku": {
+      "definition": {
+        "ADJECTIVE": "edible, of food",
+        "NOUN": "food",
+        "VERB_WITHOUT_OBJECT": "to eat, to drink, to swallow",
+        "VERB_WITH_OBJECT": "to eat, to drink, to swallow"
+      }
+    },
+    "moli": {
+      "definition": {
+        "ADJECTIVE": "dead, dying",
+        "NOUN": "death",
+        "VERB_WITHOUT_OBJECT": "to kill",
+        "VERB_WITH_OBJECT": "to kill"
+      }
+    },
+    "monsi": {
+      "definition": {
+        "ADJECTIVE": "back, rear",
+        "NOUN": "back, behind, rear, butt"
+      }
+    },
+    "monsuta": {
+      "definition": {
+        "ADJECTIVE": "scary, monstrous",
+        "NOUN": "fear, monster",
+        "VERB_WITHOUT_OBJECT": "to scare, to be afraid of, (sometimes) to turn into a monster",
+        "VERB_WITH_OBJECT": "to scare, to be afraid of, (sometimes) to turn into a monster"
+      }
+    },
+    "mu": {
+      "definition": {
+        "OTHER": "(any animal sound)"
+      }
+    },
+    "mun": {
+      "definition": {
+        "ADJECTIVE": "lunar, stellar",
+        "NOUN": "moon, star, night sky object"
+      }
+    },
+    "musi": {
+      "definition": {
+        "ADJECTIVE": "entertaining, artistic, amusing",
+        "NOUN": "game, art",
+        "VERB_WITHOUT_OBJECT": "to amuse, to play, to have fun",
+        "VERB_WITH_OBJECT": "to amuse, to play, to have fun"
+      }
+    },
+    "mute": {
+      "definition": {
+        "ADJECTIVE": "many, more",
+        "NOUN": "quantity",
+        "NUMBER": "3 or more (simple system), 20 (complex system)"
+      }
+    },
+    "n": {
+      "definition": {
+        "INTERJECTION": "um…, hm… (“thinking noise”)"
+      }
+    },
+    "namako": {
+      "definition": {
+        "ADJECTIVE": "additional, extra",
+        "NOUN": "spice, addition",
+        "VERB_WITHOUT_OBJECT": "to add, to spice up",
+        "VERB_WITH_OBJECT": "to add, to spice up"
+      }
+    },
+    "nanpa": {
+      "definition": {
+        "ADJECTIVE": "-th (ordinal indicator), mathematical, numeric, (unconventional) digital",
+        "NOUN": "number"
+      }
+    },
+    "nasa": {
+      "definition": {
+        "ADJECTIVE": "weird, unusual, strange, drunk"
+      }
+    },
+    "nasin": {
+      "definition": {
+        "ADJECTIVE": "street-, true to the directive/way/custom",
+        "NOUN": "path, road, street, directive, way, custom",
+        "VERB_WITHOUT_OBJECT": "(unconventional) to guide, to show the path",
+        "VERB_WITH_OBJECT": "(unconventional) to guide, to show the path"
+      }
+    },
+    "nena": {
+      "definition": {
+        "ADJECTIVE": "hilly, mountainous, bumpy",
+        "NOUN": "hill, mountain, button, bump, nose"
+      }
+    },
+    "ni": {
+      "definition": {
+        "ADJECTIVE": "this, that",
+        "NOUN": "this, that"
+      }
+    },
+    "nimi": {
+      "definition": {
+        "NOUN": "word, name"
+      }
+    },
+    "noka": {
+      "definition": {
+        "NOUN": "foot, leg, bottom, lower part, under (smth)"
+      }
+    },
+    "o": {
+      "definition": {
+        "PARTICLE": "(addressing people, commands)"
+      }
+    },
+    "oko": {
+      "definition": {
+        "NOUN": "eye"
+      }
+    },
+    "olin": {
+      "definition": {
+        "ADJECTIVE": "loved, favorite, respected",
+        "NOUN": "love, compassion, affection, respect",
+        "VERB_WITHOUT_OBJECT": "to love, to respect",
+        "VERB_WITH_OBJECT": "to love, to respect"
+      }
+    },
+    "ona": {
+      "definition": {
+        "ADJECTIVE": "his, her, their, its",
+        "NOUN": "he, she, they, it"
+      }
+    },
+    "open": {
+      "definition": {
+        "ADJECTIVE": "initial, starting",
+        "NOUN": "start, beginning",
+        "PRE_VERB": "to begin (doing something)",
+        "VERB_WITHOUT_OBJECT": "to start, to open, to turn on",
+        "VERB_WITH_OBJECT": "to start, to open, to turn on"
+      }
+    },
+    "pakala": {
+      "definition": {
+        "ADJECTIVE": "broken, wrong",
+        "NOUN": "damage, mistake",
+        "PARTICLE": "(generic curse)",
+        "VERB_WITHOUT_OBJECT": "to break, to make mistakes",
+        "VERB_WITH_OBJECT": "to break, to make mistakes"
+      }
+    },
+    "pali": {
+      "definition": {
+        "ADJECTIVE": "working",
+        "NOUN": "work, labor",
+        "VERB_WITHOUT_OBJECT": "to work (on), to make",
+        "VERB_WITH_OBJECT": "to work (on), to make"
+      }
+    },
+    "palisa": {
+      "definition": {
+        "ADJECTIVE": "long",
+        "NOUN": "long solid object, branch, stick, (unconventional) length"
+      }
+    },
+    "pan": {
+      "definition": {
+        "NOUN": "bread, grain, corn, rice, pizza"
+      }
+    },
+    "pana": {
+      "definition": {
+        "ADJECTIVE": "(unconventional) given, sent, released",
+        "VERB_WITHOUT_OBJECT": "to give, to send, to emit, to release",
+        "VERB_WITH_OBJECT": "to give, to send, to emit, to release"
+      }
+    },
+    "pi": {
+      "definition": {
+        "PARTICLE": "“of” (regroups two or more modifiers)"
+      }
+    },
+    "pilin": {
+      "definition": {
+        "ADJECTIVE": "feeling, touch-based",
+        "NOUN": "heart, feeling, touch, sense",
+        "VERB_WITHOUT_OBJECT": "to touch, to think, to feel",
+        "VERB_WITH_OBJECT": "to touch, to think, to feel"
+      }
+    },
+    "pimeja": {
+      "definition": {
+        "ADJECTIVE": "black, dark",
+        "NOUN": "(the color) black (and its shades), shadow",
+        "VERB_WITHOUT_OBJECT": "to color smth black, to cast a shadow",
+        "VERB_WITH_OBJECT": "to color smth black, to cast a shadow"
+      }
+    },
+    "pini": {
+      "definition": {
+        "ADJECTIVE": "final, completed, finished, past (with tenpo)",
+        "NOUN": "end, finish",
+        "PRE_VERB": "to end/stop doing something",
+        "VERB_WITHOUT_OBJECT": "to end, to finish, to close",
+        "VERB_WITH_OBJECT": "to end, to finish, to close"
+      }
+    },
+    "pipi": {
+      "definition": {
+        "NOUN": "insect, bug"
+      }
+    },
+    "poka": {
+      "definition": {
+        "ADJECTIVE": "neighboring, nearby, at one's side",
+        "NOUN": "hip, side, nearby area"
+      }
+    },
+    "poki": {
+      "definition": {
+        "NOUN": "box, container, bowl, cup, drawer",
+        "VERB_WITHOUT_OBJECT": "(unconventional) to put in a box",
+        "VERB_WITH_OBJECT": "(unconventional) to put in a box"
+      }
+    },
+    "pona": {
+      "definition": {
+        "ADJECTIVE": "good, simple, friendly, peaceful",
+        "NOUN": "good, simplicity",
+        "VERB_WITHOUT_OBJECT": "to improve, to fix",
+        "VERB_WITH_OBJECT": "to improve, to fix"
+      }
+    },
+    "pu": {
+      "definition": {
+        "ADJECTIVE": "as told in the official toki pona book",
+        "NOUN": "the official toki pona book",
+        "VERB_WITHOUT_OBJECT": "interacting with the official toki pona book",
+        "VERB_WITH_OBJECT": "interacting with the official toki pona book"
+      }
+    },
+    "sama": {
+      "definition": {
+        "ADJECTIVE": "similar, like, sibling",
+        "NOUN": "similarity, (someone's) sibling",
+        "PREPOSITION": "as, like"
+      }
+    },
+    "seli": {
+      "definition": {
+        "ADJECTIVE": "warm, hot",
+        "NOUN": "heat, warmth, chemical reaction, heat source",
+        "VERB_WITHOUT_OBJECT": "to heat",
+        "VERB_WITH_OBJECT": "to heat"
+      }
+    },
+    "selo": {
+      "definition": {
+        "ADJECTIVE": "outer",
+        "NOUN": "outer form, outer layer, shell, skin, boundary"
+      }
+    },
+    "seme": {
+      "definition": {
+        "PARTICLE": "what? which? (for questions)"
+      }
+    },
+    "sewi": {
+      "definition": {
+        "ADJECTIVE": "high, above, divine, sacred",
+        "NOUN": "area above, top, highest part, sky, god"
+      }
+    },
+    "sijelo": {
+      "definition": {
+        "ADJECTIVE": "physical, of sijelo",
+        "NOUN": "body, physical state, torso"
+      }
+    },
+    "sike": {
+      "definition": {
+        "ADJECTIVE": "round, circular, spherical, of one year",
+        "NOUN": "circle, ball, cycle, wheel, (with tenpo) year",
+        "VERB_WITHOUT_OBJECT": "to make a circle around, to surround",
+        "VERB_WITH_OBJECT": "to make a circle around, to surround"
+      }
+    },
+    "sin": {
+      "definition": {
+        "ADJECTIVE": "new, additional, fresh, extra",
+        "NOUN": "novelty, addition, (unconventional) update, spice",
+        "VERB_WITHOUT_OBJECT": "to add, to update",
+        "VERB_WITH_OBJECT": "to add, to update"
+      }
+    },
+    "sina": {
+      "definition": {
+        "ADJECTIVE": "your",
+        "NOUN": "you"
+      }
+    },
+    "sinpin": {
+      "definition": {
+        "ADJECTIVE": "of face, foremost",
+        "NOUN": "face, foremost part, front, wall"
+      }
+    },
+    "sitelen": {
+      "definition": {
+        "ADJECTIVE": "symbolic, written, recorded",
+        "NOUN": "symbol, image, writing",
+        "VERB_WITHOUT_OBJECT": "to write, to draw, to record",
+        "VERB_WITH_OBJECT": "to write, to draw, to record"
+      }
+    },
+    "soko": {
+      "definition": {
+        "NOUN": "mushroom, fungus"
+      }
+    },
+    "sona": {
+      "definition": {
+        "ADJECTIVE": "known",
+        "NOUN": "knowledge, information",
+        "PRE_VERB": "to know (how to do something)",
+        "VERB_WITHOUT_OBJECT": "to know",
+        "VERB_WITH_OBJECT": "to know"
+      }
+    },
+    "soweli": {
+      "definition": {
+        "NOUN": "land mammal, animal"
+      }
+    },
+    "suli": {
+      "definition": {
+        "ADJECTIVE": "big, heavy, tall, great, important, adult",
+        "NOUN": "size, greatness",
+        "VERB_WITHOUT_OBJECT": "to grow",
+        "VERB_WITH_OBJECT": "to grow"
+      }
+    },
+    "suno": {
+      "definition": {
+        "ADJECTIVE": "solar, bright",
+        "NOUN": "sun, light, brightness, light source",
+        "VERB_WITHOUT_OBJECT": "to light, to shine",
+        "VERB_WITH_OBJECT": "to light, to shine"
+      }
+    },
+    "supa": {
+      "definition": {
+        "NOUN": "horizontal surface"
+      }
+    },
+    "suwi": {
+      "definition": {
+        "ADJECTIVE": "sweet, fragrant, cute, adorable",
+        "NOUN": "(unconventional) sweets, fragrances"
+      }
+    },
+    "tan": {
+      "definition": {
+        "ADJECTIVE": "original",
+        "NOUN": "cause, reason, origin",
+        "PREPOSITION": "from, because of",
+        "VERB_WITH_OBJECT": "(unconventional) to cause"
+      }
+    },
+    "taso": {
+      "definition": {
+        "ADJECTIVE": "only",
+        "PREPOSITION": "(at beginning of sentence) but, however"
+      }
+    },
+    "tawa": {
+      "definition": {
+        "ADJECTIVE": "moving",
+        "NOUN": "movement",
+        "PREPOSITION": "to, for, from perspective of",
+        "VERB_WITHOUT_OBJECT": "to move",
+        "VERB_WITH_OBJECT": "to move"
+      }
+    },
+    "telo": {
+      "definition": {
+        "ADJECTIVE": "water, fluid, liquid",
+        "NOUN": "water, fluid, liquid",
+        "VERB_WITHOUT_OBJECT": "to water, to clean",
+        "VERB_WITH_OBJECT": "to water, to clean"
+      }
+    },
+    "tenpo": {
+      "definition": {
+        "ADJECTIVE": "temporal",
+        "NOUN": "time, moment, occasion"
+      }
+    },
+    "toki": {
+      "definition": {
+        "ADJECTIVE": "verbal, conversational",
+        "NOUN": "speech, conversation, language",
+        "VERB_WITHOUT_OBJECT": "to speak, to talk, to use language, to think",
+        "VERB_WITH_OBJECT": "to speak, to talk, to use language, to think"
+      }
+    },
+    "tomo": {
+      "definition": {
+        "ADJECTIVE": "indoor",
+        "NOUN": "home, building, structure, indoor space, room"
+      }
+    },
+    "tonsi": {
+      "definition": {
+        "ADJECTIVE": "gender-nonconforming, trans",
+        "NOUN": "non-binary person, trans person"
+      }
+    },
+    "tu": {
+      "definition": {
+        "ADJECTIVE": "divided",
+        "NOUN": "divide",
+        "NUMBER": "2",
+        "VERB_WITHOUT_OBJECT": "to divide",
+        "VERB_WITH_OBJECT": "to divide"
+      }
+    },
+    "unpa": {
+      "definition": {
+        "ADJECTIVE": "sexual",
+        "NOUN": "sex",
+        "VERB_WITHOUT_OBJECT": "to have sex with",
+        "VERB_WITH_OBJECT": "to have sex with"
+      }
+    },
+    "uta": {
+      "definition": {
+        "ADJECTIVE": "oral",
+        "NOUN": "mouth, lips"
+      }
+    },
+    "utala": {
+      "definition": {
+        "ADJECTIVE": "aggressive, warlike",
+        "NOUN": "fight, battle, challenge, war",
+        "VERB_WITHOUT_OBJECT": "to fight, to battle, to challenge",
+        "VERB_WITH_OBJECT": "to fight, to battle, to challenge"
+      }
+    },
+    "walo": {
+      "definition": {
+        "ADJECTIVE": "white, bright/light",
+        "NOUN": "the color white (and its shades)",
+        "VERB_WITHOUT_OBJECT": "to color something white",
+        "VERB_WITH_OBJECT": "to color something white"
+      }
+    },
+    "wan": {
+      "definition": {
+        "ADJECTIVE": "united, married",
+        "NOUN": "part (of smth)",
+        "NUMBER": "1",
+        "VERB_WITHOUT_OBJECT": "to unite, to marry",
+        "VERB_WITH_OBJECT": "to unite, to marry"
+      }
+    },
+    "waso": {
+      "definition": {
+        "NOUN": "bird, flying creature"
+      }
+    },
+    "wawa": {
+      "definition": {
+        "ADJECTIVE": "strong, powerful, energetic",
+        "NOUN": "strength, power, energy"
+      }
+    },
+    "weka": {
+      "definition": {
+        "ADJECTIVE": "absent, away, remote",
+        "NOUN": "absence, remoteness",
+        "VERB_WITHOUT_OBJECT": "remove, get rid of",
+        "VERB_WITH_OBJECT": "remove, get rid of"
+      }
+    },
+    "wile": {
+      "definition": {
+        "ADJECTIVE": "desired, needed, required",
+        "NOUN": "want, need, desire",
+        "PRE_VERB": "to want to do smth",
+        "VERB_WITHOUT_OBJECT": "to want smth",
+        "VERB_WITH_OBJECT": "to want smth"
+      }
+    }
+  }
+}
