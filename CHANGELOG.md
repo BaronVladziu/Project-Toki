@@ -11,6 +11,17 @@
 More info here: https://semver.org/
 
 
+## [0.0.5] - 2025-11-11
+
+### Added
+
+- `black` to `pre-commit`
+
+### Removed
+
+- `reorder-python-imports` from `pre-commit`
+
+
 ## [0.0.4] - 2025-11-10
 
 ### Added

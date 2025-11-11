@@ -16,7 +16,6 @@ repos:
   - id: check-yaml
   - id: debug-statements
   - id: destroyed-symlinks
-  - id: double-quote-string-fixer
   - id: end-of-file-fixer
   - id: file-contents-sorter
   - id: fix-byte-order-marker
@@ -25,11 +24,10 @@ repos:
   - id: requirements-txt-fixer
   - id: sort-simple-yaml
   - id: trailing-whitespace
-- repo: https://github.com/asottile/reorder-python-imports
-  rev: v3.16.0
+- repo: https://github.com/psf/black
+  rev: 25.11.0
   hooks:
-  - id: reorder-python-imports
-    args: [--py312-plus, --add-import, 'from __future__ import annotations']
+    - id: black
 - repo: https://github.com/asottile/add-trailing-comma
   rev: v4.0.0
   hooks:

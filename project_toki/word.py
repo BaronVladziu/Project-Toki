@@ -1,6 +1,3 @@
-from __future__ import annotations
-
-
 class Word:
     """
     This class represents a single word in Toki Pona language.
@@ -35,10 +32,7 @@ class Word:
         return f'Word("{self.text}")'
 
     def __eq__(self, other) -> bool:
-        return (
-            type(other) == type(self)
-            and self.text == other.text
-        )
+        return type(other) == type(self) and self.text == other.text
 
     def __hash__(self) -> int:
         return hash(repr(self))
