@@ -1,26 +1,22 @@
-class Word:
+class Punctuation:
     """
-    This class represents a single word in Toki Pona language.
+    This class represents a sequence of punctuation symbols.
     """
 
     def __init__(self, text: str):
-        Word._check_input(text)
+        Punctuation._check_input(text)
         self.text: str = text
 
     @staticmethod
     def _check_input(text: str) -> None:
         if not isinstance(text, str):
             raise TypeError(
-                f'Expected word of type "str" but received "{text}" of type "{type(text)}"!',
-            )
-        if len(text) <= 0:
-            raise ValueError(
-                f'Word must have positive length but received text "{text}" of length "{len(text)}"!',
+                f'Expected punctuation of type "str" but received "{text}" of type "{type(text)}"!',
             )
 
     @staticmethod
-    def from_str(text: str) -> Word:
-        return Word(text)
+    def from_str(text: str) -> Punctuation:
+        return Punctuation(text)
 
     def __len__(self) -> int:
         return len(self.text)
@@ -29,7 +25,7 @@ class Word:
         return self.text
 
     def __repr__(self) -> str:
-        return f'Word("{self.text}")'
+        return f'Punctuation("{self.text}")'
 
     def __eq__(self, other) -> bool:
         return type(other) == type(self) and self.text == other.text

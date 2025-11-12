@@ -11,6 +11,17 @@
 More info here: https://semver.org/
 
 
+## [0.0.6] - 2025-11-12
+
+### Added
+
+- `Punctuation` and `Text` classes
+
+### Removed
+
+- `rich` library since it's unused
+
+
 ## [0.0.5] - 2025-11-11
 
 ### Added

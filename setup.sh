@@ -7,7 +7,6 @@ cd "$(dirname "$0")"
 
 # Create virtual environment
 python3.14 -m venv .venv
-# shellcheck disable=SC1091
 source .venv/bin/activate
 
 # Upgrade pip
