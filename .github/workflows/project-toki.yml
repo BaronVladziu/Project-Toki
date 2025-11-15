@@ -1,0 +1,24 @@
+name: Project-Toki
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup repository
+      run: |
+        ./setup.sh
+    - name: Run tests
+      run: |
+        ./test.sh
