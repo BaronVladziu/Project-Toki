@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.7] - 2025-11-19
+
+### Added
+
+- `PartOfSpeech` class
+
+
 ## [0.0.6] - 2025-11-12
 
 ### Added

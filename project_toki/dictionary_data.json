@@ -415,7 +415,8 @@
     "mi": {
       "definition": {
         "ADJECTIVE": "my, our",
-        "NOUN": "i, me, we, us"
+        "NOUN": "i, me, we, us",
+        "PRONOUN_SPECIAL": "i, me, we, us"
       }
     },
     "mije": {
@@ -731,7 +732,8 @@
     "sina": {
       "definition": {
         "ADJECTIVE": "your",
-        "NOUN": "you"
+        "NOUN": "you",
+        "PRONOUN_SPECIAL": "you"
       }
     },
     "sinpin": {
