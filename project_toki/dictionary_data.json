@@ -21,8 +21,7 @@
     "alasa": {
       "definition": {
         "PRE_VERB": "(unconventional) to try (doing something)",
-        "VERB_WITHOUT_OBJECT": "to hunt, to gather; (unconventional) to search, to look for",
-        "VERB_WITH_OBJECT": "to hunt, to gather; (unconventional) to search, to look for"
+        "VERB": "to hunt, to gather; (unconventional) to search, to look for"
       }
     },
     "ale": {
@@ -43,16 +42,15 @@
       "definition": {
         "ADJECTIVE": "bowing down, downward, lowly, humble, dependent",
         "NOUN": "(old/non-pu) lower part",
-        "VERB_WITHOUT_OBJECT": "to bow down",
-        "VERB_WITH_OBJECT": "to conquer, to defeat"
+        "VERB__WITHOUT_OBJECT": "to bow down",
+        "VERB__WITH_OBJECT": "to conquer, to defeat"
       }
     },
     "ante": {
       "definition": {
         "ADJECTIVE": "different, other, changed",
         "NOUN": "difference, change, (unconventional) version",
-        "VERB_WITHOUT_OBJECT": "to change",
-        "VERB_WITH_OBJECT": "to change"
+        "VERB": "to change"
       }
     },
     "anu": {
@@ -65,8 +63,7 @@
         "ADJECTIVE": "kept, safe, enduring, resilient, waiting, staying",
         "NOUN": "(unconventional) stability, safety, wait",
         "PRE_VERB": "continue (doing something)",
-        "VERB_WITHOUT_OBJECT": "keep, stay, endure, protect",
-        "VERB_WITH_OBJECT": "keep, stay, endure, protect"
+        "VERB": "keep, stay, endure, protect"
       }
     },
     "e": {
@@ -88,8 +85,7 @@
       "definition": {
         "ADJECTIVE": "trade/exchange-related, commercial",
         "NOUN": "trade, transaction, exchange",
-        "VERB_WITHOUT_OBJECT": "to trade, to exchange",
-        "VERB_WITH_OBJECT": "to trade, to exchange"
+        "VERB": "to trade, to exchange"
       }
     },
     "ijo": {
@@ -102,8 +98,7 @@
       "definition": {
         "ADJECTIVE": "bad, evil, complex, unnecessary",
         "NOUN": "evil",
-        "VERB_WITHOUT_OBJECT": "(unconventional) make smth worse",
-        "VERB_WITH_OBJECT": "(unconventional) make smth worse"
+        "VERB": "(unconventional) make smth worse"
       }
     },
     "ilo": {
@@ -122,8 +117,7 @@
       "definition": {
         "ADJECTIVE": "dirty, disgusting, toxic, unclean, unsanitary",
         "NOUN": "dirt, waste",
-        "VERB_WITHOUT_OBJECT": "to make something dirty",
-        "VERB_WITH_OBJECT": "to make something dirty"
+        "VERB": "to make something dirty"
       }
     },
     "jan": {
@@ -136,23 +130,20 @@
       "definition": {
         "ADJECTIVE": "opposite",
         "NOUN": "mirror, reflection, echo",
-        "VERB_WITHOUT_OBJECT": "to reflect, to reverse",
-        "VERB_WITH_OBJECT": "to reflect, to reverse"
+        "VERB": "to reflect, to reverse"
       }
     },
     "jelo": {
       "definition": {
         "ADJECTIVE": "(the color) yellow (and its shades)",
         "NOUN": "(the color) yellow (and its shades)",
-        "VERB_WITHOUT_OBJECT": "to color smth yellow",
-        "VERB_WITH_OBJECT": "to color smth yellow"
+        "VERB": "to color smth yellow"
       }
     },
     "jo": {
       "definition": {
         "NOUN": "(unconventional) possessions, property",
-        "VERB_WITHOUT_OBJECT": "to have/carry/contain/hold",
-        "VERB_WITH_OBJECT": "to have/carry/contain/hold"
+        "VERB": "to have/carry/contain/hold"
       }
     },
     "kala": {
@@ -164,8 +155,7 @@
       "definition": {
         "ADJECTIVE": "loud, noisy, sound-making",
         "NOUN": "sound, noise",
-        "VERB_WITHOUT_OBJECT": "to make noise, to recite, to play (an instrument)",
-        "VERB_WITH_OBJECT": "to make noise, to recite, to play (an instrument)"
+        "VERB": "to make noise, to recite, to play (an instrument)"
       }
     },
     "kama": {
@@ -191,7 +181,7 @@
       "definition": {
         "NOUN": "use, (unconventional) practice",
         "PREPOSITION": "(do smth) using, with the help of",
-        "VERB_WITH_OBJECT": "to use smth"
+        "VERB__WITH_OBJECT": "to use smth"
       }
     },
     "kijetesantakalu": {
@@ -211,8 +201,7 @@
     },
     "kipisi": {
       "definition": {
-        "VERB_WITHOUT_OBJECT": "to cut, to divide",
-        "VERB_WITH_OBJECT": "to cut, to divide"
+        "VERB": "to cut, to divide"
       }
     },
     "kiwen": {
@@ -228,8 +217,7 @@
     },
     "kokosila": {
       "definition": {
-        "VERB_WITHOUT_OBJECT": "to speak not in toki pona in an environment where others speak toki pona",
-        "VERB_WITH_OBJECT": "to speak not in toki pona in an environment where others speak toki pona"
+        "VERB": "to speak not in toki pona in an environment where others speak toki pona"
       }
     },
     "kon": {
@@ -241,15 +229,14 @@
     "ku": {
       "definition": {
         "NOUN": "the Toki Pona Dictionary by Sonja Lang",
-        "VERB_WITHOUT_OBJECT": "to interact with ku"
+        "VERB__WITHOUT_OBJECT": "to interact with ku"
       }
     },
     "kule": {
       "definition": {
         "ADJECTIVE": "colorful, painted",
         "NOUN": "color, (rare) gender",
-        "VERB_WITHOUT_OBJECT": "to paint smth a color",
-        "VERB_WITH_OBJECT": "to paint smth a color"
+        "VERB": "to paint smth a color"
       }
     },
     "kulupu": {
@@ -262,8 +249,7 @@
       "definition": {
         "ADJECTIVE": "…-sounding",
         "NOUN": "ear, hearing",
-        "VERB_WITHOUT_OBJECT": "to hear, to listen, to obey",
-        "VERB_WITH_OBJECT": "to hear, to listen, to obey"
+        "VERB": "to hear, to listen, to obey"
       }
     },
     "la": {
@@ -273,32 +259,28 @@
     },
     "lanpan": {
       "definition": {
-        "VERB_WITHOUT_OBJECT": "to get, to take, to steal",
-        "VERB_WITH_OBJECT": "to get, to take, to steal"
+        "VERB": "to get, to take, to steal"
       }
     },
     "lape": {
       "definition": {
         "ADJECTIVE": "sleeping, restful",
         "NOUN": "sleep, rest",
-        "VERB_WITHOUT_OBJECT": "to sleep, to rest",
-        "VERB_WITH_OBJECT": "to sleep, to rest"
+        "VERB": "to sleep, to rest"
       }
     },
     "laso": {
       "definition": {
         "ADJECTIVE": "(the color) blue, green (and its shades)",
         "NOUN": "(the color) blue, green (and its shades)",
-        "VERB_WITHOUT_OBJECT": "to color something blue/green",
-        "VERB_WITH_OBJECT": "to color something blue/green"
+        "VERB": "to color something blue/green"
       }
     },
     "lawa": {
       "definition": {
         "ADJECTIVE": "main, primary, controlling, ruling",
         "NOUN": "head, mind",
-        "VERB_WITHOUT_OBJECT": "to head, to control, to direct, to guide, to lead, to own, to rule",
-        "VERB_WITH_OBJECT": "to head, to control, to direct, to guide, to lead, to own, to rule"
+        "VERB": "to head, to control, to direct, to guide, to lead, to own, to rule"
       }
     },
     "leko": {
@@ -310,16 +292,14 @@
       "definition": {
         "ADJECTIVE": "clothed, made of cloth/fabric",
         "NOUN": "cloth, clothes, fabric, layer of privacy",
-        "VERB_WITHOUT_OBJECT": "to clothe, to provide a layer of privacy",
-        "VERB_WITH_OBJECT": "to clothe, to provide a layer of privacy"
+        "VERB": "to clothe, to provide a layer of privacy"
       }
     },
     "lete": {
       "definition": {
         "ADJECTIVE": "cold, cool, raw, uncooked",
         "NOUN": "cold",
-        "VERB_WITHOUT_OBJECT": "to cool down",
-        "VERB_WITH_OBJECT": "to cool down"
+        "VERB": "to cool down"
       }
     },
     "li": {
@@ -331,8 +311,7 @@
       "definition": {
         "ADJECTIVE": "small, few, young",
         "NOUN": "smallness",
-        "VERB_WITHOUT_OBJECT": "to shrink",
-        "VERB_WITH_OBJECT": "to shrink"
+        "VERB": "to shrink"
       }
     },
     "linja": {
@@ -350,8 +329,7 @@
       "definition": {
         "ADJECTIVE": "(the color) red (and its shades)",
         "NOUN": "(the color) red (and its shades)",
-        "VERB_WITHOUT_OBJECT": "to color smth red",
-        "VERB_WITH_OBJECT": "to color smth red"
+        "VERB": "to color smth red"
       }
     },
     "lon": {
@@ -359,7 +337,7 @@
         "ADJECTIVE": "real, true, present, existing",
         "NOUN": "truth, life, existence",
         "PREPOSITION": "in, at, on",
-        "VERB_WITHOUT_OBJECT": "is true, exists"
+        "VERB__WITHOUT_OBJECT": "is true, exists"
       }
     },
     "luka": {
@@ -373,8 +351,7 @@
         "ADJECTIVE": "…-looking, visual",
         "NOUN": "eye, vision",
         "PRE_VERB": "to seek (to do something)",
-        "VERB_WITHOUT_OBJECT": "to look, to see, to read",
-        "VERB_WITH_OBJECT": "to look, to see, to read"
+        "VERB": "to look, to see, to read"
       }
     },
     "lupa": {
@@ -390,8 +367,7 @@
     "mama": {
       "definition": {
         "NOUN": "parent, ancestor, creator, origin, caretaker",
-        "VERB_WITHOUT_OBJECT": "to create, to parent, to take care of",
-        "VERB_WITH_OBJECT": "to create, to parent, to take care of"
+        "VERB": "to create, to parent, to take care of"
       }
     },
     "mani": {
@@ -415,8 +391,7 @@
     "mi": {
       "definition": {
         "ADJECTIVE": "my, our",
-        "NOUN": "i, me, we, us",
-        "PRONOUN_SPECIAL": "i, me, we, us"
+        "NOUN": "i, me, we, us"
       }
     },
     "mije": {
@@ -429,24 +404,21 @@
       "definition": {
         "ADJECTIVE": "medicinal",
         "NOUN": "medicine, cure",
-        "VERB_WITHOUT_OBJECT": "to cure",
-        "VERB_WITH_OBJECT": "to cure"
+        "VERB": "to cure"
       }
     },
     "moku": {
       "definition": {
         "ADJECTIVE": "edible, of food",
         "NOUN": "food",
-        "VERB_WITHOUT_OBJECT": "to eat, to drink, to swallow",
-        "VERB_WITH_OBJECT": "to eat, to drink, to swallow"
+        "VERB": "to eat, to drink, to swallow"
       }
     },
     "moli": {
       "definition": {
         "ADJECTIVE": "dead, dying",
         "NOUN": "death",
-        "VERB_WITHOUT_OBJECT": "to kill",
-        "VERB_WITH_OBJECT": "to kill"
+        "VERB": "to kill"
       }
     },
     "monsi": {
@@ -459,8 +431,7 @@
       "definition": {
         "ADJECTIVE": "scary, monstrous",
         "NOUN": "fear, monster",
-        "VERB_WITHOUT_OBJECT": "to scare, to be afraid of, (sometimes) to turn into a monster",
-        "VERB_WITH_OBJECT": "to scare, to be afraid of, (sometimes) to turn into a monster"
+        "VERB": "to scare, to be afraid of, (sometimes) to turn into a monster"
       }
     },
     "mu": {
@@ -478,8 +449,7 @@
       "definition": {
         "ADJECTIVE": "entertaining, artistic, amusing",
         "NOUN": "game, art",
-        "VERB_WITHOUT_OBJECT": "to amuse, to play, to have fun",
-        "VERB_WITH_OBJECT": "to amuse, to play, to have fun"
+        "VERB": "to amuse, to play, to have fun"
       }
     },
     "mute": {
@@ -498,8 +468,7 @@
       "definition": {
         "ADJECTIVE": "additional, extra",
         "NOUN": "spice, addition",
-        "VERB_WITHOUT_OBJECT": "to add, to spice up",
-        "VERB_WITH_OBJECT": "to add, to spice up"
+        "VERB": "to add, to spice up"
       }
     },
     "nanpa": {
@@ -517,8 +486,7 @@
       "definition": {
         "ADJECTIVE": "street-, true to the directive/way/custom",
         "NOUN": "path, road, street, directive, way, custom",
-        "VERB_WITHOUT_OBJECT": "(unconventional) to guide, to show the path",
-        "VERB_WITH_OBJECT": "(unconventional) to guide, to show the path"
+        "VERB": "(unconventional) to guide, to show the path"
       }
     },
     "nena": {
@@ -557,8 +525,7 @@
       "definition": {
         "ADJECTIVE": "loved, favorite, respected",
         "NOUN": "love, compassion, affection, respect",
-        "VERB_WITHOUT_OBJECT": "to love, to respect",
-        "VERB_WITH_OBJECT": "to love, to respect"
+        "VERB": "to love, to respect"
       }
     },
     "ona": {
@@ -572,8 +539,7 @@
         "ADJECTIVE": "initial, starting",
         "NOUN": "start, beginning",
         "PRE_VERB": "to begin (doing something)",
-        "VERB_WITHOUT_OBJECT": "to start, to open, to turn on",
-        "VERB_WITH_OBJECT": "to start, to open, to turn on"
+        "VERB": "to start, to open, to turn on"
       }
     },
     "pakala": {
@@ -581,16 +547,14 @@
         "ADJECTIVE": "broken, wrong",
         "NOUN": "damage, mistake",
         "PARTICLE": "(generic curse)",
-        "VERB_WITHOUT_OBJECT": "to break, to make mistakes",
-        "VERB_WITH_OBJECT": "to break, to make mistakes"
+        "VERB": "to break, to make mistakes"
       }
     },
     "pali": {
       "definition": {
         "ADJECTIVE": "working",
         "NOUN": "work, labor",
-        "VERB_WITHOUT_OBJECT": "to work (on), to make",
-        "VERB_WITH_OBJECT": "to work (on), to make"
+        "VERB": "to work (on), to make"
       }
     },
     "palisa": {
@@ -607,8 +571,7 @@
     "pana": {
       "definition": {
         "ADJECTIVE": "(unconventional) given, sent, released",
-        "VERB_WITHOUT_OBJECT": "to give, to send, to emit, to release",
-        "VERB_WITH_OBJECT": "to give, to send, to emit, to release"
+        "VERB": "to give, to send, to emit, to release"
       }
     },
     "pi": {
@@ -620,16 +583,14 @@
       "definition": {
         "ADJECTIVE": "feeling, touch-based",
         "NOUN": "heart, feeling, touch, sense",
-        "VERB_WITHOUT_OBJECT": "to touch, to think, to feel",
-        "VERB_WITH_OBJECT": "to touch, to think, to feel"
+        "VERB": "to touch, to think, to feel"
       }
     },
     "pimeja": {
       "definition": {
         "ADJECTIVE": "black, dark",
         "NOUN": "(the color) black (and its shades), shadow",
-        "VERB_WITHOUT_OBJECT": "to color smth black, to cast a shadow",
-        "VERB_WITH_OBJECT": "to color smth black, to cast a shadow"
+        "VERB": "to color smth black, to cast a shadow"
       }
     },
     "pini": {
@@ -637,8 +598,7 @@
         "ADJECTIVE": "final, completed, finished, past (with tenpo)",
         "NOUN": "end, finish",
         "PRE_VERB": "to end/stop doing something",
-        "VERB_WITHOUT_OBJECT": "to end, to finish, to close",
-        "VERB_WITH_OBJECT": "to end, to finish, to close"
+        "VERB": "to end, to finish, to close"
       }
     },
     "pipi": {
@@ -655,24 +615,21 @@
     "poki": {
       "definition": {
         "NOUN": "box, container, bowl, cup, drawer",
-        "VERB_WITHOUT_OBJECT": "(unconventional) to put in a box",
-        "VERB_WITH_OBJECT": "(unconventional) to put in a box"
+        "VERB": "(unconventional) to put in a box"
       }
     },
     "pona": {
       "definition": {
         "ADJECTIVE": "good, simple, friendly, peaceful",
         "NOUN": "good, simplicity",
-        "VERB_WITHOUT_OBJECT": "to improve, to fix",
-        "VERB_WITH_OBJECT": "to improve, to fix"
+        "VERB": "to improve, to fix"
       }
     },
     "pu": {
       "definition": {
         "ADJECTIVE": "as told in the official toki pona book",
         "NOUN": "the official toki pona book",
-        "VERB_WITHOUT_OBJECT": "interacting with the official toki pona book",
-        "VERB_WITH_OBJECT": "interacting with the official toki pona book"
+        "VERB__WITHOUT_OBJECT": "interacting with the official toki pona book"
       }
     },
     "sama": {
@@ -686,8 +643,7 @@
       "definition": {
         "ADJECTIVE": "warm, hot",
         "NOUN": "heat, warmth, chemical reaction, heat source",
-        "VERB_WITHOUT_OBJECT": "to heat",
-        "VERB_WITH_OBJECT": "to heat"
+        "VERB": "to heat"
       }
     },
     "selo": {
@@ -717,23 +673,20 @@
       "definition": {
         "ADJECTIVE": "round, circular, spherical, of one year",
         "NOUN": "circle, ball, cycle, wheel, (with tenpo) year",
-        "VERB_WITHOUT_OBJECT": "to make a circle around, to surround",
-        "VERB_WITH_OBJECT": "to make a circle around, to surround"
+        "VERB": "to make a circle around, to surround"
       }
     },
     "sin": {
       "definition": {
         "ADJECTIVE": "new, additional, fresh, extra",
         "NOUN": "novelty, addition, (unconventional) update, spice",
-        "VERB_WITHOUT_OBJECT": "to add, to update",
-        "VERB_WITH_OBJECT": "to add, to update"
+        "VERB": "to add, to update"
       }
     },
     "sina": {
       "definition": {
         "ADJECTIVE": "your",
-        "NOUN": "you",
-        "PRONOUN_SPECIAL": "you"
+        "NOUN": "you"
       }
     },
     "sinpin": {
@@ -746,8 +699,7 @@
       "definition": {
         "ADJECTIVE": "symbolic, written, recorded",
         "NOUN": "symbol, image, writing",
-        "VERB_WITHOUT_OBJECT": "to write, to draw, to record",
-        "VERB_WITH_OBJECT": "to write, to draw, to record"
+        "VERB": "to write, to draw, to record"
       }
     },
     "soko": {
@@ -760,8 +712,7 @@
         "ADJECTIVE": "known",
         "NOUN": "knowledge, information",
         "PRE_VERB": "to know (how to do something)",
-        "VERB_WITHOUT_OBJECT": "to know",
-        "VERB_WITH_OBJECT": "to know"
+        "VERB": "to know"
       }
     },
     "soweli": {
@@ -773,16 +724,14 @@
       "definition": {
         "ADJECTIVE": "big, heavy, tall, great, important, adult",
         "NOUN": "size, greatness",
-        "VERB_WITHOUT_OBJECT": "to grow",
-        "VERB_WITH_OBJECT": "to grow"
+        "VERB": "to grow"
       }
     },
     "suno": {
       "definition": {
         "ADJECTIVE": "solar, bright",
         "NOUN": "sun, light, brightness, light source",
-        "VERB_WITHOUT_OBJECT": "to light, to shine",
-        "VERB_WITH_OBJECT": "to light, to shine"
+        "VERB": "to light, to shine"
       }
     },
     "supa": {
@@ -801,7 +750,7 @@
         "ADJECTIVE": "original",
         "NOUN": "cause, reason, origin",
         "PREPOSITION": "from, because of",
-        "VERB_WITH_OBJECT": "(unconventional) to cause"
+        "VERB__WITH_OBJECT": "(unconventional) to cause"
       }
     },
     "taso": {
@@ -815,16 +764,14 @@
         "ADJECTIVE": "moving",
         "NOUN": "movement",
         "PREPOSITION": "to, for, from perspective of",
-        "VERB_WITHOUT_OBJECT": "to move",
-        "VERB_WITH_OBJECT": "to move"
+        "VERB": "to move"
       }
     },
     "telo": {
       "definition": {
         "ADJECTIVE": "water, fluid, liquid",
         "NOUN": "water, fluid, liquid",
-        "VERB_WITHOUT_OBJECT": "to water, to clean",
-        "VERB_WITH_OBJECT": "to water, to clean"
+        "VERB": "to water, to clean"
       }
     },
     "tenpo": {
@@ -837,8 +784,7 @@
       "definition": {
         "ADJECTIVE": "verbal, conversational",
         "NOUN": "speech, conversation, language",
-        "VERB_WITHOUT_OBJECT": "to speak, to talk, to use language, to think",
-        "VERB_WITH_OBJECT": "to speak, to talk, to use language, to think"
+        "VERB": "to speak, to talk, to use language, to think"
       }
     },
     "tomo": {
@@ -858,16 +804,14 @@
         "ADJECTIVE": "divided",
         "NOUN": "divide",
         "NUMBER": "2",
-        "VERB_WITHOUT_OBJECT": "to divide",
-        "VERB_WITH_OBJECT": "to divide"
+        "VERB": "to divide"
       }
     },
     "unpa": {
       "definition": {
         "ADJECTIVE": "sexual",
         "NOUN": "sex",
-        "VERB_WITHOUT_OBJECT": "to have sex with",
-        "VERB_WITH_OBJECT": "to have sex with"
+        "VERB": "to have sex with"
       }
     },
     "uta": {
@@ -880,16 +824,14 @@
       "definition": {
         "ADJECTIVE": "aggressive, warlike",
         "NOUN": "fight, battle, challenge, war",
-        "VERB_WITHOUT_OBJECT": "to fight, to battle, to challenge",
-        "VERB_WITH_OBJECT": "to fight, to battle, to challenge"
+        "VERB": "to fight, to battle, to challenge"
       }
     },
     "walo": {
       "definition": {
         "ADJECTIVE": "white, bright/light",
         "NOUN": "the color white (and its shades)",
-        "VERB_WITHOUT_OBJECT": "to color something white",
-        "VERB_WITH_OBJECT": "to color something white"
+        "VERB": "to color something white"
       }
     },
     "wan": {
@@ -897,8 +839,7 @@
         "ADJECTIVE": "united, married",
         "NOUN": "part (of smth)",
         "NUMBER": "1",
-        "VERB_WITHOUT_OBJECT": "to unite, to marry",
-        "VERB_WITH_OBJECT": "to unite, to marry"
+        "VERB": "to unite, to marry"
       }
     },
     "waso": {
@@ -916,8 +857,7 @@
       "definition": {
         "ADJECTIVE": "absent, away, remote",
         "NOUN": "absence, remoteness",
-        "VERB_WITHOUT_OBJECT": "remove, get rid of",
-        "VERB_WITH_OBJECT": "remove, get rid of"
+        "VERB": "remove, get rid of"
       }
     },
     "wile": {
@@ -925,8 +865,7 @@
         "ADJECTIVE": "desired, needed, required",
         "NOUN": "want, need, desire",
         "PRE_VERB": "to want to do smth",
-        "VERB_WITHOUT_OBJECT": "to want smth",
-        "VERB_WITH_OBJECT": "to want smth"
+        "VERB": "to want smth"
       }
     }
   }
