@@ -10,3 +10,6 @@ source .venv/bin/activate
 
 # Run tests
 python -m unittest tests/text_test.py
+
+# Create coverage report
+coverage xml
