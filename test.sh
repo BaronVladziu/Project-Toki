@@ -9,7 +9,7 @@ cd "$(dirname "$0")"
 source .venv/bin/activate
 
 # Run tests
-python -m unittest tests/text_test.py
+coverage run -m unittest tests/text_test.py
 
 # Create coverage report
 coverage xml

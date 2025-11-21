@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.9] - 2025-11-21
+
+### Added
+
+- code coverage
+
+
 ## [0.0.8] - 2025-11-20
 
 ### Changed
