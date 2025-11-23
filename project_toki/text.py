@@ -1,5 +1,6 @@
 from project_toki.word import Word
 from project_toki.punctuation import Punctuation
+from project_toki.part_of_speech import PartOfSpeech
 
 
 class Text:
@@ -45,6 +46,7 @@ class Text:
             if is_punctuation
             else Word(
                 next_sequence,
+                PartOfSpeech.UNKNOWN,
             )
         )
         if len(text) == 0:

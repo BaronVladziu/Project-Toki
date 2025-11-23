@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.10] - 2025-11-23
+
+### Added
+
+- `PartOfSpeech` variable to `Word` class
+
+
 ## [0.0.9] - 2025-11-21
 
 ### Added

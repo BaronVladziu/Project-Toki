@@ -3,6 +3,7 @@ import unittest
 from project_toki.text import Text
 from project_toki.word import Word
 from project_toki.punctuation import Punctuation
+from project_toki.part_of_speech import PartOfSpeech
 
 
 class TestText(unittest.TestCase):
@@ -11,7 +12,7 @@ class TestText(unittest.TestCase):
             sequences=[],
         )
         _ = Text(
-            sequences=[Word("pona")],
+            sequences=[Word("pona", PartOfSpeech.ADJECTIVE)],
         )
         _ = Text(
             sequences=[Punctuation(".")],
@@ -23,24 +24,24 @@ class TestText(unittest.TestCase):
         )
         _ = Text(
             sequences=[
-                Word("pilin"),
-                Word("pona"),
-                Word("la"),
-                Word("mi"),
-                Word("musi"),
+                Word("pilin", PartOfSpeech.NOUN),
+                Word("pona", PartOfSpeech.ADJECTIVE),
+                Word("la", PartOfSpeech.PARTICLE),
+                Word("mi", PartOfSpeech.NOUN),
+                Word("musi", PartOfSpeech.VERB),
             ],
         )
         _ = Text(
             sequences=[
-                Word("pilin"),
+                Word("pilin", PartOfSpeech.NOUN),
                 Punctuation(" "),
-                Word("pona"),
+                Word("pona", PartOfSpeech.ADJECTIVE),
                 Punctuation(", "),
-                Word("la"),
+                Word("la", PartOfSpeech.PARTICLE),
                 Punctuation(" "),
-                Word("mi"),
+                Word("mi", PartOfSpeech.NOUN),
                 Punctuation(" "),
-                Word("musi"),
+                Word("musi", PartOfSpeech.VERB),
                 Punctuation("."),
             ],
         )
@@ -56,7 +57,7 @@ class TestText(unittest.TestCase):
             Text.from_str(text="pona"),
             Text(
                 sequences=[
-                    Word("pona"),
+                    Word("pona", PartOfSpeech.UNKNOWN),
                 ],
             ),
         )
@@ -72,15 +73,15 @@ class TestText(unittest.TestCase):
             Text.from_str(text="pilin pona, la mi musi."),
             Text(
                 sequences=[
-                    Word("pilin"),
+                    Word("pilin", PartOfSpeech.UNKNOWN),
                     Punctuation(" "),
-                    Word("pona"),
+                    Word("pona", PartOfSpeech.UNKNOWN),
                     Punctuation(", "),
-                    Word("la"),
+                    Word("la", PartOfSpeech.UNKNOWN),
                     Punctuation(" "),
-                    Word("mi"),
+                    Word("mi", PartOfSpeech.UNKNOWN),
                     Punctuation(" "),
-                    Word("musi"),
+                    Word("musi", PartOfSpeech.UNKNOWN),
                     Punctuation("."),
                 ],
             ),
