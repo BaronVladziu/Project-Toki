@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.11] - 2025-11-24
+
+### Added
+
+- tests for `Word` and `Punctuation` classes
+
+
 ## [0.0.10] - 2025-11-23
 
 ### Added

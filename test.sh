@@ -9,6 +9,8 @@ cd "$(dirname "$0")"
 source .venv/bin/activate
 
 # Run tests
+coverage run -m unittest tests/word_test.py
+coverage run -m unittest tests/punctuation_test.py
 coverage run -m unittest tests/text_test.py
 
 # Create coverage report
