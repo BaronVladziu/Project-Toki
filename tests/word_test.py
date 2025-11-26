@@ -16,21 +16,18 @@ class TestWord(unittest.TestCase):
                 part_of_speech=PartOfSpeech.NOUN,
             ),
         )
-        self.assertRaises(
-            TypeError,
-            Word.from_str,
-            text=3,
-            part_of_speech=PartOfSpeech.NOUN,
-        )
-        self.assertRaises(
-            ValueError,
-            Word.from_str,
-            text="",
-            part_of_speech=PartOfSpeech.NOUN,
-        )
-        self.assertRaises(
-            TypeError,
-            Word.from_str,
-            text="toki",
-            part_of_speech=3,
-        )
+        with self.assertRaises(TypeError):
+            Word.from_str(
+                text=3,
+                part_of_speech=PartOfSpeech.NOUN,
+            )
+        with self.assertRaises(ValueError):
+            Word.from_str(
+                text="",
+                part_of_speech=PartOfSpeech.NOUN,
+            )
+        with self.assertRaises(TypeError):
+            Word.from_str(
+                text="toki",
+                part_of_speech=3,
+            )

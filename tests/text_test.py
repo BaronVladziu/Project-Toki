@@ -17,11 +17,10 @@ class TestText(unittest.TestCase):
         _ = Text(
             sequences=[Punctuation(".")],
         )
-        self.assertRaises(
-            TypeError,
-            Text,
-            sequences=[1],
-        )
+        with self.assertRaises(TypeError):
+            Text(
+                sequences=[1],
+            )
         _ = Text(
             sequences=[
                 Word("pilin", PartOfSpeech.NOUN),

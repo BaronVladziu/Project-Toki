@@ -13,8 +13,7 @@ class TestPunctuation(unittest.TestCase):
                 text='. "',
             ),
         )
-        self.assertRaises(
-            TypeError,
-            Punctuation.from_str,
-            text=3,
-        )
+        with self.assertRaises(TypeError):
+            Punctuation.from_str(
+                text=3,
+            )

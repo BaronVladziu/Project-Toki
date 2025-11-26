@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.12] - 2025-11-26
+
+### Changed
+
+- prettify tests
+
+
 ## [0.0.11] - 2025-11-24
 
 ### Added
