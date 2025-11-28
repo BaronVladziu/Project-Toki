@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.13] - 2025-11-28
+
+### Added
+
+- `Dictionary` class
+
+
 ## [0.0.12] - 2025-11-26
 
 ### Changed
