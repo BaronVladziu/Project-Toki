@@ -1,6 +1,5 @@
-from pathlib import Path
-from typing import Set
 import json
+from pathlib import Path
 
 
 class Dictionary:

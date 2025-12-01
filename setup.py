@@ -4,7 +4,6 @@ from setuptools import find_packages, setup
 
 from version import __version__ as package_version
 
-
 project_root = Path(__file__).parent
 install_requires = (project_root / "requirements.txt").read_text().splitlines()
 

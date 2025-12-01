@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.15] - 2025-12-01
+
+### Added
+
+- `isort` to `pre-commit`
+
+
 ## [0.0.14] - 2025-11-30
 
 ### Added

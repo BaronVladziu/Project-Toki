@@ -1,6 +1,6 @@
-from project_toki.word import Word
-from project_toki.punctuation import Punctuation
 from project_toki.part_of_speech import PartOfSpeech
+from project_toki.punctuation import Punctuation
+from project_toki.word import Word
 
 
 class Text:
