@@ -11,6 +11,17 @@
 More info here: https://semver.org/
 
 
+## [0.0.16] - 2025-12-04
+
+### Added
+
+- `Grammar` class
+
+### Changed
+
+- `pre-commit` version to `4.5.0`
+
+
 ## [0.0.15] - 2025-12-01
 
 ### Added
