@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.17] - 2025-12-05
+
+### Added
+
+- `GrammarParser` class
+
+
 ## [0.0.16] - 2025-12-04
 
 ### Added
