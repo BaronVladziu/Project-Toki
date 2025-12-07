@@ -39,3 +39,22 @@ class TestGrammarParser(unittest.TestCase):
                 ],
             ),
         )
+        self._compare_trees(
+            GrammarParser.parse_text("blabla"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(Word("blabla", PartOfSpeech.UNKNOWN)),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("pona blabla"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(Word("pona", PartOfSpeech.ADJECTIVE)),
+                    Phrase(Word("blabla", PartOfSpeech.UNKNOWN)),
+                ],
+            ),
+        )

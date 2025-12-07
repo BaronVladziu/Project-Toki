@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.18] - 2025-12-07
+
+### Added
+
+- unknown word support for `Grammar` class
+
+
 ## [0.0.17] - 2025-12-05
 
 ### Added
