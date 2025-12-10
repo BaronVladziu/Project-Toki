@@ -3,6 +3,7 @@ import lark
 from project_toki.grammar import Grammar
 from project_toki.part_of_speech import PartOfSpeech
 from project_toki.phrase import Phrase
+from project_toki.punctuation import Punctuation
 from project_toki.word import Word
 
 
@@ -27,15 +28,22 @@ class GrammarParser:
     @staticmethod
     def _tree_to_phrases(tree: lark.lexer.Token | lark.tree.Tree) -> Phrase:
         """
-        This method recursively converts lark tree to phrases and words
+        This method recursively converts lark tree to phrases and words.
         """
         if isinstance(tree, lark.lexer.Token):
-            return Phrase(
-                name=Word(
-                    text=tree.value,
-                    part_of_speech=PartOfSpeech(tree.type),
-                ),
-            )
+            if tree.type.startswith("PUNCT_") or tree.type.startswith("WS"):
+                return Phrase(
+                    name=Punctuation(
+                        text=tree.value,
+                    ),
+                )
+            else:
+                return Phrase(
+                    name=Word(
+                        text=tree.value,
+                        part_of_speech=PartOfSpeech(tree.type),
+                    ),
+                )
         elif isinstance(tree, lark.tree.Tree):
             return Phrase(
                 name=tree.data.upper(),

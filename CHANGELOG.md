@@ -11,6 +11,14 @@
 More info here: https://semver.org/
 
 
+## [0.0.19] - 2025-12-10
+
+### Added
+
+- separation to sentences in `Grammar` class
+- support for punctuation in `GrammarParser` class
+
+
 ## [0.0.18] - 2025-12-07
 
 ### Added
