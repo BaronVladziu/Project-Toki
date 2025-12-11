@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.20] - 2025-12-11
+
+### Added
+
+- support for complex node names in `GrammarParser`
+
+
 ## [0.0.19] - 2025-12-10
 
 ### Added

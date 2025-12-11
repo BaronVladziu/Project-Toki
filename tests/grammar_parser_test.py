@@ -18,7 +18,7 @@ class TestGrammarParser(unittest.TestCase):
                 "TEXT",
                 children=[
                     Phrase(
-                        "SENTENCE_WITH_PUNCTUATION",
+                        "SENTENCE",
                         children=[
                             Phrase(
                                 "SENTENCE",
@@ -31,7 +31,7 @@ class TestGrammarParser(unittest.TestCase):
                         ],
                     ),
                     Phrase(
-                        "SENTENCE_WITH_PUNCTUATION",
+                        "SENTENCE",
                         children=[
                             Phrase(
                                 "SENTENCE",
@@ -51,7 +51,7 @@ class TestGrammarParser(unittest.TestCase):
                 "TEXT",
                 children=[
                     Phrase(
-                        "SENTENCE_WITH_PUNCTUATION",
+                        "SENTENCE",
                         children=[
                             Phrase(
                                 "SENTENCE",
@@ -64,7 +64,7 @@ class TestGrammarParser(unittest.TestCase):
                         ],
                     ),
                     Phrase(
-                        "SENTENCE_WITHOUT_PUNCTUATION",
+                        "SENTENCE",
                         children=[
                             Phrase(
                                 "SENTENCE",

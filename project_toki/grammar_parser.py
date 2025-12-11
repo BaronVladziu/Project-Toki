@@ -10,6 +10,11 @@ from project_toki.word import Word
 class GrammarParser:
     """
     This class represents a parser that uses grammatical rules of toki pona to process any text.
+
+    It has following features:
+    - leaf "WS" and leaves with name starting with "PUNCT_" will be treated as punctuation
+    - leaves of the grammar tree that are not punctuation must be named after a PartOfSpeech
+    - when node name contains "__" then only the part before "__" will appear in the output tree
     """
 
     _PARSER: lark.Lark = lark.Lark(
@@ -31,7 +36,7 @@ class GrammarParser:
         This method recursively converts lark tree to phrases and words.
         """
         if isinstance(tree, lark.lexer.Token):
-            if tree.type.startswith("PUNCT_") or tree.type.startswith("WS"):
+            if tree.type.startswith("PUNCT_") or tree.type == "WS":
                 return Phrase(
                     name=Punctuation(
                         text=tree.value,
@@ -40,13 +45,13 @@ class GrammarParser:
             else:
                 return Phrase(
                     name=Word(
-                        text=tree.value,
-                        part_of_speech=PartOfSpeech(tree.type),
+                        text=tree.value.split("__")[0],
+                        part_of_speech=PartOfSpeech(tree.type.split("__")[0]),
                     ),
                 )
         elif isinstance(tree, lark.tree.Tree):
             return Phrase(
-                name=tree.data.upper(),
+                name=tree.data.split("__")[0].upper(),
                 children=[GrammarParser._tree_to_phrases(x) for x in tree.children],
             )
         else:

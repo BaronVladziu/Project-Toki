@@ -6,9 +6,9 @@ class Grammar:
     @staticmethod
     def get_rules() -> str:
         return f"""
-            text: WS? (sentence_with_punctuation+ | sentence_with_punctuation* sentence_without_punctuation) WS?
-            sentence_with_punctuation: sentence WS? PUNCT_END WS?
-            sentence_without_punctuation: sentence
+            text: WS? (sentence__with_punctuation+ | sentence__with_punctuation* sentence__without_punctuation) WS?
+            sentence__with_punctuation: sentence WS? PUNCT_END WS?
+            sentence__without_punctuation: sentence
 
             sentence: ADJECTIVE
 
