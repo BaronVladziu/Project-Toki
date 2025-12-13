@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.21] - 2025-12-13
+
+### Added
+
+- support for private node names in `GrammarParser`
+
+
 ## [0.0.20] - 2025-12-11
 
 ### Added

@@ -20,12 +20,7 @@ class TestGrammarParser(unittest.TestCase):
                     Phrase(
                         "SENTENCE",
                         children=[
-                            Phrase(
-                                "SENTENCE",
-                                children=[
-                                    Phrase(Word("wile", PartOfSpeech.ADJECTIVE)),
-                                ],
-                            ),
+                            Phrase(Word("wile", PartOfSpeech.ADJECTIVE)),
                             Phrase(Punctuation("?")),
                             Phrase(Punctuation(" ")),
                         ],
@@ -33,12 +28,7 @@ class TestGrammarParser(unittest.TestCase):
                     Phrase(
                         "SENTENCE",
                         children=[
-                            Phrase(
-                                "SENTENCE",
-                                children=[
-                                    Phrase(Word("wile", PartOfSpeech.ADJECTIVE)),
-                                ],
-                            ),
+                            Phrase(Word("wile", PartOfSpeech.ADJECTIVE)),
                             Phrase(Punctuation("!")),
                         ],
                     ),
@@ -53,12 +43,7 @@ class TestGrammarParser(unittest.TestCase):
                     Phrase(
                         "SENTENCE",
                         children=[
-                            Phrase(
-                                "SENTENCE",
-                                children=[
-                                    Phrase(Word("sina", PartOfSpeech.ADJECTIVE)),
-                                ],
-                            ),
+                            Phrase(Word("sina", PartOfSpeech.ADJECTIVE)),
                             Phrase(Punctuation("...")),
                             Phrase(Punctuation(" ")),
                         ],
@@ -66,12 +51,7 @@ class TestGrammarParser(unittest.TestCase):
                     Phrase(
                         "SENTENCE",
                         children=[
-                            Phrase(
-                                "SENTENCE",
-                                children=[
-                                    Phrase(Word("awen", PartOfSpeech.ADJECTIVE)),
-                                ],
-                            ),
+                            Phrase(Word("awen", PartOfSpeech.ADJECTIVE)),
                         ],
                     ),
                 ],

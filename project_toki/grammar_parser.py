@@ -1,3 +1,5 @@
+from typing import List
+
 import lark
 
 from project_toki.grammar import Grammar
@@ -15,6 +17,7 @@ class GrammarParser:
     - leaf "WS" and leaves with name starting with "PUNCT_" will be treated as punctuation
     - leaves of the grammar tree that are not punctuation must be named after a PartOfSpeech
     - when node name contains "__" then only the part before "__" will appear in the output tree
+    - when node name starts with "p_" then this node will be removed and its parent will adopt its children
     """
 
     _PARSER: lark.Lark = lark.Lark(
@@ -28,7 +31,9 @@ class GrammarParser:
         """
         This method parses input text into a grammatical tree.
         """
-        return GrammarParser._tree_to_phrases(GrammarParser._PARSER.parse(text))
+        return GrammarParser._tree_to_phrases(
+            GrammarParser._squash_private_nodes(GrammarParser._PARSER.parse(text)),
+        )
 
     @staticmethod
     def _tree_to_phrases(tree: lark.lexer.Token | lark.tree.Tree) -> Phrase:
@@ -58,3 +63,30 @@ class GrammarParser:
             raise TypeError(
                 f'Expected tree of type "Token" or "Tree" but encountered "{tree}" of type "{type(tree)}"!',
             )
+
+    @staticmethod
+    def _squash_private_nodes(
+        tree: lark.lexer.Token | lark.tree.Tree,
+    ) -> lark.lexer.Token | lark.tree.Tree:
+        """
+        This method recursively removes private nodes while retaining its children.
+        """
+        if isinstance(tree, lark.lexer.Token):
+            return tree
+        else:
+            new_children: list[lark.lexer.Token | lark.tree.Tree] = []
+            found_any_private_nodes: bool = False
+            for child in tree.children:
+                if isinstance(child, lark.lexer.Token):
+                    new_children.append(child)
+                elif child.data.startswith("p_"):
+                    new_children += [
+                        GrammarParser._squash_private_nodes(x) for x in child.children
+                    ]
+                    found_any_private_nodes = True
+                else:
+                    new_children.append(GrammarParser._squash_private_nodes(child))
+            tree.children = new_children
+            if found_any_private_nodes:
+                tree = GrammarParser._squash_private_nodes(tree)
+            return tree
