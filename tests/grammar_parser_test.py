@@ -22,7 +22,6 @@ class TestGrammarParser(unittest.TestCase):
                         children=[
                             Phrase(Word("wile", PartOfSpeech.ADJECTIVE)),
                             Phrase(Punctuation("?")),
-                            Phrase(Punctuation(" ")),
                         ],
                     ),
                     Phrase(
@@ -45,7 +44,6 @@ class TestGrammarParser(unittest.TestCase):
                         children=[
                             Phrase(Word("sina", PartOfSpeech.ADJECTIVE)),
                             Phrase(Punctuation("...")),
-                            Phrase(Punctuation(" ")),
                         ],
                     ),
                     Phrase(
