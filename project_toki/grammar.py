@@ -7,10 +7,10 @@ class Grammar:
     def get_rules() -> str:
         return f"""
             text: WS? (sentence__with_punctuation+ | sentence__with_punctuation* sentence__without_punctuation) WS?
-            sentence__with_punctuation: p_sentence WS? PUNCT_END WS?
-            sentence__without_punctuation: p_sentence
+            sentence__with_punctuation: _sentence WS? PUNCT_END WS?
+            sentence__without_punctuation: _sentence
 
-            p_sentence: ADJECTIVE
+            _sentence: ADJECTIVE
 
             WS: (" ")+
             PUNCT_END: ("..." | "." | "?" | "!")

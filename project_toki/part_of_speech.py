@@ -12,7 +12,7 @@ class PartOfSpeech(enum.Enum):
     NUMBER = "NUMBER"
     PARTICLE = "PARTICLE"
     PREPOSITION = "PREPOSITION"
-    PRE_VERB = "PRE_VERB"
+    PREVERB = "PREVERB"
     VERB = "VERB"
     OTHER = "OTHER"
     UNKNOWN = "UNKNOWN"

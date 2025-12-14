@@ -20,7 +20,7 @@
     },
     "alasa": {
       "definition": {
-        "PRE_VERB": "(unconventional) to try (doing something)",
+        "PREVERB": "(unconventional) to try (doing something)",
         "VERB": "to hunt, to gather; (unconventional) to search, to look for"
       }
     },
@@ -62,7 +62,7 @@
       "definition": {
         "ADJECTIVE": "kept, safe, enduring, resilient, waiting, staying",
         "NOUN": "(unconventional) stability, safety, wait",
-        "PRE_VERB": "continue (doing something)",
+        "PREVERB": "continue (doing something)",
         "VERB": "keep, stay, endure, protect"
       }
     },
@@ -162,7 +162,7 @@
       "definition": {
         "ADJECTIVE": "arriving, coming, future, summoned",
         "NOUN": "event, arrival",
-        "PRE_VERB": "to become, to be in the process of (doing smth), to manage to, to succeed in"
+        "PREVERB": "to become, to be in the process of (doing smth), to manage to, to succeed in"
       }
     },
     "kasi": {
@@ -174,7 +174,7 @@
       "definition": {
         "ADJECTIVE": "(unconventional) able, possible",
         "NOUN": "ability, possibility, (unconventional) right, liberty",
-        "PRE_VERB": "can (do smth), may (do smth)"
+        "PREVERB": "can (do smth), may (do smth)"
       }
     },
     "kepeken": {
@@ -350,7 +350,7 @@
       "definition": {
         "ADJECTIVE": "…-looking, visual",
         "NOUN": "eye, vision",
-        "PRE_VERB": "to seek (to do something)",
+        "PREVERB": "to seek (to do something)",
         "VERB": "to look, to see, to read"
       }
     },
@@ -538,7 +538,7 @@
       "definition": {
         "ADJECTIVE": "initial, starting",
         "NOUN": "start, beginning",
-        "PRE_VERB": "to begin (doing something)",
+        "PREVERB": "to begin (doing something)",
         "VERB": "to start, to open, to turn on"
       }
     },
@@ -597,7 +597,7 @@
       "definition": {
         "ADJECTIVE": "final, completed, finished, past (with tenpo)",
         "NOUN": "end, finish",
-        "PRE_VERB": "to end/stop doing something",
+        "PREVERB": "to end/stop doing something",
         "VERB": "to end, to finish, to close"
       }
     },
@@ -711,7 +711,7 @@
       "definition": {
         "ADJECTIVE": "known",
         "NOUN": "knowledge, information",
-        "PRE_VERB": "to know (how to do something)",
+        "PREVERB": "to know (how to do something)",
         "VERB": "to know"
       }
     },
@@ -864,7 +864,7 @@
       "definition": {
         "ADJECTIVE": "desired, needed, required",
         "NOUN": "want, need, desire",
-        "PRE_VERB": "to want to do smth",
+        "PREVERB": "to want to do smth",
         "VERB": "to want smth"
       }
     }

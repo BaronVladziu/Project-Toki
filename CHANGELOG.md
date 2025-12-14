@@ -11,6 +11,14 @@
 More info here: https://semver.org/
 
 
+## [0.0.22] - 2025-12-14
+
+### Changed
+
+- fixed `PREVERB` spelling
+- private nodes to use Lark built-in feature
+
+
 ## [0.0.21] - 2025-12-13
 
 ### Added
