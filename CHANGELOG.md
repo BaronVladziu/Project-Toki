@@ -11,6 +11,18 @@
 More info here: https://semver.org/
 
 
+## [0.0.22] - 2025-12-16
+
+### Added
+
+- separation to subsentences in `Grammar` class
+- `ADJECTIVE_PHRASE` definition to `Grammar` class
+
+### Changed
+
+- renamed `grammar_parser_test.py` to `grammar_test.py`
+
+
 ## [0.0.22] - 2025-12-15
 
 ### Changed
