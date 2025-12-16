@@ -11,7 +11,7 @@
 More info here: https://semver.org/
 
 
-## [0.0.22] - 2025-12-16
+## [0.0.23] - 2025-12-16
 
 ### Added
 
