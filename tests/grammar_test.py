@@ -135,3 +135,43 @@ class TestGrammarParser(unittest.TestCase):
                 ],
             ),
         )
+
+    def test_lesson_1(self):
+        self._compare_trees(
+            GrammarParser.parse_text("jelo"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "ADJECTIVE_PHRASE",
+                                children=[
+                                    Phrase(Word("jelo", PartOfSpeech.ADJECTIVE)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("toki"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "ADJECTIVE_PHRASE",
+                                children=[
+                                    Phrase(Word("toki", PartOfSpeech.ADJECTIVE)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )

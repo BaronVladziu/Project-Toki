@@ -1,3 +1,6 @@
+from project_toki.dictionary import Dictionary
+
+
 class Grammar:
     """
     This class represents the whole grammar of toki pona.
@@ -23,7 +26,36 @@ class Grammar:
             PUNCT_END: ("!" | "..." | "." | "?")
             PUNCT_OTHER: ("," | "-" | ":" | ";")
 
-            // Terminals
-            ADJECTIVE: UNKNOWN
-            UNKNOWN: /[A-Za-z]+/
+            // Compound terminals
+            ADJECTIVE: {Grammar._create_word_list(["ADJECTIVE", "NOUN", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "OTHER"])} | UNKNOWN
+
+            // Simple terminals
+            INTERJECTION: {Grammar._create_word_list(["INTERJECTION"])}
+            NUMBER: {Grammar._create_word_list(["NUMBER"])}
+            PARTICLE: {Grammar._create_word_list(["PARTICLE"])}
+            PREVERB: {Grammar._create_word_list(["PREVERB"])}
+            PREPOSITION: {Grammar._create_word_list(["PREPOSITION"])}
+
+            // Non-dictionary terminals
+            UNKNOWN: /(?!{'|'.join(Dictionary.get_all_words())})([a-z]+)/
         """
+
+    @staticmethod
+    def _create_word_list(parts_of_speech: list[str]) -> str:
+        return '"' + '" | "'.join(Grammar._extract_words(parts_of_speech)) + '"'
+
+    @staticmethod
+    def _extract_words(parts_of_speech: list[str]) -> list[str]:
+        words: list[str] = []
+        word_set: set[str] = set()
+        for pos in parts_of_speech:
+            pos_words: list[str] = sorted(Dictionary.get_words_for_part_of_speech(pos))
+            if len(pos_words) < 1:
+                raise ValueError(
+                    f'There are no items in a dictionary for part of speech "{pos}"!',
+                )
+            for word in pos_words:
+                if word not in word_set:
+                    words.append(word)
+                    word_set.add(word)
+        return words

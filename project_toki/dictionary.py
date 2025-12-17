@@ -12,6 +12,27 @@ class Dictionary:
         DATA = json.load(f)
 
     @staticmethod
+    def get_all_words() -> set[str]:
+        """
+        This method returnes all words present in the dictionary.
+        """
+        output: set[str] = set()
+        for word in Dictionary.DATA["words"]:
+            output.add(word)
+        return output
+
+    @staticmethod
+    def get_all_parts_of_speech() -> set[str]:
+        """
+        This method returnes all parts of speech present in the dictionary.
+        """
+        output: set[str] = {"UNKNOWN"}
+        for word in Dictionary.DATA["words"]:
+            if "definition" in Dictionary.DATA["words"][word]:
+                output |= {x for x in Dictionary.DATA["words"][word]["definition"]}
+        return output
+
+    @staticmethod
     def extract_parts_of_speech(word: str) -> set[str]:
         """
         This method returnes all parts of speech that fit given word.

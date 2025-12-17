@@ -11,6 +11,14 @@
 More info here: https://semver.org/
 
 
+## [0.0.24] - 2025-12-17
+
+### Added
+
+- new getters to `Dictionary` class
+- loading words from `dictionary_data.json` in `Grammar` class
+
+
 ## [0.0.23] - 2025-12-16
 
 ### Added
