@@ -305,7 +305,7 @@
     },
     "li": {
       "definition": {
-        "PARTICLE": "(between subj. and verb/adj.)"
+        "PARTICLE__LI": "(between subj. and verb/adj.)"
       }
     },
     "lili": {

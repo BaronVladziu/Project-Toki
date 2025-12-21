@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.25] - 2025-12-21
+
+### Added
+
+- support for simple `X li X` sentences in `Grammar` class
+
+
 ## [0.0.24] - 2025-12-17
 
 ### Added

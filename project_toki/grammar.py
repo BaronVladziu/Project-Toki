@@ -16,10 +16,20 @@ class Grammar:
 
             // Split to subsentences
             _sentence: _subsentence (WS? PUNCT_OTHER WS? _subsentence)*
-            _subsentence: adjective_phrase
+            _subsentence: _subsentence_declarative | _subsentence_quasi
+
+            // Define subsentences
+            _subsentence_declarative: noun_phrase WS PARTICLE__LI WS verb_phrase
+            _subsentence_quasi: adjective_phrase | noun_phrase
+
+            // Noun phrases
+            noun_phrase: NOUN
 
             // Adjective phrases
             adjective_phrase: ADJECTIVE (WS ADJECTIVE)*
+
+            // Verb phrases
+            verb_phrase: adjective_phrase
 
             // Punctuation
             WS: (" ")+
@@ -28,11 +38,13 @@ class Grammar:
 
             // Compound terminals
             ADJECTIVE: {Grammar._create_word_list(["ADJECTIVE", "NOUN", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "OTHER"])} | UNKNOWN
+            NOUN: {Grammar._create_word_list(["NOUN", "ADJECTIVE", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "OTHER"])} | UNKNOWN
 
             // Simple terminals
             INTERJECTION: {Grammar._create_word_list(["INTERJECTION"])}
             NUMBER: {Grammar._create_word_list(["NUMBER"])}
             PARTICLE: {Grammar._create_word_list(["PARTICLE"])}
+            PARTICLE__LI: {Grammar._create_word_list(["PARTICLE__LI"])}
             PREVERB: {Grammar._create_word_list(["PREVERB"])}
             PREPOSITION: {Grammar._create_word_list(["PREPOSITION"])}
 
