@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.26] - 2025-12-23
+
+### Added
+
+- support for noun phrases in `Grammar` class
+
+
 ## [0.0.25] - 2025-12-21
 
 ### Added

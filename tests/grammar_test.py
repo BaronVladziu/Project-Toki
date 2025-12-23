@@ -11,6 +11,35 @@ class TestGrammarParser(unittest.TestCase):
     def _compare_trees(self, out_tree: Phrase, ref_tree: Phrase) -> None:
         self.assertEqual(out_tree, ref_tree, msg=f"\n{out_tree}\n!={ref_tree}")
 
+    def test_unknown_words(self):
+        self._compare_trees(
+            GrammarParser.parse_text("bleble pona"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("bleble", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(
+                                                Word("pona", PartOfSpeech.ADJECTIVE),
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+
     def test_punctuation(self):
         self._compare_trees(
             GrammarParser.parse_text("mi, sina, ona."),
@@ -400,6 +429,204 @@ class TestGrammarParser(unittest.TestCase):
                                 ],
                             ),
                             Phrase(Punctuation(".")),
+                        ],
+                    ),
+                ],
+            ),
+        )
+
+    def test_lesson_3(self):
+        self._compare_trees(
+            GrammarParser.parse_text("ijo li pona."),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("ijo", PartOfSpeech.NOUN)),
+                                ],
+                            ),
+                            Phrase(Word("li", PartOfSpeech.PARTICLE)),
+                            Phrase(
+                                "VERB_PHRASE",
+                                children=[
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(
+                                                Word("pona", PartOfSpeech.ADJECTIVE),
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                            Phrase(Punctuation(".")),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("tomo suli"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("tomo", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(
+                                                Word("suli", PartOfSpeech.ADJECTIVE),
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("jan pona"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("jan", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(
+                                                Word("pona", PartOfSpeech.ADJECTIVE),
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("meli lili"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("meli", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(
+                                                Word("lili", PartOfSpeech.ADJECTIVE),
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("telo suli"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("telo", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(
+                                                Word("suli", PartOfSpeech.ADJECTIVE),
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("lipu soweli"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("lipu", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(
+                                                Word("soweli", PartOfSpeech.ADJECTIVE),
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("tomo meli"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("tomo", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(
+                                                Word("meli", PartOfSpeech.ADJECTIVE),
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
                         ],
                     ),
                 ],

@@ -20,13 +20,14 @@ class Grammar:
 
             // Define subsentences
             _subsentence_declarative: noun_phrase WS PARTICLE__LI WS verb_phrase
-            _subsentence_quasi: adjective_phrase | noun_phrase
+            _subsentence_quasi: adjective_phrase__single | noun_phrase | adjective_phrase
 
             // Noun phrases
-            noun_phrase: NOUN
+            noun_phrase: NOUN (WS adjective_phrase)?
 
             // Adjective phrases
             adjective_phrase: ADJECTIVE (WS ADJECTIVE)*
+            adjective_phrase__single: ADJECTIVE
 
             // Verb phrases
             verb_phrase: adjective_phrase
