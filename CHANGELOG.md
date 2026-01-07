@@ -11,6 +11,14 @@
 More info here: https://semver.org/
 
 
+## [0.0.27] - 2026-01-07
+
+### Added
+
+- support for `mi` and `sina` subjects in `Grammar` class
+- support for `NOUN_PHRASE` objects in `Grammar` class
+
+
 ## [0.0.26] - 2025-12-23
 
 ### Added

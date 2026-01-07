@@ -16,21 +16,23 @@ class Grammar:
 
             // Split to subsentences
             _sentence: _subsentence (WS? PUNCT_OTHER WS? _subsentence)*
-            _subsentence: _subsentence_declarative | _subsentence_quasi
+            _subsentence: _subsentence_declarative_mi_sina | _subsentence_declarative_other | _subsentence_quasi
 
             // Define subsentences
-            _subsentence_declarative: noun_phrase WS PARTICLE__LI WS verb_phrase
-            _subsentence_quasi: adjective_phrase__single | noun_phrase | adjective_phrase
+            _subsentence_declarative_mi_sina: noun_phrase__mi_sina WS verb_phrase
+            _subsentence_declarative_other: noun_phrase__other WS PARTICLE__LI WS verb_phrase
+            _subsentence_quasi: adjective_phrase__single | noun_phrase__other
 
             // Noun phrases
-            noun_phrase: NOUN (WS adjective_phrase)?
+            noun_phrase__mi_sina: NOUN__MI_SINA
+            noun_phrase__other: NOUN (WS adjective_phrase)?
 
             // Adjective phrases
             adjective_phrase: ADJECTIVE (WS ADJECTIVE)*
             adjective_phrase__single: ADJECTIVE
 
             // Verb phrases
-            verb_phrase: adjective_phrase
+            verb_phrase: _subsentence_quasi
 
             // Punctuation
             WS: (" ")+
@@ -38,11 +40,12 @@ class Grammar:
             PUNCT_OTHER: ("," | "-" | ":" | ";")
 
             // Compound terminals
-            ADJECTIVE: {Grammar._create_word_list(["ADJECTIVE", "NOUN", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "OTHER"])} | UNKNOWN
-            NOUN: {Grammar._create_word_list(["NOUN", "ADJECTIVE", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "OTHER"])} | UNKNOWN
+            ADJECTIVE: {Grammar._create_word_list(["ADJECTIVE", "NOUN", "NOUN__MI_SINA", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "OTHER"])} | UNKNOWN
+            NOUN: {Grammar._create_word_list(["NOUN", "NOUN__MI_SINA", "ADJECTIVE", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "OTHER"])} | UNKNOWN
 
             // Simple terminals
             INTERJECTION: {Grammar._create_word_list(["INTERJECTION"])}
+            NOUN__MI_SINA: {Grammar._create_word_list(["NOUN__MI_SINA"])}
             NUMBER: {Grammar._create_word_list(["NUMBER"])}
             PARTICLE: {Grammar._create_word_list(["PARTICLE"])}
             PARTICLE__LI: {Grammar._create_word_list(["PARTICLE__LI"])}
