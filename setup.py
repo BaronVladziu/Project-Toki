@@ -8,7 +8,7 @@ project_root = Path(__file__).parent
 install_requires = (project_root / "requirements.txt").read_text().splitlines()
 
 setup(
-    name="project_poki",
+    name="project_toki",
     version=package_version,
     description="Collection of tools for analysis and processing of Toki Pona language.",
     author="BaronVladziu",

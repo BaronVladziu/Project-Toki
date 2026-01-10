@@ -11,6 +11,17 @@
 More info here: https://semver.org/
 
 
+## [0.0.28] - 2026-01-10
+
+### Added
+
+- support for verb phrases with objects in `Grammar` class
+
+### Fixed
+
+- typo in package name in `setup.py`
+
+
 ## [0.0.27] - 2026-01-07
 
 ### Added
