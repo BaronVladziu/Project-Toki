@@ -21,7 +21,7 @@ class Grammar:
             // Define subsentences
             _subsentence_declarative_mi_sina: noun_phrase__mi_sina WS verb_phrase
             _subsentence_declarative_other: noun_phrase__other WS PARTICLE__LI WS verb_phrase
-            _subsentence_quasi: adjective_phrase__single | noun_phrase__other
+            _subsentence_quasi: number_phrase | adjective_phrase__single | noun_phrase__other
 
             // Noun phrases
             noun_phrase__mi_sina: NOUN__MI_SINA
@@ -30,6 +30,9 @@ class Grammar:
             // Adjective phrases
             adjective_phrase: ADJECTIVE (WS ADJECTIVE)*
             adjective_phrase__single: ADJECTIVE
+
+            // Number phrases
+            number_phrase: NUMBER (WS NUMBER)*
 
             // Verb phrases
             verb_phrase: _subsentence_quasi | _verb_phrase

@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.29] - 2026-01-11
+
+### Added
+
+- support for ordinal numerals in `Grammar` class
+
+
 ## [0.0.28] - 2026-01-10
 
 ### Added
