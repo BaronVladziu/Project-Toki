@@ -15,46 +15,54 @@ class Grammar:
             sentence__without_punctuation: _sentence
 
             // Split to subsentences
-            _sentence: _subsentence (WS? PUNCT_OTHER WS? _subsentence)*
+            _sentence: _subsentence ((WS? PUNCT_OTHER? WS PARTICLE__CONJ WS? PUNCT_OTHER? WS | WS? PUNCT_OTHER WS?) _subsentence)*
             _subsentence: _subsentence_declarative_mi_sina | _subsentence_declarative_other | _subsentence_quasi
 
             // Define subsentences
             _subsentence_declarative_mi_sina: noun_phrase__mi_sina WS verb_phrase
             _subsentence_declarative_other: noun_phrase__other WS PARTICLE__LI WS verb_phrase
-            _subsentence_quasi: number_phrase | adjective_phrase__single | noun_phrase__other
+            _subsentence_quasi: PARTICLE__SEME | number_phrase | adjective_phrase__single | noun_phrase__other
 
             // Noun phrases
             noun_phrase__mi_sina: NOUN__MI_SINA
-            noun_phrase__other: NOUN (WS adjective_phrase)?
+            noun_phrase__other: (_x_ala_x_noun_phrase | NOUN) (WS adjective_phrase)?
 
             // Adjective phrases
             adjective_phrase: ADJECTIVE (WS ADJECTIVE)*
-            adjective_phrase__single: ADJECTIVE
+            adjective_phrase__single: _x_ala_x_adjective_phrase | ADJECTIVE
 
             // Number phrases
             number_phrase: NUMBER (WS NUMBER)*
 
             // Verb phrases
             verb_phrase: _subsentence_quasi | _verb_phrase
-            _verb_phrase: VERB (WS adjective_phrase)? (WS PARTICLE__E WS noun_phrase__other)?
+            _verb_phrase: (_x_ala_x_verb_phrase | VERB) (WS adjective_phrase)? (WS PARTICLE__E WS noun_phrase__other)?
 
             // Punctuation
             WS: (" ")+
             PUNCT_END: ("!" | "..." | "." | "?")
             PUNCT_OTHER: ("," | "-" | ":" | ";")
 
+            // x ala x questions
+            _x_ala_x_adjective_phrase.9: {Grammar._create_x_ala_x_phrase_definition(phrase_part_of_speech="ADJECTIVE", parts_of_speech=["ADJECTIVE", "NOUN", "NOUN__MI_SINA", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "PARTICLE__SEME", "OTHER"])}
+            _x_ala_x_noun_phrase.9: {Grammar._create_x_ala_x_phrase_definition(phrase_part_of_speech="NOUN", parts_of_speech=["NOUN", "NOUN__MI_SINA", "ADJECTIVE", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "PARTICLE__SEME", "OTHER"])}
+            _x_ala_x_verb_phrase.9: {Grammar._create_x_ala_x_phrase_definition(phrase_part_of_speech="VERB", parts_of_speech=["VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "ADJECTIVE", "NOUN", "NOUN__MI_SINA", "PARTICLE__SEME", "OTHER"])}
+
             // Compound terminals
-            ADJECTIVE: {Grammar._create_word_list(["ADJECTIVE", "NOUN", "NOUN__MI_SINA", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "OTHER"])} | UNKNOWN
-            NOUN: {Grammar._create_word_list(["NOUN", "NOUN__MI_SINA", "ADJECTIVE", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "OTHER"])} | UNKNOWN
-            VERB: {Grammar._create_word_list(["VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "ADJECTIVE", "NOUN", "NOUN__MI_SINA", "OTHER"])} | UNKNOWN
+            ADJECTIVE: {Grammar._create_word_list(["ADJECTIVE", "NOUN", "NOUN__MI_SINA", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "PARTICLE__SEME", "OTHER"])} | UNKNOWN
+            NOUN: {Grammar._create_word_list(["NOUN", "NOUN__MI_SINA", "ADJECTIVE", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "PARTICLE__SEME", "OTHER"])} | UNKNOWN
+            VERB: {Grammar._create_word_list(["VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "ADJECTIVE", "NOUN", "NOUN__MI_SINA", "PARTICLE__SEME", "OTHER"])} | UNKNOWN
+            PARTICLE__CONJ: {Grammar._create_word_list(["PARTICLE__ANU", "PARTICLE__EN", "PARTICLE__LA"])}
 
             // Simple terminals
             INTERJECTION: {Grammar._create_word_list(["INTERJECTION"])}
             NOUN__MI_SINA: {Grammar._create_word_list(["NOUN__MI_SINA"])}
             NUMBER: {Grammar._create_word_list(["NUMBER"])}
             PARTICLE: {Grammar._create_word_list(["PARTICLE"])}
+            PARTICLE__ALA: {Grammar._create_word_list(["PARTICLE__ALA"])}
             PARTICLE__LI: {Grammar._create_word_list(["PARTICLE__LI"])}
             PARTICLE__E: {Grammar._create_word_list(["PARTICLE__E"])}
+            PARTICLE__SEME: {Grammar._create_word_list(["PARTICLE__SEME"])}
             PREVERB: {Grammar._create_word_list(["PREVERB"])}
             PREPOSITION: {Grammar._create_word_list(["PREPOSITION"])}
 
@@ -65,6 +73,25 @@ class Grammar:
     @staticmethod
     def _create_word_list(parts_of_speech: list[str]) -> str:
         return '"' + '" | "'.join(Grammar._extract_words(parts_of_speech)) + '"'
+
+    @staticmethod
+    def _create_x_ala_x_phrase_definition(
+        phrase_part_of_speech: str,
+        parts_of_speech: list[str],
+    ) -> str:
+        output_lines: list[str] = [
+            " | ".join(
+                [
+                    f"{phrase_part_of_speech.upper()}__{word.upper()}_XALAX WS PARTICLE__ALA WS {phrase_part_of_speech.upper()}__{word.upper()}_XALAX"
+                    for word in Grammar._extract_words(parts_of_speech)
+                ],
+            ),
+        ]
+        output_lines += [
+            f'{phrase_part_of_speech.upper()}__{word.upper()}_XALAX: "{word}"'
+            for word in Grammar._extract_words(parts_of_speech)
+        ]
+        return "\n".join(output_lines)
 
     @staticmethod
     def _extract_words(parts_of_speech: list[str]) -> list[str]:

@@ -16,7 +16,7 @@
         "ADJECTIVE": "not, no, empty",
         "NOUN": "nothing",
         "NUMBER": "zero",
-        "PARTICLE": "or not (to ask yes-or-no question)"
+        "PARTICLE__ALA": "or not (to ask yes-or-no question)"
       }
     },
     "alasa": {
@@ -56,7 +56,7 @@
     },
     "anu": {
       "definition": {
-        "PARTICLE": "or"
+        "PARTICLE__ANU": "or"
       }
     },
     "awen": {
@@ -74,7 +74,7 @@
     },
     "en": {
       "definition": {
-        "PARTICLE": "and (combines subjects)"
+        "PARTICLE__EN": "and (combines subjects)"
       }
     },
     "epiku": {
@@ -255,7 +255,7 @@
     },
     "la": {
       "definition": {
-        "PARTICLE": "“if/when” (introduces context)"
+        "PARTICLE__LA": "“if/when” (introduces context)"
       }
     },
     "lanpan": {
@@ -655,7 +655,7 @@
     },
     "seme": {
       "definition": {
-        "PARTICLE": "what? which? (for questions)"
+        "PARTICLE__SEME": "what? which? (for questions)"
       }
     },
     "sewi": {

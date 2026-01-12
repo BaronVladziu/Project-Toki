@@ -11,11 +11,19 @@
 More info here: https://semver.org/
 
 
+## [0.0.30] - 2026-01-12
+
+### Added
+
+- support for questions in `Grammar` class
+- support for complex sentences in `Grammar` class
+
+
 ## [0.0.29] - 2026-01-11
 
 ### Added
 
-- support for ordinal numerals in `Grammar` class
+- support for cardinal numerals in `Grammar` class
 
 
 ## [0.0.28] - 2026-01-10
