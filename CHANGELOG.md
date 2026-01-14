@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.31] - 2026-01-14
+
+### Added
+
+- support for prepositions in `Grammar` class
+
+
 ## [0.0.30] - 2026-01-12
 
 ### Added

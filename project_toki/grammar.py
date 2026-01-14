@@ -21,7 +21,7 @@ class Grammar:
             // Define subsentences
             _subsentence_declarative_mi_sina: noun_phrase__mi_sina WS verb_phrase
             _subsentence_declarative_other: noun_phrase__other WS PARTICLE__LI WS verb_phrase
-            _subsentence_quasi: PARTICLE__SEME | number_phrase | adjective_phrase__single | noun_phrase__other
+            _subsentence_quasi: PARTICLE__SEME | number_phrase | adjective_phrase__single | preposition_phrase | noun_phrase__other
 
             // Noun phrases
             noun_phrase__mi_sina: NOUN__MI_SINA
@@ -35,8 +35,12 @@ class Grammar:
             number_phrase: NUMBER (WS NUMBER)*
 
             // Verb phrases
-            verb_phrase: _subsentence_quasi | _verb_phrase
+            verb_phrase: _verb_phrase_with_preposition | _subsentence_quasi | _verb_phrase
+            _verb_phrase_with_preposition: (_verb_phrase | _subsentence_quasi) (WS preposition_phrase)+
             _verb_phrase: (_x_ala_x_verb_phrase | VERB) (WS adjective_phrase)? (WS PARTICLE__E WS noun_phrase__other)?
+
+            // Preposition phrases
+            preposition_phrase.2: PREPOSITION WS noun_phrase__other
 
             // Punctuation
             WS: (" ")+
