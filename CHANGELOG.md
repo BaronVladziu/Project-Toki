@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.32] - 2026-01-18
+
+### Added
+
+- support for proper names in `Grammar` class
+
+
 ## [0.0.31] - 2026-01-14
 
 ### Added

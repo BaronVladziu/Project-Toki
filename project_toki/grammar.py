@@ -53,7 +53,7 @@ class Grammar:
             _x_ala_x_verb_phrase.9: {Grammar._create_x_ala_x_phrase_definition(phrase_part_of_speech="VERB", parts_of_speech=["VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "ADJECTIVE", "NOUN", "NOUN__MI_SINA", "PARTICLE__SEME", "OTHER"])}
 
             // Compound terminals
-            ADJECTIVE: {Grammar._create_word_list(["ADJECTIVE", "NOUN", "NOUN__MI_SINA", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "PARTICLE__SEME", "OTHER"])} | UNKNOWN
+            ADJECTIVE: {Grammar._create_word_list(["ADJECTIVE", "NOUN", "NOUN__MI_SINA", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "PARTICLE__SEME", "OTHER"])} | PROPER_NAME | UNKNOWN
             NOUN: {Grammar._create_word_list(["NOUN", "NOUN__MI_SINA", "ADJECTIVE", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "PARTICLE__SEME", "OTHER"])} | UNKNOWN
             VERB: {Grammar._create_word_list(["VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "ADJECTIVE", "NOUN", "NOUN__MI_SINA", "PARTICLE__SEME", "OTHER"])} | UNKNOWN
             PARTICLE__CONJ: {Grammar._create_word_list(["PARTICLE__ANU", "PARTICLE__EN", "PARTICLE__LA"])}
@@ -71,6 +71,9 @@ class Grammar:
             PREPOSITION: {Grammar._create_word_list(["PREPOSITION"])}
 
             // Non-dictionary terminals
+            PROPER_NAME: UPPERCASE_LETTER LOWERCASE_LETTER*
+            UPPERCASE_LETTER: /[A-Z]/
+            LOWERCASE_LETTER: /[a-z]/
             UNKNOWN: /(?!{'|'.join(Dictionary.get_all_words())})([a-z]+)/
         """
 
