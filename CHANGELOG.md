@@ -11,6 +11,23 @@
 More info here: https://semver.org/
 
 
+## [0.0.33] - 2026-01-21
+
+### Added
+
+- support for imperative sentences in `Grammar` class
+- support for interjections in `Grammar` class
+- support for all ASCII punctuation in `Grammar` class
+
+### Changed
+
+- improved splitting to subsentences in `Grammar` class
+
+### Fixed
+
+- not considering word borders for some unknown words in `Grammar` class
+
+
 ## [0.0.32] - 2026-01-18
 
 ### Added

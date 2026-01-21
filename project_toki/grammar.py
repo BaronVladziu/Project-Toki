@@ -15,13 +15,17 @@ class Grammar:
             sentence__without_punctuation: _sentence
 
             // Split to subsentences
-            _sentence: _subsentence ((WS? PUNCT_OTHER? WS PARTICLE__CONJ WS? PUNCT_OTHER? WS | WS? PUNCT_OTHER WS?) _subsentence)*
-            _subsentence: _subsentence_declarative_mi_sina | _subsentence_declarative_other | _subsentence_quasi
+            _sentence: _subsentence ((_separator_conj | _separator_punct | _separator_whitespace) _subsentence)*
+            _separator_conj: WS? PUNCT_OTHER? WS PARTICLE__CONJ WS? PUNCT_OTHER? WS
+            _separator_punct: WS? PUNCT_OTHER WS?
+            _separator_whitespace.-1: WS
 
             // Define subsentences
-            _subsentence_declarative_mi_sina: noun_phrase__mi_sina WS verb_phrase
-            _subsentence_declarative_other: noun_phrase__other WS PARTICLE__LI WS verb_phrase
-            _subsentence_quasi: PARTICLE__SEME | number_phrase | adjective_phrase__single | preposition_phrase | noun_phrase__other
+            _subsentence: _subsentence_imperative | _subsentence_declarative_mi_sina | _subsentence_declarative_other | _subsentence_quasi
+            _subsentence_declarative_mi_sina: noun_phrase__mi_sina WS verb_phrase__verb_second
+            _subsentence_declarative_other: noun_phrase__other WS PARTICLE__LI WS verb_phrase__verb_second
+            _subsentence_imperative: (noun_phrase__other WS)? PARTICLE__O (WS verb_phrase__verb_first)?
+            _subsentence_quasi: PARTICLE__SEME | number_phrase | adjective_phrase__single | preposition_phrase | noun_phrase__other | _interjections
 
             // Noun phrases
             noun_phrase__mi_sina: NOUN__MI_SINA
@@ -35,17 +39,17 @@ class Grammar:
             number_phrase: NUMBER (WS NUMBER)*
 
             // Verb phrases
-            verb_phrase: _verb_phrase_with_preposition | _subsentence_quasi | _verb_phrase
-            _verb_phrase_with_preposition: (_verb_phrase | _subsentence_quasi) (WS preposition_phrase)+
-            _verb_phrase: (_x_ala_x_verb_phrase | VERB) (WS adjective_phrase)? (WS PARTICLE__E WS noun_phrase__other)?
+            verb_phrase__verb_first: _verb_phrase | _subsentence_quasi
+            verb_phrase__verb_second: _subsentence_quasi | _verb_phrase
+            _verb_phrase: (_verb_phrase_e | preposition_phrase | _verb_phrase_single) (WS preposition_phrase)*
+            _verb_phrase_e: _verb_phrase_single WS PARTICLE__E WS noun_phrase__other
+            _verb_phrase_single: (_x_ala_x_verb_phrase | VERB) (WS adjective_phrase)?
 
             // Preposition phrases
             preposition_phrase.2: PREPOSITION WS noun_phrase__other
 
-            // Punctuation
-            WS: (" ")+
-            PUNCT_END: ("!" | "..." | "." | "?")
-            PUNCT_OTHER: ("," | "-" | ":" | ";")
+            // Special phrases
+            _interjections: PARTICLE__A | PARTICLE__O | PARTICLE__PAKALA
 
             // x ala x questions
             _x_ala_x_adjective_phrase.9: {Grammar._create_x_ala_x_phrase_definition(phrase_part_of_speech="ADJECTIVE", parts_of_speech=["ADJECTIVE", "NOUN", "NOUN__MI_SINA", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "PARTICLE__SEME", "OTHER"])}
@@ -63,18 +67,24 @@ class Grammar:
             NOUN__MI_SINA: {Grammar._create_word_list(["NOUN__MI_SINA"])}
             NUMBER: {Grammar._create_word_list(["NUMBER"])}
             PARTICLE: {Grammar._create_word_list(["PARTICLE"])}
+            PARTICLE__A: {Grammar._create_word_list(["PARTICLE__A"])}
             PARTICLE__ALA: {Grammar._create_word_list(["PARTICLE__ALA"])}
             PARTICLE__LI: {Grammar._create_word_list(["PARTICLE__LI"])}
             PARTICLE__E: {Grammar._create_word_list(["PARTICLE__E"])}
+            PARTICLE__O: {Grammar._create_word_list(["PARTICLE__O"])}
+            PARTICLE__PAKALA: {Grammar._create_word_list(["PARTICLE__PAKALA"])}
             PARTICLE__SEME: {Grammar._create_word_list(["PARTICLE__SEME"])}
             PREVERB: {Grammar._create_word_list(["PREVERB"])}
             PREPOSITION: {Grammar._create_word_list(["PREPOSITION"])}
 
             // Non-dictionary terminals
-            PROPER_NAME: UPPERCASE_LETTER LOWERCASE_LETTER*
-            UPPERCASE_LETTER: /[A-Z]/
-            LOWERCASE_LETTER: /[a-z]/
-            UNKNOWN: /(?!{'|'.join(Dictionary.get_all_words())})([a-z]+)/
+            PROPER_NAME: /\\b[A-Z][a-z]*\\b/
+            UNKNOWN: /(?!\\b{'\\b|\\b'.join(Dictionary.get_all_words())}\\b)(\\b[a-z]+\\b)/
+
+            // Punctuation
+            WS: (" ")+
+            PUNCT_END: ("!" | "?" | "..." | ".")
+            PUNCT_OTHER: /[^A-Za-z .?!]+/
         """
 
     @staticmethod

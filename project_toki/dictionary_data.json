@@ -3,7 +3,7 @@
   "words": {
     "a": {
       "definition": {
-        "PARTICLE": "(emotional interjection, emphasis or confirmation)"
+        "PARTICLE__A": "(emotional interjection, emphasis or confirmation)"
       }
     },
     "akesi": {
@@ -514,7 +514,7 @@
     },
     "o": {
       "definition": {
-        "PARTICLE": "(addressing people, commands)"
+        "PARTICLE__O": "(addressing people, commands)"
       }
     },
     "oko": {
@@ -547,7 +547,7 @@
       "definition": {
         "ADJECTIVE": "broken, wrong",
         "NOUN": "damage, mistake",
-        "PARTICLE": "(generic curse)",
+        "PARTICLE__PAKALA": "(generic curse)",
         "VERB": "to break, to make mistakes"
       }
     },
