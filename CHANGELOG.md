@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.34] - 2026-01-25
+
+### Added
+
+- support for `pi` in noun phrases in `Grammar` class
+
+
 ## [0.0.33] - 2026-01-21
 
 ### Added

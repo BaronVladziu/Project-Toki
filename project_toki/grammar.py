@@ -23,13 +23,14 @@ class Grammar:
             // Define subsentences
             _subsentence: _subsentence_imperative | _subsentence_declarative_mi_sina | _subsentence_declarative_other | _subsentence_quasi
             _subsentence_declarative_mi_sina: noun_phrase__mi_sina WS verb_phrase__verb_second
-            _subsentence_declarative_other: noun_phrase__other WS PARTICLE__LI WS verb_phrase__verb_second
-            _subsentence_imperative: (noun_phrase__other WS)? PARTICLE__O (WS verb_phrase__verb_first)?
-            _subsentence_quasi: PARTICLE__SEME | number_phrase | adjective_phrase__single | preposition_phrase | noun_phrase__other | _interjections
+            _subsentence_declarative_other: noun_phrase WS PARTICLE__LI WS verb_phrase__verb_second
+            _subsentence_imperative: (noun_phrase WS)? PARTICLE__O (WS verb_phrase__verb_first)?
+            _subsentence_quasi: PARTICLE__SEME | number_phrase | adjective_phrase__single | preposition_phrase | noun_phrase | _interjections
 
             // Noun phrases
             noun_phrase__mi_sina: NOUN__MI_SINA
-            noun_phrase__other: (_x_ala_x_noun_phrase | NOUN) (WS adjective_phrase)?
+            noun_phrase: (PARTICLE__PI WS)? _noun_phrase (WS PARTICLE__PI WS _noun_phrase)*
+            _noun_phrase: (_x_ala_x_noun_phrase | NOUN) (WS adjective_phrase)?
 
             // Adjective phrases
             adjective_phrase: ADJECTIVE (WS ADJECTIVE)*
@@ -42,11 +43,11 @@ class Grammar:
             verb_phrase__verb_first: _verb_phrase | _subsentence_quasi
             verb_phrase__verb_second: _subsentence_quasi | _verb_phrase
             _verb_phrase: (_verb_phrase_e | preposition_phrase | _verb_phrase_single) (WS preposition_phrase)*
-            _verb_phrase_e: _verb_phrase_single WS PARTICLE__E WS noun_phrase__other
+            _verb_phrase_e: _verb_phrase_single WS PARTICLE__E WS noun_phrase
             _verb_phrase_single: (_x_ala_x_verb_phrase | VERB) (WS adjective_phrase)?
 
             // Preposition phrases
-            preposition_phrase.2: PREPOSITION WS noun_phrase__other
+            preposition_phrase.2: PREPOSITION WS noun_phrase
 
             // Special phrases
             _interjections: PARTICLE__A | PARTICLE__O | PARTICLE__PAKALA
@@ -73,6 +74,7 @@ class Grammar:
             PARTICLE__E: {Grammar._create_word_list(["PARTICLE__E"])}
             PARTICLE__O: {Grammar._create_word_list(["PARTICLE__O"])}
             PARTICLE__PAKALA: {Grammar._create_word_list(["PARTICLE__PAKALA"])}
+            PARTICLE__PI: {Grammar._create_word_list(["PARTICLE__PI"])}
             PARTICLE__SEME: {Grammar._create_word_list(["PARTICLE__SEME"])}
             PREVERB: {Grammar._create_word_list(["PREVERB"])}
             PREPOSITION: {Grammar._create_word_list(["PREPOSITION"])}
