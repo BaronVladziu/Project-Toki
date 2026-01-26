@@ -16,12 +16,12 @@ class Grammar:
 
             // Split to subsentences
             _sentence: _subsentence ((_separator_conj | _separator_punct | _separator_whitespace) _subsentence)*
-            _separator_conj: WS? PUNCT_OTHER? WS PARTICLE__CONJ WS? PUNCT_OTHER? WS
+            _separator_conj: WS? PUNCT_OTHER? WS _conjunctions WS? PUNCT_OTHER? WS
             _separator_punct: WS? PUNCT_OTHER WS?
             _separator_whitespace.-1: WS
 
             // Define subsentences
-            _subsentence: _subsentence_imperative | _subsentence_declarative_mi_sina | _subsentence_declarative_other | _subsentence_quasi
+            _subsentence: _subsentence_imperative | _subsentence_declarative_mi_sina | _subsentence_declarative_other | _subsentence_quasi | _special_words
             _subsentence_declarative_mi_sina: noun_phrase__mi_sina WS verb_phrase__verb_second
             _subsentence_declarative_other: noun_phrase WS PARTICLE__LI WS verb_phrase__verb_second
             _subsentence_imperative: (noun_phrase WS)? PARTICLE__O (WS verb_phrase__verb_first)?
@@ -46,22 +46,24 @@ class Grammar:
             _verb_phrase_e: _verb_phrase_single WS PARTICLE__E WS noun_phrase
             _verb_phrase_single: (_x_ala_x_verb_phrase | VERB) (WS adjective_phrase)?
 
-            // Preposition phrases
+            // Other phrases
             preposition_phrase.2: PREPOSITION WS noun_phrase
-
-            // Special phrases
-            _interjections: PARTICLE__A | PARTICLE__O | PARTICLE__PAKALA
+            _conjunctions: PARTICLE__ANU | PARTICLE__EN | PARTICLE__LA
+            _interjections: PARTICLE__A | PARTICLE__O | PARTICLE__PAKALA | INTERJECTION
+            _special_words: {" | ".join(Grammar._get_special_parts())}
 
             // x ala x questions
-            _x_ala_x_adjective_phrase.9: {Grammar._create_x_ala_x_phrase_definition(phrase_part_of_speech="ADJECTIVE", parts_of_speech=["ADJECTIVE", "NOUN", "NOUN__MI_SINA", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "PARTICLE__SEME", "OTHER"])}
-            _x_ala_x_noun_phrase.9: {Grammar._create_x_ala_x_phrase_definition(phrase_part_of_speech="NOUN", parts_of_speech=["NOUN", "NOUN__MI_SINA", "ADJECTIVE", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "PARTICLE__SEME", "OTHER"])}
-            _x_ala_x_verb_phrase.9: {Grammar._create_x_ala_x_phrase_definition(phrase_part_of_speech="VERB", parts_of_speech=["VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "ADJECTIVE", "NOUN", "NOUN__MI_SINA", "PARTICLE__SEME", "OTHER"])}
+            _x_ala_x_adjective_phrase.9: ADJECTIVE__X_ALA_X
+            _x_ala_x_noun_phrase.9: NOUN__X_ALA_X
+            _x_ala_x_verb_phrase.9: VERB__X_ALA_X
 
             // Compound terminals
-            ADJECTIVE: {Grammar._create_word_list(["ADJECTIVE", "NOUN", "NOUN__MI_SINA", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "PARTICLE__SEME", "OTHER"])} | PROPER_NAME | UNKNOWN
-            NOUN: {Grammar._create_word_list(["NOUN", "NOUN__MI_SINA", "ADJECTIVE", "VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "PARTICLE__SEME", "OTHER"])} | UNKNOWN
-            VERB: {Grammar._create_word_list(["VERB", "VERB__WITH_OBJECT", "VERB__WITHOUT_OBJECT", "ADJECTIVE", "NOUN", "NOUN__MI_SINA", "PARTICLE__SEME", "OTHER"])} | UNKNOWN
-            PARTICLE__CONJ: {Grammar._create_word_list(["PARTICLE__ANU", "PARTICLE__EN", "PARTICLE__LA"])}
+            ADJECTIVE__X_ALA_X: UNKNOWN__X_ALA_X
+            NOUN__X_ALA_X: UNKNOWN__X_ALA_X
+            VERB__X_ALA_X: UNKNOWN__X_ALA_X
+            ADJECTIVE: PROPER_NAME | UNKNOWN__WORD
+            NOUN: UNKNOWN__WORD
+            VERB: UNKNOWN__WORD
 
             // Simple terminals
             INTERJECTION: {Grammar._create_word_list(["INTERJECTION"])}
@@ -70,8 +72,11 @@ class Grammar:
             PARTICLE: {Grammar._create_word_list(["PARTICLE"])}
             PARTICLE__A: {Grammar._create_word_list(["PARTICLE__A"])}
             PARTICLE__ALA: {Grammar._create_word_list(["PARTICLE__ALA"])}
+            PARTICLE__ANU: {Grammar._create_word_list(["PARTICLE__ANU"])}
+            PARTICLE__LA: {Grammar._create_word_list(["PARTICLE__LA"])}
             PARTICLE__LI: {Grammar._create_word_list(["PARTICLE__LI"])}
             PARTICLE__E: {Grammar._create_word_list(["PARTICLE__E"])}
+            PARTICLE__EN: {Grammar._create_word_list(["PARTICLE__EN"])}
             PARTICLE__O: {Grammar._create_word_list(["PARTICLE__O"])}
             PARTICLE__PAKALA: {Grammar._create_word_list(["PARTICLE__PAKALA"])}
             PARTICLE__PI: {Grammar._create_word_list(["PARTICLE__PI"])}
@@ -81,13 +86,27 @@ class Grammar:
 
             // Non-dictionary terminals
             PROPER_NAME: /\\b[A-Z][a-z]*\\b/
-            UNKNOWN: /(?!\\b{'\\b|\\b'.join(Dictionary.get_all_words())}\\b)(\\b[a-z]+\\b)/
+            UNKNOWN__WORD: /(?!\\b{'\\b|\\b'.join(Grammar._extract_words(Grammar._get_special_parts()))}\\b)(\\b([A-Za-z0-9]+)\\b)/
+            UNKNOWN__X_ALA_X: /((?!\\b{'\\b|\\b'.join(Grammar._extract_words(Grammar._get_special_parts()))}\\b)(\\b([A-Za-z0-9]+)\\b)) ala \\1/
 
             // Punctuation
             WS: (" ")+
             PUNCT_END: ("!" | "?" | "..." | ".")
             PUNCT_OTHER: /[^A-Za-z .?!]+/
         """
+
+    @staticmethod
+    def _get_special_parts() -> list[str]:
+        return [
+            "PARTICLE__A",
+            "PARTICLE__ANU",
+            "PARTICLE__E",
+            "PARTICLE__EN",
+            "PARTICLE__LA",
+            "PARTICLE__LI",
+            "PARTICLE__O",
+            "PARTICLE__PI",
+        ]
 
     @staticmethod
     def _create_word_list(parts_of_speech: list[str]) -> str:

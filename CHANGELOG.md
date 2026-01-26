@@ -11,6 +11,14 @@
 More info here: https://semver.org/
 
 
+## [0.0.35] - 2026-01-26
+
+### Changed
+
+- moved processing of `X ala X` phrases to `GrammarParser` class
+- simplified code for adjectives, nouns and verbs in `Grammar` class
+
+
 ## [0.0.34] - 2026-01-25
 
 ### Added

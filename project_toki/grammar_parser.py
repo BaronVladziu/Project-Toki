@@ -29,8 +29,10 @@ class GrammarParser:
         """
         This method parses input text into a grammatical tree.
         """
-        return GrammarParser._tree_to_phrases(
-            GrammarParser._remove_whitespaces(GrammarParser._PARSER.parse(text)),
+        return GrammarParser._split_x_ala_x(
+            GrammarParser._tree_to_phrases(
+                GrammarParser._remove_whitespaces(GrammarParser._PARSER.parse(text)),
+            ),
         )
 
     @staticmethod
@@ -61,6 +63,51 @@ class GrammarParser:
             raise TypeError(
                 f'Expected tree of type "Token" or "Tree" but encountered "{tree}" of type "{type(tree)}"!',
             )
+
+    @staticmethod
+    def _split_x_ala_x(
+        tree: Phrase,
+    ) -> Phrase:
+        """
+        This method splits all "X ala X" phrases in the tree.
+        """
+        if tree.children is not None:
+            new_children: list[Phrase] = []
+            for child in tree.children:
+                if isinstance(child.name, Word) and " ala " in child.name.text:
+                    word1, word2 = child.name.text.split(" ala ")
+                    new_children.append(
+                        Phrase(
+                            name=Word(
+                                text=word1,
+                                part_of_speech=child.name.part_of_speech,
+                            ),
+                        ),
+                    )
+                    new_children.append(
+                        Phrase(
+                            name=Word(
+                                text="ala",
+                                part_of_speech=PartOfSpeech.PARTICLE,
+                            ),
+                        ),
+                    )
+                    new_children.append(
+                        Phrase(
+                            name=Word(
+                                text=word2,
+                                part_of_speech=child.name.part_of_speech,
+                            ),
+                        ),
+                    )
+                else:
+                    new_children.append(GrammarParser._split_x_ala_x(child))
+            return Phrase(
+                name=tree.name,
+                children=new_children,
+            )
+        else:
+            return tree
 
     @staticmethod
     def _remove_whitespaces(
