@@ -15,29 +15,16 @@ class Grammar:
             sentence__without_punctuation: _sentence
 
             // Split to subsentences
-            _sentence: _subsentence ((_separator_conj | _separator_punct | _separator_whitespace) _subsentence)*
-            _separator_conj: WS? PUNCT_OTHER? WS _conjunctions WS? PUNCT_OTHER? WS
+            _sentence: _subsentence ((_separator_punct | _separator_whitespace) _subsentence)*
             _separator_punct: WS? PUNCT_OTHER WS?
             _separator_whitespace.-1: WS
 
             // Define subsentences
-            _subsentence: _subsentence_imperative | _subsentence_declarative_mi_sina | _subsentence_declarative_other | _subsentence_quasi | _special_words
-            _subsentence_declarative_mi_sina: noun_phrase__mi_sina WS verb_phrase__verb_second
-            _subsentence_declarative_other: noun_phrase WS PARTICLE__LI WS verb_phrase__verb_second
-            _subsentence_imperative: (noun_phrase WS)? PARTICLE__O (WS verb_phrase__verb_first)?
-            _subsentence_quasi: PARTICLE__SEME | number_phrase | adjective_phrase__single | preposition_phrase | noun_phrase | _interjections
-
-            // Noun phrases
-            noun_phrase__mi_sina: NOUN__MI_SINA
-            noun_phrase: (PARTICLE__PI WS)? _noun_phrase (WS PARTICLE__PI WS _noun_phrase)*
-            _noun_phrase: (_x_ala_x_noun_phrase | NOUN) (WS adjective_phrase)?
-
-            // Adjective phrases
-            adjective_phrase: ADJECTIVE (WS ADJECTIVE)*
-            adjective_phrase__single: _x_ala_x_adjective_phrase | ADJECTIVE
-
-            // Number phrases
-            number_phrase: NUMBER (WS NUMBER)*
+            _subsentence: (_subsentence_li | _subsentence_o | _subsentence_mi_sina | _subsentence_quasi | _special_words) (WS _anu_seme_phrase)?
+            _subsentence_li: (noun_phrase WS)? PARTICLE__LI WS verb_phrase__verb_second
+            _subsentence_o: (noun_phrase WS)? PARTICLE__O WS verb_phrase__verb_first
+            _subsentence_mi_sina: noun_phrase__mi_sina WS verb_phrase__verb_second
+            _subsentence_quasi: number_phrase | adjective_phrase__single | preposition_phrase | noun_phrase | _interjections
 
             // Verb phrases
             verb_phrase__verb_first: _verb_phrase | _subsentence_quasi
@@ -46,9 +33,24 @@ class Grammar:
             _verb_phrase_e: _verb_phrase_single WS PARTICLE__E WS noun_phrase
             _verb_phrase_single: (_x_ala_x_verb_phrase | VERB) (WS adjective_phrase)?
 
+            // Noun phrases
+            noun_phrase__mi_sina: NOUN__MI_SINA
+            noun_phrase: _noun_phrase_pi (WS _conjunctions WS _noun_phrase_pi)*
+            _noun_phrase_pi: (PARTICLE__PI WS)? _noun_phrase (WS PARTICLE__PI WS _noun_phrase)*
+            _noun_phrase: (_x_ala_x_noun_phrase | NOUN) (WS adjective_phrase)?
+
+            // Adjective phrases
+            adjective_phrase__single: _adjective
+            adjective_phrase: _adjective (WS _adjective)*
+            _adjective: _x_ala_x_adjective_phrase | ADJECTIVE
+
+            // Number phrases
+            number_phrase: NUMBER (WS NUMBER)*
+
             // Other phrases
-            preposition_phrase.2: PREPOSITION WS noun_phrase
-            _conjunctions: PARTICLE__ANU | PARTICLE__EN | PARTICLE__LA
+            preposition_phrase.3: PREPOSITION WS noun_phrase
+            _anu_seme_phrase: PARTICLE__ANU WS PARTICLE__SEME
+            _conjunctions: PARTICLE__ANU | PARTICLE__EN
             _interjections: PARTICLE__A | PARTICLE__O | PARTICLE__PAKALA | INTERJECTION
             _special_words: {" | ".join(Grammar._get_special_parts())}
 
