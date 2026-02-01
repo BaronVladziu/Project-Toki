@@ -39,15 +39,17 @@ class TestDictionary(unittest.TestCase):
     def test_get_words_for_part_of_speech(self):
         self.assertEqual(
             Dictionary.get_words_for_part_of_speech(
-                part_of_speech="NUMBER",
+                part_of_speech="PREVERB",
             ),
             {
-                "ala",
-                "ale",
-                "ali",
-                "luka",
-                "mute",
-                "tu",
-                "wan",
+                "alasa",
+                "awen",
+                "kama",
+                "ken",
+                "lukin",
+                "open",
+                "pini",
+                "sona",
+                "wile",
             },
         )

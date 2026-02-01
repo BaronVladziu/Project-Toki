@@ -17,14 +17,14 @@ class Grammar:
             // Split to subsentences
             _sentence: _subsentence ((_separator_punct | _separator_whitespace) _subsentence)*
             _separator_punct: WS? PUNCT_OTHER WS?
-            _separator_whitespace.-1: WS
+            _separator_whitespace.-3: WS
 
             // Define subsentences
             _subsentence: (_subsentence_li | _subsentence_o | _subsentence_mi_sina | _subsentence_quasi | _special_words) (WS _anu_seme_phrase)?
             _subsentence_li: (noun_phrase WS)? PARTICLE__LI WS verb_phrase__verb_second
             _subsentence_o: (noun_phrase WS)? PARTICLE__O WS verb_phrase__verb_first
             _subsentence_mi_sina: noun_phrase__mi_sina WS verb_phrase__verb_second
-            _subsentence_quasi: number_phrase | adjective_phrase__single | preposition_phrase | noun_phrase | _interjections
+            _subsentence_quasi: number_phrase__cardinal | number_phrase__ordinal_noun | adjective_phrase__single | preposition_phrase | noun_phrase | _interjections
 
             // Verb phrases
             verb_phrase__verb_first: _verb_phrase | _subsentence_quasi
@@ -37,15 +37,24 @@ class Grammar:
             noun_phrase__mi_sina: NOUN__MI_SINA
             noun_phrase: _noun_phrase_pi (WS _conjunctions WS _noun_phrase_pi)*
             _noun_phrase_pi: (PARTICLE__PI WS)? _noun_phrase (WS PARTICLE__PI WS _noun_phrase)*
-            _noun_phrase: (_x_ala_x_noun_phrase | NOUN) (WS adjective_phrase)?
+            _noun_phrase: (_x_ala_x_noun_phrase | number_phrase__ordinal_noun | NOUN) (WS adjective_phrase)?
 
             // Adjective phrases
             adjective_phrase__single: _adjective
             adjective_phrase: _adjective (WS _adjective)*
-            _adjective: _x_ala_x_adjective_phrase | ADJECTIVE
+            _adjective: _x_ala_x_number_phrase | _x_ala_x_adjective_phrase | number_phrase__ordinal_adjective | ADJECTIVE
 
             // Number phrases
-            number_phrase: NUMBER (WS NUMBER)*
+            number_phrase__cardinal: _number_phrase
+            number_phrase__ordinal_adjective.2: ADJECTIVE__NANPA WS _number_phrase
+            number_phrase__ordinal_noun.2: NOUN__NANPA WS _number_phrase
+            _number_phrase: _x_ala_x_number_phrase | _number_phrase_100 | _number_phrase_20 | _number_phrase_5 | _number_phrase_2 | _number_phrase_1 | _number_phrase_0
+            _number_phrase_100.2: NUMBER__100 (WS NUMBER__100)* (WS (_number_phrase_20 | _number_phrase_5 | _number_phrase_2 | _number_phrase_1))?
+            _number_phrase_20.2: NUMBER__20 (WS NUMBER__20)* (WS (_number_phrase_5 | _number_phrase_2 | _number_phrase_1))?
+            _number_phrase_5.2: NUMBER__5 (WS NUMBER__5)* (WS (_number_phrase_2 | _number_phrase_1))?
+            _number_phrase_2.2: NUMBER__2 (WS NUMBER__2)* (WS _number_phrase_1)?
+            _number_phrase_1.2: NUMBER__1 (WS NUMBER__1)*
+            _number_phrase_0.2: NUMBER__0
 
             // Other phrases
             preposition_phrase.3: PREPOSITION WS noun_phrase
@@ -58,6 +67,7 @@ class Grammar:
             _x_ala_x_adjective_phrase.9: ADJECTIVE__X_ALA_X
             _x_ala_x_noun_phrase.9: NOUN__X_ALA_X
             _x_ala_x_verb_phrase.9: VERB__X_ALA_X
+            _x_ala_x_number_phrase.9: {Grammar._create_x_ala_x_phrase_definition(phrase_part_of_speech="NUMBER", parts_of_speech=["NUMBER__0", "NUMBER__1", "NUMBER__2", "NUMBER__5", "NUMBER__20", "NUMBER__100"])}
 
             // Compound terminals
             ADJECTIVE__X_ALA_X: UNKNOWN__X_ALA_X
@@ -68,9 +78,16 @@ class Grammar:
             VERB: UNKNOWN__WORD
 
             // Simple terminals
+            ADJECTIVE__NANPA: {Grammar._create_word_list(["ADJECTIVE__NANPA"])}
             INTERJECTION: {Grammar._create_word_list(["INTERJECTION"])}
             NOUN__MI_SINA: {Grammar._create_word_list(["NOUN__MI_SINA"])}
-            NUMBER: {Grammar._create_word_list(["NUMBER"])}
+            NOUN__NANPA: {Grammar._create_word_list(["NOUN__NANPA"])}
+            NUMBER__0: {Grammar._create_word_list(["NUMBER__0"])}  //ala
+            NUMBER__1: {Grammar._create_word_list(["NUMBER__1"])}  //wan
+            NUMBER__2: {Grammar._create_word_list(["NUMBER__2"])}  //tu
+            NUMBER__5: {Grammar._create_word_list(["NUMBER__5"])}  //luka
+            NUMBER__20: {Grammar._create_word_list(["NUMBER__20"])}  //mute
+            NUMBER__100: {Grammar._create_word_list(["NUMBER__100"])}  //ale
             PARTICLE: {Grammar._create_word_list(["PARTICLE"])}
             PARTICLE__A: {Grammar._create_word_list(["PARTICLE__A"])}
             PARTICLE__ALA: {Grammar._create_word_list(["PARTICLE__ALA"])}

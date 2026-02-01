@@ -4597,3 +4597,528 @@ class TestGrammarParser(unittest.TestCase):
                 ],
             ),
         )
+
+    def test_lesson_12(self):
+        self._compare_trees(
+            GrammarParser.parse_text("kili ala"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("kili", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(Word("ala", PartOfSpeech.ADJECTIVE)),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("mije wan"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("mije", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(Word("wan", PartOfSpeech.ADJECTIVE)),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("tomo tu"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("tomo", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(Word("tu", PartOfSpeech.ADJECTIVE)),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("soweli mute"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("soweli", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(
+                                                Word("mute", PartOfSpeech.ADJECTIVE),
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("jan ale"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("jan", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(Word("ale", PartOfSpeech.ADJECTIVE)),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("wan"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("wan", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("tu"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("tu", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("luka"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("luka", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("mute"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("mute", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("ale"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("ale", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("tu wan"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("tu", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("wan", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("tu tu"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("tu", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("tu", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("luka wan"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("luka", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("wan", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("luka tu"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("luka", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("tu", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("luka tu wan"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("luka", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("tu", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("wan", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("luka tu tu"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("luka", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("tu", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("tu", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("luka luka"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("luka", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("luka", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("luka luka tu wan"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("luka", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("luka", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("tu", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("wan", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("mute mute mute luka luka luka tu wan"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("mute", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("mute", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("mute", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("luka", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("luka", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("luka", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("tu", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("wan", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("ale tu"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NUMBER_PHRASE",
+                                children=[
+                                    Phrase(Word("ale", PartOfSpeech.NUMBER)),
+                                    Phrase(Word("tu", PartOfSpeech.NUMBER)),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("toki nanpa wan"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("toki", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(
+                                                "NUMBER_PHRASE",
+                                                children=[
+                                                    Phrase(
+                                                        Word(
+                                                            "nanpa",
+                                                            PartOfSpeech.ADJECTIVE,
+                                                        ),
+                                                    ),
+                                                    Phrase(
+                                                        Word(
+                                                            "wan",
+                                                            PartOfSpeech.NUMBER,
+                                                        ),
+                                                    ),
+                                                ],
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )
+        self._compare_trees(
+            GrammarParser.parse_text("tomo nanpa mute tu wan"),
+            Phrase(
+                "TEXT",
+                children=[
+                    Phrase(
+                        "SENTENCE",
+                        children=[
+                            Phrase(
+                                "NOUN_PHRASE",
+                                children=[
+                                    Phrase(Word("tomo", PartOfSpeech.NOUN)),
+                                    Phrase(
+                                        "ADJECTIVE_PHRASE",
+                                        children=[
+                                            Phrase(
+                                                "NUMBER_PHRASE",
+                                                children=[
+                                                    Phrase(
+                                                        Word(
+                                                            "nanpa",
+                                                            PartOfSpeech.ADJECTIVE,
+                                                        ),
+                                                    ),
+                                                    Phrase(
+                                                        Word(
+                                                            "mute",
+                                                            PartOfSpeech.NUMBER,
+                                                        ),
+                                                    ),
+                                                    Phrase(
+                                                        Word("tu", PartOfSpeech.NUMBER),
+                                                    ),
+                                                    Phrase(
+                                                        Word(
+                                                            "wan",
+                                                            PartOfSpeech.NUMBER,
+                                                        ),
+                                                    ),
+                                                ],
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+        )

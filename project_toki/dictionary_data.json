@@ -15,7 +15,7 @@
       "definition": {
         "ADJECTIVE": "not, no, empty",
         "NOUN": "nothing",
-        "NUMBER": "zero",
+        "NUMBER__0": "zero",
         "PARTICLE__ALA": "or not (to ask yes-or-no question)"
       }
     },
@@ -29,14 +29,14 @@
       "definition": {
         "ADJECTIVE": "every, all, abundant",
         "NOUN": "everything, universe",
-        "NUMBER": "all/infinite (simple system), 100 (complex system)"
+        "NUMBER__100": "all/infinite (simple system), 100 (complex system)"
       }
     },
     "ali": {
       "definition": {
         "ADJECTIVE": "every, all, abundant",
         "NOUN": "everything, universe",
-        "NUMBER": "all/infinite (simple system), 100 (complex system)"
+        "NUMBER__100": "all/infinite (simple system), 100 (complex system)"
       }
     },
     "anpa": {
@@ -344,7 +344,7 @@
     "luka": {
       "definition": {
         "NOUN": "hand, arm",
-        "NUMBER": "5 (complex system)"
+        "NUMBER__5": "5 (complex system)"
       }
     },
     "lukin": {
@@ -457,7 +457,7 @@
       "definition": {
         "ADJECTIVE": "many, more",
         "NOUN": "quantity",
-        "NUMBER": "3 or more (simple system), 20 (complex system)"
+        "NUMBER__20": "3 or more (simple system), 20 (complex system)"
       }
     },
     "n": {
@@ -474,8 +474,8 @@
     },
     "nanpa": {
       "definition": {
-        "ADJECTIVE": "-th (ordinal indicator), mathematical, numeric, (unconventional) digital",
-        "NOUN": "number"
+        "ADJECTIVE__NANPA": "-th (ordinal indicator), mathematical, numeric, (unconventional) digital",
+        "NOUN__NANPA": "number"
       }
     },
     "nasa": {
@@ -804,7 +804,7 @@
       "definition": {
         "ADJECTIVE": "divided",
         "NOUN": "divide",
-        "NUMBER": "2",
+        "NUMBER__2": "2",
         "VERB": "to divide"
       }
     },
@@ -839,7 +839,7 @@
       "definition": {
         "ADJECTIVE": "united, married",
         "NOUN": "part (of smth)",
-        "NUMBER": "1",
+        "NUMBER__1": "1",
         "VERB": "to unite, to marry"
       }
     },
