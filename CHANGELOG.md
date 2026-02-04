@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.38] - 2026-02-04
+
+### Added
+
+- support for preverbs in `Grammar` class
+
+
 ## [0.0.37] - 2026-02-01
 
 ### Added

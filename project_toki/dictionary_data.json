@@ -13,7 +13,7 @@
     },
     "ala": {
       "definition": {
-        "ADJECTIVE": "not, no, empty",
+        "ADJECTIVE__ALA": "not, no, empty",
         "NOUN": "nothing",
         "NUMBER__0": "zero",
         "PARTICLE__ALA": "or not (to ask yes-or-no question)"

@@ -31,7 +31,7 @@ class Grammar:
             verb_phrase__verb_second: _subsentence_quasi | _verb_phrase
             _verb_phrase: (_verb_phrase_e | preposition_phrase | _verb_phrase_single) (WS preposition_phrase)*
             _verb_phrase_e: _verb_phrase_single WS PARTICLE__E WS noun_phrase
-            _verb_phrase_single: (_x_ala_x_verb_phrase | VERB) (WS adjective_phrase)?
+            _verb_phrase_single: (_preverb_phrase WS)* (_x_ala_x_verb_phrase | VERB) (WS adjective_phrase)?
 
             // Noun phrases
             noun_phrase__mi_sina: NOUN__MI_SINA
@@ -42,7 +42,8 @@ class Grammar:
             // Adjective phrases
             adjective_phrase__single: _adjective
             adjective_phrase: _adjective (WS _adjective)*
-            _adjective: _x_ala_x_number_phrase | _x_ala_x_adjective_phrase | number_phrase__ordinal_adjective | ADJECTIVE
+            _adjective: _x_ala_x_number_phrase | _x_ala_x_adjective_phrase | number_phrase__ordinal_adjective | _adjective_ala | ADJECTIVE
+            _adjective_ala.2: ADJECTIVE__ALA
 
             // Number phrases
             number_phrase__cardinal: _number_phrase
@@ -60,7 +61,8 @@ class Grammar:
             preposition_phrase.3: PREPOSITION WS noun_phrase
             _anu_seme_phrase: PARTICLE__ANU WS PARTICLE__SEME
             _conjunctions: PARTICLE__ANU | PARTICLE__EN
-            _interjections: PARTICLE__A | PARTICLE__O | PARTICLE__PAKALA | INTERJECTION
+            _interjections.-1: PARTICLE__A | PARTICLE__O | PARTICLE__PAKALA | INTERJECTION
+            _preverb_phrase.2: _x_ala_x_preverb_phrase | PREVERB (WS adjective_phrase)?
             _special_words: {" | ".join(Grammar._get_special_parts())}
 
             // x ala x questions
@@ -68,6 +70,7 @@ class Grammar:
             _x_ala_x_noun_phrase.9: NOUN__X_ALA_X
             _x_ala_x_verb_phrase.9: VERB__X_ALA_X
             _x_ala_x_number_phrase.9: {Grammar._create_x_ala_x_phrase_definition(phrase_part_of_speech="NUMBER", parts_of_speech=["NUMBER__0", "NUMBER__1", "NUMBER__2", "NUMBER__5", "NUMBER__20", "NUMBER__100"])}
+            _x_ala_x_preverb_phrase.9: {Grammar._create_x_ala_x_phrase_definition(phrase_part_of_speech="PREVERB", parts_of_speech=["PREVERB"])}
 
             // Compound terminals
             ADJECTIVE__X_ALA_X: UNKNOWN__X_ALA_X
@@ -78,6 +81,7 @@ class Grammar:
             VERB: UNKNOWN__WORD
 
             // Simple terminals
+            ADJECTIVE__ALA: {Grammar._create_word_list(["ADJECTIVE__ALA"])}
             ADJECTIVE__NANPA: {Grammar._create_word_list(["ADJECTIVE__NANPA"])}
             INTERJECTION: {Grammar._create_word_list(["INTERJECTION"])}
             NOUN__MI_SINA: {Grammar._create_word_list(["NOUN__MI_SINA"])}
