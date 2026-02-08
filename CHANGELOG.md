@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.39] - 2026-02-08
+
+### Added
+
+- pretty diff generation for `Phrase` objects
+
+
 ## [0.0.38] - 2026-02-04
 
 ### Added
