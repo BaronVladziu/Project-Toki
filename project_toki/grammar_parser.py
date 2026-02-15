@@ -14,7 +14,7 @@ class GrammarParser:
     It has following features:
     - leaf "WS" and leaves with name starting with "PUNCT_" will be treated as punctuation
     - leaves of the grammar tree that are not punctuation must be named after a PartOfSpeech
-    - when node name contains "__" then only the part before "__" will appear in the output tree
+    - when node name contains "__" then only the part before the leftmost "__" will appear in the output tree
     - when node name starts with "_" then this node will be removed and its parent will adopt its children
     """
 

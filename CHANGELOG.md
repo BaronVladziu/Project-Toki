@@ -11,6 +11,14 @@
 More info here: https://semver.org/
 
 
+## [0.0.40] - 2026-02-15
+
+### Added
+
+- constructor for `Phrase` from `str`
+- constructor for `Phrase` from `list[str]`
+
+
 ## [0.0.39] - 2026-02-08
 
 ### Added
