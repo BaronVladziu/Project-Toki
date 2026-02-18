@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.41] - 2026-02-18
+
+### Changed
+
+- simplified `Grammar` class
+
+
 ## [0.0.40] - 2026-02-15
 
 ### Added

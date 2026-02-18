@@ -69,13 +69,15 @@ class Grammar:
             _x_ala_x_adjective_phrase.9: ADJECTIVE__X_ALA_X
             _x_ala_x_noun_phrase.9: NOUN__X_ALA_X
             _x_ala_x_verb_phrase.9: VERB__X_ALA_X
-            _x_ala_x_number_phrase.9: {Grammar._create_x_ala_x_phrase_definition(phrase_part_of_speech="NUMBER", parts_of_speech=["NUMBER__0", "NUMBER__1", "NUMBER__2", "NUMBER__5", "NUMBER__20", "NUMBER__100"])}
-            _x_ala_x_preverb_phrase.9: {Grammar._create_x_ala_x_phrase_definition(phrase_part_of_speech="PREVERB", parts_of_speech=["PREVERB"])}
+            _x_ala_x_number_phrase.9: NUMBER__X_ALA_X
+            _x_ala_x_preverb_phrase.9: PREVERB__X_ALA_X
 
             // Compound terminals
             ADJECTIVE__X_ALA_X: UNKNOWN__X_ALA_X
             NOUN__X_ALA_X: UNKNOWN__X_ALA_X
             VERB__X_ALA_X: UNKNOWN__X_ALA_X
+            NUMBER__X_ALA_X: /({"|".join(Dictionary.get_words_for_parts_of_speech(["NUMBER__1", "NUMBER__2", "NUMBER__5", "NUMBER__20", "NUMBER__100"]))}) ala \\1/
+            PREVERB__X_ALA_X: /({"|".join(Dictionary.get_words_for_parts_of_speech(["PREVERB"]))}) ala \\1/
             ADJECTIVE: PROPER_NAME | UNKNOWN__WORD
             NOUN: UNKNOWN__WORD
             VERB: UNKNOWN__WORD
@@ -96,10 +98,10 @@ class Grammar:
             PARTICLE__A: {Grammar._create_word_list(["PARTICLE__A"])}
             PARTICLE__ALA: {Grammar._create_word_list(["PARTICLE__ALA"])}
             PARTICLE__ANU: {Grammar._create_word_list(["PARTICLE__ANU"])}
-            PARTICLE__LA: {Grammar._create_word_list(["PARTICLE__LA"])}
-            PARTICLE__LI: {Grammar._create_word_list(["PARTICLE__LI"])}
             PARTICLE__E: {Grammar._create_word_list(["PARTICLE__E"])}
             PARTICLE__EN: {Grammar._create_word_list(["PARTICLE__EN"])}
+            PARTICLE__LA: {Grammar._create_word_list(["PARTICLE__LA"])}
+            PARTICLE__LI: {Grammar._create_word_list(["PARTICLE__LI"])}
             PARTICLE__O: {Grammar._create_word_list(["PARTICLE__O"])}
             PARTICLE__PAKALA: {Grammar._create_word_list(["PARTICLE__PAKALA"])}
             PARTICLE__PI: {Grammar._create_word_list(["PARTICLE__PI"])}
@@ -109,8 +111,8 @@ class Grammar:
 
             // Non-dictionary terminals
             PROPER_NAME: /\\b[A-Z][a-z]*\\b/
-            UNKNOWN__WORD: /(?!\\b{'\\b|\\b'.join(Grammar._extract_words(Grammar._get_special_parts()))}\\b)(\\b([A-Za-z0-9]+)\\b)/
-            UNKNOWN__X_ALA_X: /((?!\\b{'\\b|\\b'.join(Grammar._extract_words(Grammar._get_special_parts()))}\\b)(\\b([A-Za-z0-9]+)\\b)) ala \\1/
+            UNKNOWN__WORD: /(?!\\b{'\\b|\\b'.join(Dictionary.get_words_for_parts_of_speech(Grammar._get_special_parts()))}\\b)(\\b([A-Za-z0-9]+)\\b)/
+            UNKNOWN__X_ALA_X: /((?!\\b{'\\b|\\b'.join(Dictionary.get_words_for_parts_of_speech(Grammar._get_special_parts()))}\\b)(\\b([A-Za-z0-9]+)\\b)) ala \\1/
 
             // Punctuation
             WS: (" ")+
@@ -133,39 +135,8 @@ class Grammar:
 
     @staticmethod
     def _create_word_list(parts_of_speech: list[str]) -> str:
-        return '"' + '" | "'.join(Grammar._extract_words(parts_of_speech)) + '"'
-
-    @staticmethod
-    def _create_x_ala_x_phrase_definition(
-        phrase_part_of_speech: str,
-        parts_of_speech: list[str],
-    ) -> str:
-        output_lines: list[str] = [
-            " | ".join(
-                [
-                    f"{phrase_part_of_speech.upper()}__{word.upper()}_XALAX WS PARTICLE__ALA WS {phrase_part_of_speech.upper()}__{word.upper()}_XALAX"
-                    for word in Grammar._extract_words(parts_of_speech)
-                ],
-            ),
-        ]
-        output_lines += [
-            f'{phrase_part_of_speech.upper()}__{word.upper()}_XALAX: "{word}"'
-            for word in Grammar._extract_words(parts_of_speech)
-        ]
-        return "\n".join(output_lines)
-
-    @staticmethod
-    def _extract_words(parts_of_speech: list[str]) -> list[str]:
-        words: list[str] = []
-        word_set: set[str] = set()
-        for pos in parts_of_speech:
-            pos_words: list[str] = sorted(Dictionary.get_words_for_part_of_speech(pos))
-            if len(pos_words) < 1:
-                raise ValueError(
-                    f'There are no items in a dictionary for part of speech "{pos}"!',
-                )
-            for word in pos_words:
-                if word not in word_set:
-                    words.append(word)
-                    word_set.add(word)
-        return words
+        return (
+            '"'
+            + '" | "'.join(Dictionary.get_words_for_parts_of_speech(parts_of_speech))
+            + '"'
+        )
