@@ -2,13 +2,13 @@ import unittest
 
 from project_toki.part_of_speech import PartOfSpeech
 from project_toki.phrase import Phrase
+from project_toki.phrase_comparer import PhraseComparer
 from project_toki.punctuation import Punctuation
 from project_toki.word import Word
 
 
 class TestPhrase(unittest.TestCase):
-    def _compare_trees(self, out_tree: Phrase, ref_tree: Phrase) -> None:
-        self.assertEqual(out_tree, ref_tree, msg=f"\n{out_tree}\n!={ref_tree}")
+    COMPARER: PhraseComparer = PhraseComparer()
 
     def test_constructors(self):
         phrase_as_str: str = str(
@@ -67,17 +67,17 @@ TEXT
             str(phrase),
             phrase_as_str.strip(),
         )
-        self._compare_trees(
+        self.COMPARER.compare_phrases(
             Phrase.from_str(phrase_as_str),
             phrase,
         )
-        self._compare_trees(
+        self.COMPARER.compare_phrases(
             Phrase.from_lines(phrase_as_str.splitlines()),
             phrase,
         )
 
     def test_from_lines(self):
-        self._compare_trees(
+        self.COMPARER.compare_phrases(
             Phrase.from_lines(
                 [
                     "X",
@@ -93,7 +93,7 @@ TEXT
                 "X",
             ],
         )
-        self._compare_trees(
+        self.COMPARER.compare_phrases(
             Phrase.from_lines(
                 [
                     "X",
@@ -115,7 +115,7 @@ TEXT
                 "├── X",
             ],
         )
-        self._compare_trees(
+        self.COMPARER.compare_phrases(
             Phrase.from_lines(
                 [
                     "X",

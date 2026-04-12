@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.42] - 2026-04-12
+
+### Added
+
+- `PhraseComparer` class
+
+
 ## [0.0.41] - 2026-02-18
 
 ### Changed
