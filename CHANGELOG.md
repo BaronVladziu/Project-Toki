@@ -11,11 +11,18 @@
 More info here: https://semver.org/
 
 
+## [0.0.44] - 2026-04-19
+
+### Changed
+
+- split and moved grammar tests to `tests/grammar_tests/`
+
+
 ## [0.0.43] - 2026-04-15
 
 ### Changed
 
-- simplify all grammar test
+- simplify all grammar tests
 
 
 ## [0.0.42] - 2026-04-12
