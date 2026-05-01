@@ -87,3 +87,107 @@ class TestGrammarCustom(unittest.TestCase):
                 ],
             ),
         )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("nimi sona: sina sona"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "nimi"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "sona"',
+                    "    ├── :",
+                    "    ├── NOUN_PHRASE",
+                    '    │   └── NOUN: "sina"',
+                    "    └── VERB_PHRASE",
+                    "        └── ADJECTIVE_PHRASE",
+                    '            └── ADJECTIVE: "sona"',
+                ],
+            ),
+        )
+
+    def test_difficult(self):
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("jan ale li wile kama e jan ike mi"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "jan"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "ale"',
+                    '    ├── PARTICLE: "li"',
+                    "    └── VERB_PHRASE",
+                    '        ├── PREVERB: "wile"',
+                    '        ├── VERB: "kama"',
+                    '        ├── PARTICLE: "e"',
+                    "        └── NOUN_PHRASE",
+                    '            ├── NOUN: "jan"',
+                    "            └── ADJECTIVE_PHRASE",
+                    '                ├── ADJECTIVE: "ike"',
+                    '                └── ADJECTIVE: "mi"',
+                ],
+            ),
+        )
+
+    def test_numbers(self):
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("li nanpa tu ala tu"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    '    ├── PARTICLE: "li"',
+                    "    └── VERB_PHRASE",
+                    "        └── NUMBER_PHRASE",
+                    '            ├── NOUN: "nanpa"',
+                    '            ├── NUMBER: "tu"',
+                    '            ├── PARTICLE: "ala"',
+                    '            └── NUMBER: "tu"',
+                ],
+            ),
+        )
+
+    def test_short(self):
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("a!"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    '    ├── PARTICLE: "a"',
+                    "    └── !",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("jan pona lon awen"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "jan"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "pona"',
+                    "    └── PREPOSITION_PHRASE",
+                    '        ├── PREPOSITION: "lon"',
+                    "        └── NOUN_PHRASE",
+                    '            └── NOUN: "awen"',
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("a mute"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    '    ├── PARTICLE: "a"',
+                    "    └── NUMBER_PHRASE",
+                    '        └── NUMBER: "mute"',
+                ],
+            ),
+        )
