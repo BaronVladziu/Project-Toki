@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.46] - 2026-05-08
+
+### Changed
+
+- improved prepositions in `Grammar` class
+
+
 ## [0.0.45] - 2026-05-01
 
 ### Added

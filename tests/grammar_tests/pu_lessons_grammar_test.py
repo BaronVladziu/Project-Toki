@@ -2722,3 +2722,154 @@ class TestGrammarPuLessons(unittest.TestCase):
                 ],
             ),
         )
+
+    def test_lesson_15(self):
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("lon"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    └── ADJECTIVE_PHRASE",
+                    '        └── ADJECTIVE: "lon"',
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("mi lon poka sina."),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   └── NOUN: "mi"',
+                    "    ├── VERB_PHRASE",
+                    "    │   └── PREPOSITION_PHRASE",
+                    '    │       ├── PREPOSITION: "lon"',
+                    "    │       └── NOUN_PHRASE",
+                    '    │           ├── NOUN: "poka"',
+                    "    │           └── ADJECTIVE_PHRASE",
+                    '    │               └── ADJECTIVE: "sina"',
+                    "    └── .",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("noka tomo li wawa."),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "noka"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "tomo"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "wawa"',
+                    "    └── .",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("jan lili li lon insa pi mama meli."),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "jan"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "lili"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    "    │   └── PREPOSITION_PHRASE",
+                    '    │       ├── PREPOSITION: "lon"',
+                    "    │       └── NOUN_PHRASE",
+                    '    │           ├── NOUN: "insa"',
+                    '    │           ├── PARTICLE: "pi"',
+                    '    │           ├── NOUN: "mama"',
+                    "    │           └── ADJECTIVE_PHRASE",
+                    '    │               └── ADJECTIVE: "meli"',
+                    "    └── .",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("ilo suli li tawa lon sewi."),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "ilo"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "suli"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    '    │   ├── VERB: "tawa"',
+                    "    │   └── PREPOSITION_PHRASE",
+                    '    │       ├── PREPOSITION: "lon"',
+                    "    │       └── NOUN_PHRASE",
+                    '    │           └── NOUN: "sewi"',
+                    "    └── .",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("kala laso mute li lon noka pi telo suli."),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "kala"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       ├── ADJECTIVE: "laso"',
+                    '    │       └── ADJECTIVE: "mute"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    "    │   └── PREPOSITION_PHRASE",
+                    '    │       ├── PREPOSITION: "lon"',
+                    "    │       └── NOUN_PHRASE",
+                    '    │           ├── NOUN: "noka"',
+                    '    │           ├── PARTICLE: "pi"',
+                    '    │           ├── NOUN: "telo"',
+                    "    │           └── ADJECTIVE_PHRASE",
+                    '    │               └── ADJECTIVE: "suli"',
+                    "    └── .",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text(
+                "tomo sona ni la jan lili li wile kepeken toki Inli.",
+            ),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "tomo"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       ├── ADJECTIVE: "sona"',
+                    '    │       └── ADJECTIVE: "ni"',
+                    '    ├── PARTICLE: "la"',
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "jan"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "lili"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    '    │   ├── VERB: "wile"',
+                    "    │   └── PREPOSITION_PHRASE",
+                    '    │       ├── PREPOSITION: "kepeken"',
+                    "    │       └── NOUN_PHRASE",
+                    '    │           ├── NOUN: "toki"',
+                    "    │           └── ADJECTIVE_PHRASE",
+                    '    │               └── ADJECTIVE: "Inli"',
+                    "    └── .",
+                ],
+            ),
+        )
