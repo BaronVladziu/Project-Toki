@@ -2873,3 +2873,157 @@ class TestGrammarPuLessons(unittest.TestCase):
                 ],
             ),
         )
+
+    def test_lesson_16(self):
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("tawa"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    └── ADJECTIVE_PHRASE",
+                    '        └── ADJECTIVE: "tawa"',
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("suwi li pona tawa mi."),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   └── NOUN: "suwi"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    '    │   ├── VERB: "pona"',
+                    "    │   └── PREPOSITION_PHRASE",
+                    '    │       ├── PREPOSITION: "tawa"',
+                    "    │       └── NOUN_PHRASE",
+                    '    │           └── NOUN: "mi"',
+                    "    └── .",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("sina en mi li anpa tawa sewi."),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "sina"',
+                    '    │   ├── PARTICLE: "en"',
+                    '    │   └── NOUN: "mi"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    '    │   ├── VERB: "anpa"',
+                    "    │   └── PREPOSITION_PHRASE",
+                    '    │       ├── PREPOSITION: "tawa"',
+                    "    │       └── NOUN_PHRASE",
+                    '    │           └── NOUN: "sewi"',
+                    "    └── .",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("ma mama li lili li lete."),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "ma"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "mama"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "lili"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "lete"',
+                    "    └── .",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("taso mije en meli li pali li pilin pona."),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── PREPOSITION_PHRASE",
+                    '    │   ├── PREPOSITION: "taso"',
+                    "    │   └── NOUN_PHRASE",
+                    '    │       ├── NOUN: "mije"',
+                    '    │       ├── PARTICLE: "en"',
+                    '    │       └── NOUN: "meli"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "pali"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    "    │   └── NOUN_PHRASE",
+                    '    │       ├── NOUN: "pilin"',
+                    "    │       └── ADJECTIVE_PHRASE",
+                    '    │           └── ADJECTIVE: "pona"',
+                    "    └── .",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text(
+                "meli sama mi li open e lupa nanpa wan e lupa nanpa tu.",
+            ),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "meli"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       ├── ADJECTIVE: "sama"',
+                    '    │       └── ADJECTIVE: "mi"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    '    │   ├── VERB: "open"',
+                    '    │   ├── PARTICLE: "e"',
+                    "    │   ├── NOUN_PHRASE",
+                    '    │   │   ├── NOUN: "lupa"',
+                    "    │   │   └── ADJECTIVE_PHRASE",
+                    "    │   │       └── NUMBER_PHRASE",
+                    '    │   │           ├── ADJECTIVE: "nanpa"',
+                    '    │   │           └── NUMBER: "wan"',
+                    '    │   ├── PARTICLE: "e"',
+                    "    │   └── NOUN_PHRASE",
+                    '    │       ├── NOUN: "lupa"',
+                    "    │       └── ADJECTIVE_PHRASE",
+                    "    │           └── NUMBER_PHRASE",
+                    '    │               ├── ADJECTIVE: "nanpa"',
+                    '    │               └── NUMBER: "tu"',
+                    "    └── .",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("tomo sina taso li pimeja."),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "tomo"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       ├── ADJECTIVE: "sina"',
+                    '    │       └── ADJECTIVE: "taso"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "pimeja"',
+                    "    └── .",
+                ],
+            ),
+        )

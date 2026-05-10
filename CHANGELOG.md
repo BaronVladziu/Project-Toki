@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.47] - 2026-05-10
+
+### Added
+
+- support for verb phrases with multiple `e` particles in `Grammar` class
+
+
 ## [0.0.46] - 2026-05-08
 
 ### Changed

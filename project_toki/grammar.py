@@ -31,7 +31,7 @@ class Grammar:
             verb_phrase__verb_second: (_verb_phrase_high_priority | _subsentence_quasi | _verb_phrase)
             _verb_phrase_high_priority: _verb_phrase_e | _verb_phrase_preposition
             _verb_phrase: (_verb_phrase_e | _verb_phrase_preposition | preposition_phrase | _verb_phrase_single) (WS preposition_phrase)*
-            _verb_phrase_e: _verb_phrase_single WS PARTICLE__E WS noun_phrase
+            _verb_phrase_e: _verb_phrase_single (WS PARTICLE__E WS noun_phrase)+
             _verb_phrase_preposition: (_preverb_phrase WS)? _verb_phrase_single (WS preposition_phrase)+ (WS PARTICLE__E WS noun_phrase)*
             _verb_phrase_single: (_preverb_phrase WS)? (_x_ala_x_verb_phrase | VERB) (WS adjective_phrase)?
 
