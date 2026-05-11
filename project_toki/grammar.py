@@ -21,10 +21,10 @@ class Grammar:
 
             // Define subsentences
             _subsentence: (_subsentence_li | _subsentence_o | _subsentence_mi_sina | _subsentence_quasi | _special_words) (WS _anu_seme_phrase)?
-            _subsentence_li: (noun_phrase WS)? PARTICLE__LI WS verb_phrase__verb_second
-            _subsentence_o: (noun_phrase WS)? PARTICLE__O WS verb_phrase__verb_first
+            _subsentence_li: ((preposition_phrase | noun_phrase) WS)? PARTICLE__LI WS verb_phrase__verb_second
+            _subsentence_o: ((preposition_phrase | noun_phrase) WS)? PARTICLE__O WS verb_phrase__verb_first
             _subsentence_mi_sina: noun_phrase__mi_sina WS verb_phrase__verb_second
-            _subsentence_quasi: number_phrase__cardinal | number_phrase__ordinal_noun | adjective_phrase__single | preposition_phrase | noun_phrase | _interjections
+            _subsentence_quasi: number_phrase__cardinal | number_phrase__ordinal_noun | adjective_phrase__single | noun_phrase WS preposition_phrase | preposition_phrase | noun_phrase | _interjections
 
             // Verb phrases
             verb_phrase__verb_first: (_verb_phrase_high_priority | _verb_phrase | _subsentence_quasi)
@@ -60,7 +60,7 @@ class Grammar:
             _number_phrase_0.2: NUMBER__0
 
             // Other phrases
-            preposition_phrase.3: PREPOSITION WS noun_phrase
+            preposition_phrase.2: PREPOSITION WS noun_phrase
             _anu_seme_phrase: PARTICLE__ANU WS PARTICLE__SEME
             _conjunctions: PARTICLE__ANU | PARTICLE__EN
             _interjections.-1: PARTICLE__A | PARTICLE__O | PARTICLE__PAKALA | INTERJECTION
