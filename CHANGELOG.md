@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.49] - 2026-05-15
+
+### Added
+
+- many new grammar tests
+
+
 ## [0.0.48] - 2026-05-11
 
 ### Changed

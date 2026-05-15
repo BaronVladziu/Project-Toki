@@ -191,3 +191,31 @@ class TestGrammarCustom(unittest.TestCase):
                 ],
             ),
         )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("li sona"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    '    ├── PARTICLE: "li"',
+                    "    └── VERB_PHRASE",
+                    "        └── ADJECTIVE_PHRASE",
+                    '            └── ADJECTIVE: "sona"',
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("li pana e pan"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    '    ├── PARTICLE: "li"',
+                    "    └── VERB_PHRASE",
+                    '        ├── VERB: "pana"',
+                    '        ├── PARTICLE: "e"',
+                    "        └── NOUN_PHRASE",
+                    '            └── NOUN: "pan"',
+                ],
+            ),
+        )
