@@ -22,6 +22,23 @@ class TestGrammarCustom(unittest.TestCase):
                 ],
             ),
         )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("jan Cat45XD li suuuuuwi"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "jan"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "Cat45XD"',
+                    '    ├── PARTICLE: "li"',
+                    "    └── VERB_PHRASE",
+                    "        └── ADJECTIVE_PHRASE",
+                    '            └── ADJECTIVE: "suuuuuwi"',
+                ],
+            ),
+        )
 
     def test_punctuation(self):
         self.COMPARER.compare_phrases(

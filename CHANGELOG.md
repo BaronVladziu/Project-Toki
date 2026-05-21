@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.50] - 2026-05-21
+
+### Added
+
+- support for digits in `Grammar` class
+
+
 ## [0.0.49] - 2026-05-15
 
 ### Added

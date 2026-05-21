@@ -108,18 +108,18 @@ class Grammar:
             PARTICLE__PAKALA: {Grammar._create_word_list(["PARTICLE__PAKALA"])}
             PARTICLE__PI: {Grammar._create_word_list(["PARTICLE__PI"])}
             PARTICLE__SEME: {Grammar._create_word_list(["PARTICLE__SEME"])}
-            PREVERB: {Grammar._create_word_list(["PREVERB"])}
             PREPOSITION: {Grammar._create_word_list(["PREPOSITION"])}
+            PREVERB: {Grammar._create_word_list(["PREVERB"])}
 
             // Non-dictionary terminals
-            PROPER_NAME: /\\b[A-Z][a-z]*\\b/
-            UNKNOWN__WORD: /(?!\\b{'\\b|\\b'.join(Dictionary.get_words_for_parts_of_speech(Grammar._get_special_parts()))}\\b)(\\b([A-Za-z0-9]+)\\b)/
-            UNKNOWN__X_ALA_X: /((?!\\b{'\\b|\\b'.join(Dictionary.get_words_for_parts_of_speech(Grammar._get_special_parts()))}\\b)(\\b([A-Za-z0-9]+)\\b)) ala \\1/
+            PROPER_NAME: /\\b[A-Z][a-z0-9]*\\b/
+            UNKNOWN__WORD: /(?!\\b{'\\b|\\b'.join(Dictionary.get_words_for_parts_of_speech(Grammar._get_special_parts()))}\\b)(\\b\\S+\\b)/
+            UNKNOWN__X_ALA_X: /((?!\\b{'\\b|\\b'.join(Dictionary.get_words_for_parts_of_speech(Grammar._get_special_parts()))}\\b)(\\b\\S+\\b)) ala \\1/
 
             // Punctuation
             WS: (" ")+
-            PUNCT_END: ("!" | "?" | "..." | ".")
-            PUNCT_OTHER: /[^A-Za-z .?!]+/
+            PUNCT_END: ("." | "?" | "!")+
+            PUNCT_OTHER: /[^A-Za-z0-9 .?!]+/
         """
 
     @staticmethod
