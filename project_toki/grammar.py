@@ -21,19 +21,20 @@ class Grammar:
 
             // Define subsentences
             _subsentence: (_subsentence_li | _subsentence_o | _subsentence_mi_sina | _subsentence_quasi | _special_words) (WS _anu_seme_phrase)?
-            _subsentence_li: ((preposition_phrase | noun_phrase) WS)? PARTICLE__LI WS verb_phrase__verb_second
-            _subsentence_o: ((preposition_phrase | noun_phrase) WS)? PARTICLE__O WS verb_phrase__verb_first
+            _subsentence_li: ((preposition_phrase | noun_phrase) WS)? PARTICLE__LI WS verb_phrase__verb_second (WS PARTICLE__LI WS verb_phrase__verb_second)*
+            _subsentence_o: ((preposition_phrase | noun_phrase) WS)? PARTICLE__O WS verb_phrase__verb_first (WS PARTICLE__O WS verb_phrase__verb_first)*
             _subsentence_mi_sina: noun_phrase__mi_sina WS verb_phrase__verb_second
             _subsentence_quasi: number_phrase__cardinal | number_phrase__ordinal_noun | adjective_phrase__single | noun_phrase WS preposition_phrase | preposition_phrase | noun_phrase | _interjections
 
             // Verb phrases
             verb_phrase__verb_first: (_verb_phrase_high_priority | _verb_phrase | _subsentence_quasi)
             verb_phrase__verb_second: (_verb_phrase_high_priority | _subsentence_quasi | _verb_phrase)
-            _verb_phrase_high_priority: _verb_phrase_e | _verb_phrase_preposition
+            _verb_phrase_high_priority: _preverb_verb_phrase | _verb_phrase_e | _verb_phrase_preposition
+            _preverb_verb_phrase: _preverb_phrase WS (_verb_phrase_e | _verb_phrase_preposition | _verb_phrase_single) (WS preposition_phrase)*
             _verb_phrase: (_verb_phrase_e | _verb_phrase_preposition | preposition_phrase | _verb_phrase_single) (WS preposition_phrase)*
-            _verb_phrase_e: _verb_phrase_single (WS PARTICLE__E WS noun_phrase)+
+            _verb_phrase_e: (_preverb_phrase WS)? _verb_phrase_single (WS PARTICLE__E WS noun_phrase)+
             _verb_phrase_preposition: (_preverb_phrase WS)? _verb_phrase_single (WS preposition_phrase)+ (WS PARTICLE__E WS noun_phrase)*
-            _verb_phrase_single: (_preverb_phrase WS)? (_x_ala_x_verb_phrase | VERB) (WS adjective_phrase)?
+            _verb_phrase_single: (_preverb_phrase WS)? (_x_ala_x_verb_phrase | VERB (WS adjective_phrase__negation)?) (WS adjective_phrase)?
 
             // Noun phrases
             noun_phrase__mi_sina: NOUN__MI_SINA
@@ -43,9 +44,9 @@ class Grammar:
 
             // Adjective phrases
             adjective_phrase__single: _adjective
+            adjective_phrase__negation.2: ADJECTIVE__ALA
             adjective_phrase: _adjective (WS _adjective)*
-            _adjective: _x_ala_x_number_phrase | _x_ala_x_adjective_phrase | number_phrase__ordinal_adjective | _adjective_ala | ADJECTIVE
-            _adjective_ala.2: ADJECTIVE__ALA
+            _adjective: _x_ala_x_number_phrase | _x_ala_x_adjective_phrase | number_phrase__ordinal_adjective | ADJECTIVE
 
             // Number phrases
             number_phrase__cardinal: _number_phrase
@@ -64,7 +65,7 @@ class Grammar:
             _anu_seme_phrase: PARTICLE__ANU WS PARTICLE__SEME
             _conjunctions: PARTICLE__ANU | PARTICLE__EN
             _interjections.-1: PARTICLE__A | PARTICLE__O | PARTICLE__PAKALA | INTERJECTION
-            _preverb_phrase.2: _x_ala_x_preverb_phrase | PREVERB (WS adjective_phrase)?
+            _preverb_phrase: _x_ala_x_preverb_phrase | PREVERB (WS adjective_phrase__negation)?
             _special_words: {" | ".join(Grammar._get_special_parts())}
 
             // x ala x questions

@@ -372,6 +372,28 @@ class TestGrammarPuOther(unittest.TestCase):
             ),
         )
         self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("jan lili li sona ala e ike."),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "jan"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "lili"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    '    │   ├── VERB: "sona"',
+                    "    │   ├── ADJECTIVE_PHRASE",
+                    '    │   │   └── ADJECTIVE: "ala"',
+                    '    │   ├── PARTICLE: "e"',
+                    "    │   └── NOUN_PHRASE",
+                    '    │       └── NOUN: "ike"',
+                    "    └── .",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
             GrammarParser.parse_text("meli li nasa e mije."),
             Phrase.from_lines(
                 [

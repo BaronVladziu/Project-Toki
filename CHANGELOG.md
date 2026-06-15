@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.51] - 2026-06-15
+
+### Changed
+
+- improved preverb detection and negation
+
+
 ## [0.0.50] - 2026-05-21
 
 ### Added

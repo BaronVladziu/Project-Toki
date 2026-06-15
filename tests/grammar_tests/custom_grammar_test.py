@@ -236,3 +236,16 @@ class TestGrammarCustom(unittest.TestCase):
                 ],
             ),
         )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("li a!"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    '    │   └── PARTICLE: "a"',
+                    "    └── !",
+                ],
+            ),
+        )
