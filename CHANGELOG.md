@@ -11,11 +11,18 @@
 More info here: https://semver.org/
 
 
+## [0.0.52] - 2026-06-16
+
+### Changed
+
+- improved punctuation in `Grammar` class
+
+
 ## [0.0.51] - 2026-06-15
 
 ### Changed
 
-- improved preverb detection and negation
+- improved preverb detection and negation in `Grammar` class
 
 
 ## [0.0.50] - 2026-05-21

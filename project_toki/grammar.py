@@ -10,13 +10,16 @@ class Grammar:
     def get_rules() -> str:
         return f"""
             // Split to sentences
-            text: WS? (sentence__with_punctuation+ | sentence__with_punctuation* sentence__without_punctuation) WS?
-            sentence__with_punctuation: _sentence WS? PUNCT_END WS?
-            sentence__without_punctuation: _sentence
+            text: _separator_whitespace? sentence__only_punctuation? (sentence__with_punctuation+ | sentence__with_punctuation* sentence__without_punctuation) _separator_whitespace?
+            sentence__only_punctuation: _separator_punct_end
+            sentence__with_punctuation: _separator_punct_other_low_priority? _separator_punct_other_low_priority? _sentence (_separator_punct_end | _separator_punct_other_low_priority)
+            sentence__without_punctuation: _separator_punct_other_low_priority? _separator_punct_other_low_priority? _sentence
 
             // Split to subsentences
-            _sentence: _subsentence ((_separator_punct | _separator_whitespace) _subsentence)*
-            _separator_punct: WS? PUNCT_OTHER WS?
+            _sentence: _subsentence ((_separator_punct_other_high_priority | _separator_whitespace) _subsentence)*
+            _separator_punct_end: WS? PUNCT_END WS?
+            _separator_punct_other_high_priority: WS? PUNCT_OTHER WS?
+            _separator_punct_other_low_priority.-3: WS? PUNCT_OTHER WS?
             _separator_whitespace.-3: WS
 
             // Define subsentences

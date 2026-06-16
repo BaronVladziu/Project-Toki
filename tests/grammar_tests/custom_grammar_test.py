@@ -90,7 +90,7 @@ class TestGrammarCustom(unittest.TestCase):
             ),
         )
         self.COMPARER.compare_phrases(
-            GrammarParser.parse_text("sina... awen"),
+            GrammarParser.parse_text("sina... awen…"),
             Phrase.from_lines(
                 [
                     "TEXT",
@@ -99,8 +99,9 @@ class TestGrammarCustom(unittest.TestCase):
                     '│   │   └── ADJECTIVE: "sina"',
                     "│   └── ...",
                     "└── SENTENCE",
-                    "    └── ADJECTIVE_PHRASE",
-                    '        └── ADJECTIVE: "awen"',
+                    "    ├── ADJECTIVE_PHRASE",
+                    '    │   └── ADJECTIVE: "awen"',
+                    "    └── …",
                 ],
             ),
         )
@@ -120,6 +121,38 @@ class TestGrammarCustom(unittest.TestCase):
                     "    └── VERB_PHRASE",
                     "        └── ADJECTIVE_PHRASE",
                     '            └── ADJECTIVE: "sona"',
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("sina epiku (li suwi)"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   └── NOUN: "sina"',
+                    "    ├── VERB_PHRASE",
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "epiku"',
+                    "    ├── (",
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "suwi"',
+                    "    └── )",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("':' ala"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── ':'",
+                    "    └── NUMBER_PHRASE",
+                    '        └── NUMBER: "ala"',
                 ],
             ),
         )
@@ -175,6 +208,18 @@ class TestGrammarCustom(unittest.TestCase):
                     "TEXT",
                     "└── SENTENCE",
                     '    ├── PARTICLE: "a"',
+                    "    └── !",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("pakala!"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── ADJECTIVE_PHRASE",
+                    '    │   └── ADJECTIVE: "pakala"',
                     "    └── !",
                 ],
             ),

@@ -624,6 +624,25 @@ class TestGrammarPuOther(unittest.TestCase):
             ),
         )
         self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("mi wile (e ni)"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   └── NOUN: "mi"',
+                    "    ├── VERB_PHRASE",
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "wile"',
+                    "    ├── (",
+                    '    ├── PARTICLE: "e"',
+                    "    ├── ADJECTIVE_PHRASE",
+                    '    │   └── ADJECTIVE: "ni"',
+                    "    └── )",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
             GrammarParser.parse_text("ale li pona"),
             Phrase.from_lines(
                 [
