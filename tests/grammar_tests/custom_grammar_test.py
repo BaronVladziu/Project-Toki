@@ -40,6 +40,56 @@ class TestGrammarCustom(unittest.TestCase):
             ),
         )
 
+    def test_punctuation_only(self):
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text(""),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text(" "),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("."),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    └── .",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text(","),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    └── ,",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("..."),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    └── ...",
+                ],
+            ),
+        )
+
     def test_punctuation(self):
         self.COMPARER.compare_phrases(
             GrammarParser.parse_text("mi, sina, ona."),

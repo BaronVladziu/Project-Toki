@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.53] - 2026-06-27
+
+### Added
+
+- support for sentences with only punctuation in `Grammar` class
+
+
 ## [0.0.52] - 2026-06-16
 
 ### Changed

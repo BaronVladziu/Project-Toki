@@ -31,9 +31,20 @@ class GrammarParser:
         """
         return GrammarParser._split_x_ala_x(
             GrammarParser._tree_to_phrases(
-                GrammarParser._remove_whitespaces(GrammarParser._PARSER.parse(text)),
+                GrammarParser._remove_whitespaces(
+                    GrammarParser._PARSER.parse(GrammarParser._preprocess_text(text)),
+                ),
             ),
         )
+
+    @staticmethod
+    def _preprocess_text(text: str) -> str:
+        """
+        This method preprocesses input text to prevent some parsing errors.
+        """
+        if text == "":
+            text = " "  # because lark fails on empty input
+        return text
 
     @staticmethod
     def _tree_to_phrases(tree: lark.lexer.Token | lark.tree.Tree) -> Phrase:

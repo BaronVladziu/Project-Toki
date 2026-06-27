@@ -10,8 +10,8 @@ class Grammar:
     def get_rules() -> str:
         return f"""
             // Split to sentences
-            text: _separator_whitespace? sentence__only_punctuation? (sentence__with_punctuation+ | sentence__with_punctuation* sentence__without_punctuation) _separator_whitespace?
-            sentence__only_punctuation: _separator_punct_end
+            text: _separator_whitespace? sentence__only_punctuation? (sentence__with_punctuation+ | sentence__with_punctuation* sentence__without_punctuation) _separator_whitespace? | sentence__only_punctuation
+            sentence__only_punctuation.-2: _separator_punct_end | _separator_punct_other_low_priority | _separator_whitespace
             sentence__with_punctuation: _separator_punct_other_low_priority? _separator_punct_other_low_priority? _sentence (_separator_punct_end | _separator_punct_other_low_priority)
             sentence__without_punctuation: _separator_punct_other_low_priority? _separator_punct_other_low_priority? _sentence
 
