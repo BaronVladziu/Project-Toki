@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.54] - 2026-06-30
+
+### Fixed
+
+- some single-word sentences
+
+
 ## [0.0.53] - 2026-06-27
 
 ### Added

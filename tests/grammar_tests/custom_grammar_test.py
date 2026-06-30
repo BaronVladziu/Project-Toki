@@ -195,6 +195,27 @@ class TestGrammarCustom(unittest.TestCase):
             ),
         )
         self.COMPARER.compare_phrases(
+            GrammarParser.parse_text('"sitelen pi ilo toki" li seme?'),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    '    ├── "',
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "sitelen"',
+                    '    │   ├── PARTICLE: "pi"',
+                    '    │   ├── NOUN: "ilo"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "toki"',
+                    '    ├── "',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    '    │   └── PARTICLE: "seme"',
+                    "    └── ?",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
             GrammarParser.parse_text("':' ala"),
             Phrase.from_lines(
                 [
@@ -228,6 +249,36 @@ class TestGrammarCustom(unittest.TestCase):
                     "            └── ADJECTIVE_PHRASE",
                     '                ├── ADJECTIVE: "ike"',
                     '                └── ADJECTIVE: "mi"',
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("jan mute li toki e ni: ali li seli, anu seme?"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    "    ├── NOUN_PHRASE",
+                    '    │   ├── NOUN: "jan"',
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "mute"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    '    │   ├── VERB: "toki"',
+                    '    │   ├── PARTICLE: "e"',
+                    "    │   └── NOUN_PHRASE",
+                    '    │       └── NOUN: "ni"',
+                    "    ├── :",
+                    "    ├── NOUN_PHRASE",
+                    '    │   └── NOUN: "ali"',
+                    '    ├── PARTICLE: "li"',
+                    "    ├── VERB_PHRASE",
+                    "    │   └── ADJECTIVE_PHRASE",
+                    '    │       └── ADJECTIVE: "seli"',
+                    "    ├── ,",
+                    '    ├── PARTICLE: "anu"',
+                    '    ├── PARTICLE: "seme"',
+                    "    └── ?",
                 ],
             ),
         )
@@ -271,6 +322,17 @@ class TestGrammarCustom(unittest.TestCase):
                     "    ├── ADJECTIVE_PHRASE",
                     '    │   └── ADJECTIVE: "pakala"',
                     "    └── !",
+                ],
+            ),
+        )
+        self.COMPARER.compare_phrases(
+            GrammarParser.parse_text("seme?!"),
+            Phrase.from_lines(
+                [
+                    "TEXT",
+                    "└── SENTENCE",
+                    '    ├── PARTICLE: "seme"',
+                    "    └── ?!",
                 ],
             ),
         )

@@ -23,11 +23,11 @@ class Grammar:
             _separator_whitespace.-3: WS
 
             // Define subsentences
-            _subsentence: (_subsentence_li | _subsentence_o | _subsentence_mi_sina | _subsentence_quasi | _special_words) (WS _anu_seme_phrase)?
+            _subsentence: (_subsentence_li | _subsentence_o | _subsentence_mi_sina | _special_words | _subsentence_quasi) (WS _anu_seme_phrase)?
             _subsentence_li: ((preposition_phrase | noun_phrase) WS)? PARTICLE__LI WS verb_phrase__verb_second (WS PARTICLE__LI WS verb_phrase__verb_second)*
             _subsentence_o: ((preposition_phrase | noun_phrase) WS)? PARTICLE__O WS verb_phrase__verb_first (WS PARTICLE__O WS verb_phrase__verb_first)*
             _subsentence_mi_sina: noun_phrase__mi_sina WS verb_phrase__verb_second
-            _subsentence_quasi: number_phrase__cardinal | number_phrase__ordinal_noun | adjective_phrase__single | noun_phrase WS preposition_phrase | preposition_phrase | noun_phrase | _interjections
+            _subsentence_quasi: number_phrase__cardinal | number_phrase__ordinal_noun | PARTICLE__SEME | adjective_phrase__single | noun_phrase WS preposition_phrase | preposition_phrase | noun_phrase | _interjections
 
             // Verb phrases
             verb_phrase__verb_first: (_verb_phrase_high_priority | _verb_phrase | _subsentence_quasi)
