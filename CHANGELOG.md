@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.55] - 2026-07-07
+
+### Fixed
+
+- pre-commit pyupgrade hook
+
+
 ## [0.0.54] - 2026-06-30
 
 ### Fixed
