@@ -24,7 +24,7 @@ class Phrase(NodeMixin):
             self.children: list[Phrase] = children
 
     @staticmethod
-    def from_str(text: str) -> "Phrase":
+    def from_str(text: str) -> Phrase:
         """
         This method creates Phrase object from string like:
 
@@ -46,7 +46,7 @@ class Phrase(NodeMixin):
         return Phrase.from_lines(lines=text.splitlines())
 
     @staticmethod
-    def from_lines(lines: list[str]) -> "Phrase":
+    def from_lines(lines: list[str]) -> Phrase:
         """
         This method creates Phrase object from list of strings like:
 
@@ -72,7 +72,7 @@ class Phrase(NodeMixin):
         )
 
     @staticmethod
-    def _from_lines_recursive(lines: list[str]) -> "Phrase":
+    def _from_lines_recursive(lines: list[str]) -> Phrase:
         lines = [x.rstrip() for x in lines]
         lines = [x for x in lines if x]
         if len(lines) < 1:

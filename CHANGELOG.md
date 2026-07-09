@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.56] - 2026-07-09
+
+### Added
+
+- tool for text analysis
+
+
 ## [0.0.55] - 2026-07-07
 
 ### Fixed
