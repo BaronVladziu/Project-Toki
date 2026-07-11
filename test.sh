@@ -9,15 +9,7 @@ cd "$(dirname "$0")"
 source .venv/bin/activate
 
 # Run tests
-coverage run -m unittest tests/dictionary_test.py
-coverage run -m unittest tests/word_test.py
-coverage run -m unittest tests/punctuation_test.py
-coverage run -m unittest tests/phrase_test.py
-coverage run -m unittest tests/grammar_tests/pu_lessons_grammar_test.py
-coverage run -m unittest tests/grammar_tests/custom_grammar_test.py \
-	tests/grammar_tests/pu_other_grammar_test.py \
-	tests/grammar_tests/pu_preface_grammar_test.py
-coverage run -m unittest tests/text_test.py
+coverage run -m pytest tests/*
 
 # Create coverage report
 coverage xml

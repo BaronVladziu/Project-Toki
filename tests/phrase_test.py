@@ -1,4 +1,4 @@
-import unittest
+import pytest
 
 from project_toki.part_of_speech import PartOfSpeech
 from project_toki.phrase import Phrase
@@ -7,7 +7,7 @@ from project_toki.punctuation import Punctuation
 from project_toki.word import Word
 
 
-class TestPhrase(unittest.TestCase):
+class TestPhrase:
     COMPARER: PhraseComparer = PhraseComparer()
 
     def test_constructors(self):
@@ -63,10 +63,7 @@ TEXT
                 ),
             ],
         )
-        self.assertEqual(
-            str(phrase),
-            phrase_as_str.strip(),
-        )
+        assert str(phrase) == phrase_as_str.strip()
         self.COMPARER.compare_phrases(
             Phrase.from_str(phrase_as_str),
             phrase,
@@ -85,14 +82,13 @@ TEXT
             ),
             Phrase("X"),
         )
-        self.assertRaises(
-            ValueError,
-            Phrase.from_lines,
-            [
-                "X",
-                "X",
-            ],
-        )
+        with pytest.raises(ValueError):
+            Phrase.from_lines(
+                [
+                    "X",
+                    "X",
+                ],
+            )
         self.COMPARER.compare_phrases(
             Phrase.from_lines(
                 [
@@ -107,14 +103,13 @@ TEXT
                 ],
             ),
         )
-        self.assertRaises(
-            ValueError,
-            Phrase.from_lines,
-            [
-                "X",
-                "├── X",
-            ],
-        )
+        with pytest.raises(ValueError):
+            Phrase.from_lines(
+                [
+                    "X",
+                    "├── X",
+                ],
+            )
         self.COMPARER.compare_phrases(
             Phrase.from_lines(
                 [
@@ -135,33 +130,30 @@ TEXT
                 ],
             ),
         )
-        self.assertRaises(
-            ValueError,
-            Phrase.from_lines,
-            [
-                "X",
-                "├── X",
-                "│   └── X",
-            ],
-        )
-        self.assertRaises(
-            ValueError,
-            Phrase.from_lines,
-            [
-                "X",
-                "└── X",
-                "    ├── X",
-            ],
-        )
-        self.assertRaises(
-            ValueError,
-            Phrase.from_lines,
-            [
-                "X",
-                "└── X",
-                "│   └── X",
-            ],
-        )
+        with pytest.raises(ValueError):
+            Phrase.from_lines(
+                [
+                    "X",
+                    "├── X",
+                    "│   └── X",
+                ],
+            )
+        with pytest.raises(ValueError):
+            Phrase.from_lines(
+                [
+                    "X",
+                    "└── X",
+                    "    ├── X",
+                ],
+            )
+        with pytest.raises(ValueError):
+            Phrase.from_lines(
+                [
+                    "X",
+                    "└── X",
+                    "│   └── X",
+                ],
+            )
 
     def test_diff(self):
         phrase1: Phrase = Phrase(
@@ -235,9 +227,9 @@ TEXT
                 ),
             ],
         )
-        self.assertEqual(
-            phrase1.get_diff(phrase2).rstrip(),
-            """
+        assert (
+            phrase1.get_diff(phrase2).rstrip()
+            == """
   TEXT                              TEXT
   └── SENTENCE                      └── SENTENCE
       ├── NOUN_PHRASE                   ├── NOUN_PHRASE
@@ -250,5 +242,5 @@ TEXT
 X     │       └── ADJECTIVE: "pona"     │       └── ADJECTIVE: "ike"
 X     ├── PARTICLE: "a"                 └── !
 X     └── !
-            """.rstrip(),
+            """.rstrip()
         )

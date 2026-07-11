@@ -1,4 +1,4 @@
-import unittest
+import pytest
 
 from project_toki.part_of_speech import PartOfSpeech
 from project_toki.punctuation import Punctuation
@@ -6,7 +6,7 @@ from project_toki.text import Text
 from project_toki.word import Word
 
 
-class TestText(unittest.TestCase):
+class TestText:
     def test_init(self):
         _ = Text(
             sequences=[],
@@ -17,7 +17,7 @@ class TestText(unittest.TestCase):
         _ = Text(
             sequences=[Punctuation(".")],
         )
-        with self.assertRaises(TypeError):
+        with pytest.raises(TypeError):
             Text(
                 sequences=[1],
             )
@@ -46,42 +46,30 @@ class TestText(unittest.TestCase):
         )
 
     def test_from_str(self):
-        self.assertEqual(
-            Text.from_str(text=""),
-            Text(
-                sequences=[],
-            ),
+        assert Text.from_str(text="") == Text(
+            sequences=[],
         )
-        self.assertEqual(
-            Text.from_str(text="pona"),
-            Text(
-                sequences=[
-                    Word("pona", PartOfSpeech.UNKNOWN),
-                ],
-            ),
+        assert Text.from_str(text="pona") == Text(
+            sequences=[
+                Word("pona", PartOfSpeech.UNKNOWN),
+            ],
         )
-        self.assertEqual(
-            Text.from_str(text="."),
-            Text(
-                sequences=[
-                    Punctuation("."),
-                ],
-            ),
+        assert Text.from_str(text=".") == Text(
+            sequences=[
+                Punctuation("."),
+            ],
         )
-        self.assertEqual(
-            Text.from_str(text="pilin pona, la mi musi."),
-            Text(
-                sequences=[
-                    Word("pilin", PartOfSpeech.UNKNOWN),
-                    Punctuation(" "),
-                    Word("pona", PartOfSpeech.UNKNOWN),
-                    Punctuation(", "),
-                    Word("la", PartOfSpeech.UNKNOWN),
-                    Punctuation(" "),
-                    Word("mi", PartOfSpeech.UNKNOWN),
-                    Punctuation(" "),
-                    Word("musi", PartOfSpeech.UNKNOWN),
-                    Punctuation("."),
-                ],
-            ),
+        assert Text.from_str(text="pilin pona, la mi musi.") == Text(
+            sequences=[
+                Word("pilin", PartOfSpeech.UNKNOWN),
+                Punctuation(" "),
+                Word("pona", PartOfSpeech.UNKNOWN),
+                Punctuation(", "),
+                Word("la", PartOfSpeech.UNKNOWN),
+                Punctuation(" "),
+                Word("mi", PartOfSpeech.UNKNOWN),
+                Punctuation(" "),
+                Word("musi", PartOfSpeech.UNKNOWN),
+                Punctuation("."),
+            ],
         )

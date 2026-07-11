@@ -1,11 +1,9 @@
-import unittest
-
 from project_toki.grammar_parser import GrammarParser
 from project_toki.phrase import Phrase
 from project_toki.phrase_comparer import PhraseComparer
 
 
-class TestGrammarPuLessons(unittest.TestCase):
+class TestGrammarPuLessons:
     COMPARER: PhraseComparer = PhraseComparer()
 
     def test_lesson_1(self):

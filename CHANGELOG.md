@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.57] - 2026-07-11
+
+### Changed
+
+- tests to use `pytest` instead of `unittest`
+
+
 ## [0.0.56] - 2026-07-09
 
 ### Added

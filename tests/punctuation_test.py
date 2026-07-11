@@ -1,19 +1,16 @@
-import unittest
+import pytest
 
 from project_toki.punctuation import Punctuation
 
 
-class TestPunctuation(unittest.TestCase):
+class TestPunctuation:
     def test_from_str(self):
-        self.assertEqual(
-            Punctuation.from_str(
-                text='. "',
-            ),
-            Punctuation(
-                text='. "',
-            ),
+        assert Punctuation.from_str(
+            text='. "',
+        ) == Punctuation(
+            text='. "',
         )
-        with self.assertRaises(TypeError):
+        with pytest.raises(TypeError):
             Punctuation.from_str(
                 text=3,
             )

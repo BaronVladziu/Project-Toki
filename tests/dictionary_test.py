@@ -1,55 +1,46 @@
-import unittest
+import pytest
 
 from project_toki.dictionary import Dictionary
 
 
-class TestDictionary(unittest.TestCase):
+class TestDictionary:
     def test_extract_parts_of_speech(self):
-        self.assertEqual(
-            Dictionary.extract_parts_of_speech(
-                word="x",
-            ),
-            {"UNKNOWN"},
-        )
-        self.assertEqual(
-            Dictionary.extract_parts_of_speech(
-                word="toki",
-            ),
-            {
-                "ADJECTIVE",
-                "NOUN",
-                "VERB",
-            },
-        )
+        assert Dictionary.extract_parts_of_speech(
+            word="x",
+        ) == {"UNKNOWN"}
+        assert Dictionary.extract_parts_of_speech(
+            word="toki",
+        ) == {
+            "ADJECTIVE",
+            "NOUN",
+            "VERB",
+        }
 
     def test_extract_definition(self):
-        with self.assertRaises(ValueError):
+        with pytest.raises(ValueError):
             Dictionary.extract_definition(
                 word="x",
                 part_of_speech="NOUN",
             )
-        self.assertEqual(
+        assert (
             Dictionary.extract_definition(
                 word="toki",
                 part_of_speech="VERB",
-            ),
-            "to speak, to talk, to use language, to think",
+            )
+            == "to speak, to talk, to use language, to think"
         )
 
     def test_get_words_for_part_of_speech(self):
-        self.assertEqual(
-            Dictionary.get_words_for_part_of_speech(
-                part_of_speech="PREVERB",
-            ),
-            {
-                "alasa",
-                "awen",
-                "kama",
-                "ken",
-                "lukin",
-                "open",
-                "pini",
-                "sona",
-                "wile",
-            },
-        )
+        assert Dictionary.get_words_for_part_of_speech(
+            part_of_speech="PREVERB",
+        ) == {
+            "alasa",
+            "awen",
+            "kama",
+            "ken",
+            "lukin",
+            "open",
+            "pini",
+            "sona",
+            "wile",
+        }

@@ -1,11 +1,9 @@
-import unittest
-
 from project_toki.grammar_parser import GrammarParser
 from project_toki.phrase import Phrase
 from project_toki.phrase_comparer import PhraseComparer
 
 
-class TestGrammarPuOther(unittest.TestCase):
+class TestGrammarPuOther:
     COMPARER: PhraseComparer = PhraseComparer()
 
     def test_pu_proverbs(self):
@@ -548,17 +546,6 @@ class TestGrammarPuOther(unittest.TestCase):
                 ],
             ),
         )
-
-        # ...
-        # ...
-        # ...
-        # ...
-        # ...
-        # ...
-        # ...
-        # ...
-        # ...
-
         self.COMPARER.compare_phrases(
             GrammarParser.parse_text("toki"),
             Phrase.from_lines(
