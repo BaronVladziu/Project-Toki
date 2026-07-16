@@ -16,7 +16,7 @@ pip3 install pip --upgrade
 pip3 install -e . --no-cache-dir
 
 # Install other requirements
-pip3 install coverage==7.11.3
+pip3 install pre-commit==4.6.0
 
 # Build pre-commit
 pre-commit install --config=".pre-commit-config.yaml"

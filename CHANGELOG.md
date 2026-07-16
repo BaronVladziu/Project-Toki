@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.58] - 2026-07-16
+
+### Changed
+
+- update python requirements
+
+
 ## [0.0.57] - 2026-07-11
 
 ### Changed
