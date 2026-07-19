@@ -11,6 +11,13 @@
 More info here: https://semver.org/
 
 
+## [0.0.59] - 2026-07-19
+
+### Added
+
+- `WordStatus` class
+
+
 ## [0.0.58] - 2026-07-16
 
 ### Changed
